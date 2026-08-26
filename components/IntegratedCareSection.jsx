@@ -5,8 +5,6 @@ import { useRef, useState } from "react";
 
 export default function IntegratedCareSection() {
   const scrollRef = useRef(null);
-
-  // Card toggle state track karne ke liye
   const [flippedCards, setFlippedCards] = useState({});
 
   const scrollLeft = () => {
@@ -21,12 +19,10 @@ export default function IntegratedCareSection() {
     }
   };
 
-  // Toggle function for individual cards
   const toggleCard = (id) => {
     setFlippedCards((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
-  // All 8 sections added from the image
   const cardsData = [
     {
       id: 1,
@@ -58,28 +54,28 @@ export default function IntegratedCareSection() {
     },
     {
       id: 5,
-      image: "/video-thumb-5.jpg", // Placeholder for new image
+      image: "/video-thumb-5.jpg",
       imgClass: "object-cover",
       title: "Brain Fog & Memory",
       desc: "Forgetting names, losing your train of thought, difficulty concentrating, or feeling mentally slower than usual can be unsettling. These experiences are common during perimenopause and deserve understanding, not dismissal."
     },
     {
       id: 6,
-      image: "/video-thumb-6.jpg", // Placeholder for new image
+      image: "/video-thumb-6.jpg",
       imgClass: "object-cover",
       title: "Movement & Strength",
       desc: "Movement plays a powerful role in supporting physical health, mood, sleep, strength, and long-term wellbeing. We help you find sustainable ways to stay active that fit your body, your lifestyle, and your goals."
     },
     {
       id: 7,
-      image: "/video-thumb-7.jpg", // Placeholder for new image
+      image: "/video-thumb-7.jpg",
       imgClass: "object-cover",
       title: "Sexual Wellbeing",
       desc: "Changes in desire, intimacy, vaginal comfort, and sexual health are common yet often under-discussed. We provide a safe, supportive space to explore concerns and identify solutions that work for you."
     },
     {
       id: 8,
-      image: "/video-thumb-8.jpg", // Placeholder for new image
+      image: "/video-thumb-8.jpg",
       imgClass: "object-cover",
       title: "Healthy Ageing",
       desc: "Midlife is an opportunity to invest in your future health. From bone health and cardiovascular wellbeing to cognitive resilience and vitality, we focus on helping women age with strength, confidence, and purpose."
@@ -89,7 +85,6 @@ export default function IntegratedCareSection() {
   return (
     <section className="relative w-full py-24 flex flex-col items-center bg-[#004D40] overflow-hidden text-white">
       
-      {/* Background Pattern Overlay */}
       <div className="absolute inset-0 z-0 opacity-90">
         <Image 
           src="/green-pattern.svg" 
@@ -101,41 +96,36 @@ export default function IntegratedCareSection() {
         />
       </div>
 
-      {/* Content Container */}
-      <div className="relative z-10 w-full max-w-[1200px] px-6 md:px-0 flex flex-col mx-auto">
+      <div className="relative z-10 w-full max-w-[1200px] px-0 md:px-0 flex flex-col mx-auto">
         
-        {/* Subtitle & Heading */}
-        <div className="flex flex-col items-start md:items-center text-left md:text-center gap-3 w-full mb-6">
+        <div className="flex flex-col items-start md:items-center text-left md:text-center gap-3 w-full mb-6 px-6 md:px-0">
           <p className="text-[12px] md:text-[20px] font-bold tracking-[0.16em] uppercase text-[#FDF6EC]" style={{ fontFamily: "'Quicksand', sans-serif" }}>
             — HOW DO WE HELP —
           </p>
-
           <h2 className="text-3xl md:text-[52px] font-serif font-bold leading-tight md:leading-[69px] max-w-4xl text-white">
             The integrated care you deserve in <span className="text-[#F5A623] italic font-bold">midlife.</span>
           </h2>
         </div>
 
-        {/* Description */}
-        <p className="text-white text-base md:text-[20px] leading-relaxed md:leading-[32px] font-medium max-w-5xl mb-14 text-left md:text-center mx-0 md:mx-auto">
+        <p className="text-white text-base md:text-[20px] leading-relaxed md:leading-[32px] font-medium max-w-5xl mb-14 text-left md:text-center mx-6 md:mx-auto">
           A space where women can access evidence-based guidance, meaningful conversations, and a supportive community while navigating perimenopause, menopause and healthy ageing. We help you understand what is changing, why it matters, and what you can do about it.
         </p>
 
-        {/* HORIZONTAL CAROUSEL / SLIDER */}
+        {/* YAHAN FIX KIYA HAI: Container Padding aur snap behavior */}
         <div 
           ref={scrollRef}
-          className="flex gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-4 text-left pr-6 md:pr-12 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="flex gap-4 md:gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {cardsData.map((card) => (
-            <div key={card.id} className="shrink-0 w-[280px] sm:w-[320px] md:w-[360px] h-[312px] snap-start rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group">
+            <div key={card.id} className="shrink-0 w-[80vw] max-w-[360px] h-[312px] snap-center rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group">
+              {/* YAHAN FIX KIYA HAI: w-[80vw] aur snap-center jisse card center mein rahe aur kate nahi */}
               
-              {/* Background Image (Fades out when clicked) */}
               <img 
                 src={card.image} 
                 alt={card.title} 
                 className={`absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out ${card.imgClass} ${flippedCards[card.id] ? 'opacity-0' : 'opacity-100'}`}
               />
 
-              {/* Text Overlay Content (Pops up when clicked) */}
               <div 
                 className={`absolute inset-0 bg-[#FAF4EE] p-8 flex flex-col justify-center transition-all duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-100 translate-y-0 z-20' : 'opacity-0 translate-y-4 -z-10 pointer-events-none'
@@ -149,7 +139,6 @@ export default function IntegratedCareSection() {
                 </p>
               </div>
 
-              {/* Aligned Plus/Minus Button */}
               <button 
                 onClick={() => toggleCard(card.id)}
                 className={`absolute bottom-5 right-5 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 z-30 shadow-md ${
@@ -160,25 +149,21 @@ export default function IntegratedCareSection() {
                 aria-label="Toggle details"
               >
                 {flippedCards[card.id] ? (
-                  // Minus Icon
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12H4"></path>
                   </svg>
                 ) : (
-                  // Plus Icon
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path>
                   </svg>
                 )}
               </button>
-
             </div>
           ))}
-
         </div>
 
         {/* Navigation Arrows */}
-        <div className="flex gap-4 self-end pr-6 md:pr-0">
+        <div className="flex gap-4 self-end pr-6 md:pr-0 mt-2">
           <button 
             onClick={scrollLeft}
             className="w-12 h-12 flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer shrink-0 bg-transparent border-none p-0"
