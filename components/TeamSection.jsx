@@ -1,72 +1,127 @@
-import Navbar from '../components/Navbar';
-import HeroSection from '../components/HeroSection';
-import ImageDivider from '../components/ImageDivider';
-import StepsSection from '../components/StepsSection';
-import StagesSection from '../components/StagesSection';
-import IntegratedCareSection from '../components/IntegratedCareSection';
-import CarePlanSection from '@/components/CarePlanSection';
-import TeamSection from '@/components/TeamSection';
-import FaqSection from '@/components/FaqSection';
-import CommunitySection from '@/components/CommunitySection';
-import Footer from '@/components/Footer';
+"use client";
 
-export default function Home() {
+import { useState } from "react";
+
+export default function TeamSection() {
+  // Kaunsa card khula hai usko track karne ke liye state
+  const [expandedCards, setExpandedCards] = useState({});
+
+  const toggleCard = (id) => {
+    setExpandedCards((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
+  // Team data array
+  const teamData = [
+    {
+      id: 1,
+      name: "Dr. Roshni Changalath",
+      title: "Founder & Clinical Lead",
+      subtitle: "MBBS, MS, DNB (OBG)",
+      image: "/team-1.jpg",
+      bio: "OB-GYN with over a decade of clinical experience in providing evidence-based, compassionate women’s health care across hospital, community and global health settings, with a focus on midlife women's health and gynaecologic oncology."
+    },
+    {
+      id: 2,
+      name: "Nahida Wankhede",
+      title: <>Registered Dietitian &<br/>Certified Menopausal<br/>Nutritionist</>,
+      subtitle: "",
+      image: "/team-2.jpg",
+      // NOTE: Aap yahan Nahida ka actual bio update kar sakte hain
+      bio: "OB-GYN with over a decade of clinical experience in providing evidence-based, compassionate women’s health care across hospital, community and global health settings, with a focus on midlife women's health and gynaecologic oncology."
+    },
+    {
+      id: 3,
+      name: "Deepa Mani",
+      title: <>Certified<br/>Psychotherapist</>,
+      subtitle: "",
+      image: "/team-3.jpg",
+      // NOTE: Aap yahan Deepa ka actual bio update kar sakte hain
+      bio: "OB-GYN with over a decade of clinical experience in providing evidence-based, compassionate women’s health care across hospital, community and global health settings, with a focus on midlife women's health and gynaecologic oncology."
+    }
+  ];
+
   return (
-    <main className="bg-[#FAF8F5] min-h-screen">
+    <section className="w-full py-16 md:py-20 px-6 md:px-12 flex justify-center bg-white overflow-hidden">
       
-      <Navbar />
-      
-      <HeroSection />
-      
-      {/* Pehli leti hui aurat */}
-      <ImageDivider />
-      
-      {/* Text Section (Figma mein transition text) */}
-      <section className="py-16 md:py-24 px-6 md:px-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div>
-          {/* YAHAN FIX KIYA HAI: Size ko 13px kar diya hai taaki mobile pe bina toote ek line mein aa jaye */}
-          <p
-            className="text-[#0B306F] uppercase text-[13px] md:text-[16px] font-bold tracking-[0.1em] leading-[20px] whitespace-nowrap"
-            style={{ fontFamily: 'Quicksand, serif' }}
-          >
-             —&nbsp;SHAPE YOUR MIDLIFE JOURNEY&nbsp;— 
-          </p>
-          <br />
-          <h2
-            className="text-3xl md:text-5xl font-bold text-slate-900 leading-snug"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            Your transition from <br className="hidden md:block" />
-            <span className="text-[#b31217] font-bold">perimenopause</span> to <br /><span className="text-[#b31217] font-bold">menopause</span> is more <br /> than just hormonal <br />changes.
-          </h2>
-        </div>
-        <div className="text-slate-700 text-xl md:text-base leading-relaxed space-y-4 font-medium" style={{ fontFamily: 'Quicksand, serif' }}>
-          <p>
-           Midlife can affect your sleep, energy, mood, metabolism, relationships, identity, and how you experience everyday life.
-          </p>
-          <p>
-           We combine evidence-based care with a compassionate, multidisciplinary team to help you access the best midlife science.
-          </p>
-           <p>
-           Together, we create your personalised midlife care roadmap shaped around your symptoms, priorities, and goals.
-          </p>
-        </div>
-      </section>
+      {/* Content Container */}
+      <div className="w-full max-w-[1200px] flex flex-col">
+        
+        {/* Section Heading */}
+        <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-8 md:mb-10 text-left">
+          Meet your team
+        </h2>
 
-      {/* Doosri leti hui aurat */}
-      <ImageDivider />
-      
-      <StepsSection />
-      <CarePlanSection />
-      
-      {/* Teesri leti hui aurat */}
-      <StagesSection />
-      <IntegratedCareSection />
-      <TeamSection/>
-      <FaqSection />
-      <CommunitySection />
-      <Footer />
+        {/* Cards Container - Desktop pe Grid (3 columns), Mobile pe Vertical Stack (flex-col) */}
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-4 md:gap-6 w-full items-start">
+          
+          {teamData.map((member) => (
+            <div key={member.id} className="bg-[#FDF4E7] rounded-[24px] p-5 md:p-6 flex flex-col w-full shadow-sm transition-all duration-300">
+              
+              {/* Top Section: Photo, Name, and Button */}
+              <div className="flex items-center w-full">
+                <img 
+                  src={member.image} 
+                  alt={member.name} 
+                  className="w-[72px] h-[72px] md:w-[76px] md:h-[76px] rounded-full object-cover shrink-0 shadow-sm"
+                />
+                
+                {/* Text Details */}
+                <div className="flex flex-col ml-4 flex-grow">
+                  <h4 className="text-[17px] md:text-[18px] font-bold text-slate-900 leading-tight">
+                    {member.name}
+                  </h4>
+                  <p className="text-[#D9185F] font-bold mt-1 text-[13px] md:text-[15px] leading-tight">
+                    {member.title}
+                  </p>
+                  {member.subtitle && (
+                    <p className="text-slate-700 text-[12px] md:text-[13px] mt-1 font-semibold">
+                      {member.subtitle}
+                    </p>
+                  )}
+                </div>
 
-    </main>
+                {/* Plus / Minus Toggle Button */}
+                <button 
+                  onClick={() => toggleCard(member.id)}
+                  className={`shrink-0 w-8 h-8 rounded-full border-[1.5px] border-[#004D40] flex items-center justify-center transition cursor-pointer ml-2 ${
+                    expandedCards[member.id] ? "bg-[#004D40] text-white" : "text-[#004D40] hover:bg-[#004D40] hover:text-white"
+                  }`}
+                >
+                  {expandedCards[member.id] ? (
+                    /* Minus Icon */
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" />
+                    </svg>
+                  ) : (
+                    /* Plus Icon */
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                  )}
+                </button>
+              </div>
+
+              {/* Bottom Section: Bio Content (Visible only when expanded) */}
+              {expandedCards[member.id] && (
+                <div className="mt-5 pt-4 border-t border-[#F2E5D3] animate-fadeIn">
+                  {/* YAHAN COLOR, SIZE AUR FONT UPDATE KIYA GAYA HAI */}
+                  <p 
+                    className="text-[#221f1f] text-[20px] leading-relaxed font-medium" 
+                    style={{ fontFamily: "'Quicksand', sans-serif" }}
+                  >
+                    {member.bio}
+                  </p>
+                </div>
+              )}
+
+            </div>
+          ))}
+
+        </div>
+      </div>
+    </section>
   );
 }
