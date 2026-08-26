@@ -67,11 +67,9 @@ export default function Footer() {
           {/* Links Area */}
           <div className="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-3 w-full md:w-auto">
             
-          {/* ========================================= */}
-{/* FORCE DOWNLOAD API LINK */}
-{/* ========================================= */}
-<a 
+          <a 
   href="/api/download" 
+  download="Menoessence-Client-Onboarding-Form.pdf"
   className="text-slate-600 hover:text-[#D9185F] transition text-[13px] md:text-[14px] font-bold flex items-center gap-1.5"
 >
   <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
