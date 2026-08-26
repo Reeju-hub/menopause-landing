@@ -8,7 +8,7 @@ export default function CarePlanSection() {
   // --- SWIPE LOGIC ---
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-  const minSwipeDistance = 50;
+  const minSwipeDistance = 40; // Thoda aur sensitive kar diya hai
 
   const plans = [
     {
@@ -97,9 +97,9 @@ export default function CarePlanSection() {
           Your Care Plan
         </h2>
 
-        {/* Cream Card Container */}
+        {/* Cream Card Container (Yahan se padding hata di hai) */}
         <div 
-          className="bg-[#F6C4A3] rounded-[32px] p-6 md:p-8 max-w-[480px] w-full relative z-30 mt-4 md:mt-0 -mb-[100px] md:mb-0 overflow-hidden"
+          className="bg-[#F6C4A3] rounded-[32px] max-w-[480px] w-full relative z-30 mt-4 md:mt-0 -mb-[100px] md:mb-0 overflow-hidden shadow-lg"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
@@ -122,10 +122,10 @@ export default function CarePlanSection() {
           >
             {plans.map((plan, idx) => (
               
-              // YAHAN FIX HAI: min-w-full ensure karega ki slide ekdum 100% fix rahe, overlap na ho
-              <div key={idx} className="w-full min-w-full flex-shrink-0 flex flex-col">
+              // YAHAN FIX HAI: min-w-0 aur p-6 yahan add kiya hai taaki slide 100% lock rahe
+              <div key={idx} className="w-full shrink-0 min-w-0 flex flex-col p-6 md:p-8">
                 
-                {/* Quote (pr-20 isliye taaki text arrows ke neeche na ghuse) */}
+                {/* Quote (pr-20 isliye taaki text arrows se overlap na ho) */}
                 <h3 className="text-[22px] md:text-[26px] pr-20 font-serif font-extrabold text-slate-900 leading-snug mb-6" style={{ fontFamily: "'Playfair Display', sans-serif" }}>
                   {plan.quote}
                 </h3>
@@ -135,16 +135,18 @@ export default function CarePlanSection() {
                   YOUR CARE PLAN MAY INCLUDE
                 </p>
 
-                {/* YAHAN FIX HAI: 3 Cards ke liye GRID use kiya hai fixed width ki jagah */}
+                {/* 3 Cards Grid */}
                 <div className="grid grid-cols-3 gap-2 md:gap-3 w-full pb-2">
                   {plan.items.map((item, itemIdx) => (
                     
-                    <div key={itemIdx} className="bg-white rounded-[16px] md:rounded-[24px] overflow-hidden flex flex-col text-center shadow-sm w-full h-full">
-                      <div className="w-full aspect-[4/3] shrink-0">
+                    <div key={itemIdx} className="bg-white rounded-[16px] md:rounded-[24px] overflow-hidden flex flex-col text-center shadow-sm w-full h-full min-w-0">
+                      <div className="w-full aspect-[4/3] shrink-0 bg-gray-50">
                         <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
                       </div>
-                      <div className="w-full flex-1 flex items-center justify-center p-2">
-                        <span className="text-[9.5px] md:text-[11px] font-bold uppercase tracking-[0.1em] text-[#323232] leading-tight whitespace-pre-line" style={{ fontFamily: "'Quicksand', sans-serif" }}>
+                      
+                      {/* Text box with overflow protection */}
+                      <div className="w-full flex-1 flex items-center justify-center p-1 md:p-2 overflow-hidden">
+                        <span className="text-[9px] md:text-[11px] font-bold uppercase tracking-[0.05em] text-[#323232] leading-tight whitespace-pre-line break-words w-full" style={{ fontFamily: "'Quicksand', sans-serif" }}>
                           {item.title}
                         </span>
                       </div>
