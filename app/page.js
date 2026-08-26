@@ -21,26 +21,34 @@ export default function Home() {
       {/* Pehli leti hui aurat */}
       <ImageDivider />
       
-      {/* Text Section */}
+      {/* Text Section (Exact Figma Match for Safari) */}
       <section className="py-16 md:py-24 px-6 md:px-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div>
-          {/* YAHAN FIX KIYA HAI: Mathematical width aur nowrap jise Safari tod hi nahi sakta */}
-          <div style={{ width: '100%', overflow: 'visible' }}>
-            <p
-              className="text-[#0B306F] uppercase font-bold mb-4"
-              style={{ 
-                fontFamily: 'Quicksand, serif',
-                whiteSpace: 'nowrap', /* Text ko ek line mein lock karta hai */
-                letterSpacing: '0.1em', /* Spacing thodi kam ki hai taaki fit aaye */
-                fontSize: 'clamp(10px, 3.2vw, 16px)' /* Mobile par chota (approx 12px) aur desktop par 16px */
-              }}
+        <div className="w-full">
+          
+          {/* YAHAN FIX KIYA HAI: The Ultimate Safari Em-Dash Bug Fix */}
+          <div className="flex flex-row flex-nowrap items-center w-max max-w-none mb-4">
+            <span 
+              className="shrink-0 whitespace-nowrap text-[#0B306F] font-bold text-[11.5px] md:text-[16px]"
+              style={{ fontFamily: 'Quicksand, serif' }}
             >
-              —&nbsp;SHAPE&nbsp;YOUR&nbsp;MIDLIFE&nbsp;JOURNEY&nbsp;—
-            </p>
+              —
+            </span>
+            <span 
+              className="shrink-0 whitespace-nowrap text-[#0B306F] uppercase font-bold text-[11.5px] md:text-[16px] tracking-[0.1em] md:tracking-[0.16em] mx-1 md:mx-2"
+              style={{ fontFamily: 'Quicksand, serif' }}
+            >
+              SHAPE YOUR MIDLIFE JOURNEY
+            </span>
+            <span 
+              className="shrink-0 whitespace-nowrap text-[#0B306F] font-bold text-[11.5px] md:text-[16px]"
+              style={{ fontFamily: 'Quicksand, serif' }}
+            >
+              —
+            </span>
           </div>
           
           <h2
-            className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.2]"
+            className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.2] mt-2"
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
             Your transition from <br />
@@ -50,6 +58,7 @@ export default function Home() {
             changes.
           </h2>
         </div>
+        
         <div className="text-slate-700 text-xl md:text-base leading-relaxed space-y-4 font-medium" style={{ fontFamily: 'Quicksand, serif' }}>
           <p>
            Midlife can affect your sleep, energy, mood, metabolism, relationships, identity, and how you experience everyday life.
