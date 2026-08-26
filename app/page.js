@@ -22,30 +22,16 @@ export default function Home() {
       <ImageDivider />
       
       {/* Text Section (Exact Figma Match for Safari) */}
-      <section className="py-16 md:py-24 px-6 md:px-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div className="w-full">
+      <section className="py-16 md:py-24 px-6 md:px-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-w-0">
+        <div className="min-w-0">
           
-          {/* YAHAN FIX KIYA HAI: The Ultimate Safari Em-Dash Bug Fix */}
-          <div className="flex flex-row flex-nowrap items-center w-max max-w-none mb-4">
-            <span 
-              className="shrink-0 whitespace-nowrap text-[#0B306F] font-bold text-[11.5px] md:text-[16px]"
-              style={{ fontFamily: 'Quicksand, serif' }}
-            >
-              —
-            </span>
-            <span 
-              className="shrink-0 whitespace-nowrap text-[#0B306F] uppercase font-bold text-[11.5px] md:text-[16px] tracking-[0.1em] md:tracking-[0.16em] mx-1 md:mx-2"
-              style={{ fontFamily: 'Quicksand, serif' }}
-            >
-              SHAPE YOUR MIDLIFE JOURNEY
-            </span>
-            <span 
-              className="shrink-0 whitespace-nowrap text-[#0B306F] font-bold text-[11.5px] md:text-[16px]"
-              style={{ fontFamily: 'Quicksand, serif' }}
-            >
-              —
-            </span>
-          </div>
+          {/* YAHAN FIX KIYA HAI: Normal spaces ki jagah &nbsp; laga diya hai taaki Safari isko tod na sake */}
+          <p
+            className="text-[#0B306F] uppercase font-bold tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.16em] text-[10.5px] sm:text-[12px] md:text-[16px] mb-4 whitespace-nowrap block"
+            style={{ fontFamily: 'Quicksand, sans-serif' }}
+          >
+            —&nbsp;SHAPE&nbsp;YOUR&nbsp;MIDLIFE&nbsp;JOURNEY&nbsp;—
+          </p>
           
           <h2
             className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.2] mt-2"
