@@ -140,7 +140,7 @@ export default function HeroSection() {
         
         {/* Mobile Header Text */}
         <div className="flex flex-col items-center text-center px-4 mb-1">
-          <p className="force-quicksand text-[16px] font-bold tracking-[0.2em] text-[#1D3557] uppercase mb-2">
+          <p className="force-quicksand text-[12px] font-bold tracking-[0.2em] text-[#1D3557] uppercase mb-2">
             — WOMEN'S MIDLIFE HEALTH —
           </p>
           
