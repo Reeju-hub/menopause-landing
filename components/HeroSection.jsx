@@ -102,7 +102,7 @@ export default function HeroSection() {
 
       {/* --- DESKTOP Top Text & Button --- */}
       <div className="hidden md:flex relative z-30 flex-col items-center px-4 md:px-6">
-         <p className="force-quicksand text-[16px] font-bold tracking-[0.2em] text-[#1D3557] uppercase mb-2">
+         <p className="force-quicksand text-[12px] font-bold tracking-[0.2em] text-[#1D3557] uppercase mb-2">
             — WOMEN'S MIDLIFE HEALTH —
           </p>
 

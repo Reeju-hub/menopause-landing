@@ -106,7 +106,7 @@ export default function IntegratedCareSection() {
         
         {/* Subtitle & Heading */}
         <div className="flex flex-col items-start md:items-center text-left md:text-center gap-3 w-full mb-6">
-          <p className="text-[16px] md:text-[20px] font-bold tracking-[0.16em] uppercase text-[#FDF6EC]" style={{ fontFamily: "'Quicksand', sans-serif" }}>
+          <p className="text-[12px] md:text-[20px] font-bold tracking-[0.16em] uppercase text-[#FDF6EC]" style={{ fontFamily: "'Quicksand', sans-serif" }}>
             — HOW DO WE HELP —
           </p>
 

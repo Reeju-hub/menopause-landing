@@ -58,7 +58,7 @@ export default function FaqSection() {
       <div className="w-full max-w-[1000px] flex flex-col">
         
         {/* Subtitle */}
-        <p className="text-16px md:text-2xl font-bold tracking-[0.16em] uppercase mb-4 text-white/90" style={{ fontFamily: "'Quicksand', sans-serif" }}>
+        <p className="text-12px md:text-2xl font-bold tracking-[0.16em] uppercase mb-4 text-white/90" style={{ fontFamily: "'Quicksand', sans-serif" }}>
           — FAQS —
         </p>
 

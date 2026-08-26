@@ -75,7 +75,7 @@ export default function CommunitySection() {
         <div className="relative z-10 w-full max-w-[1200px] mx-auto flex justify-start md:justify-end items-start md:items-center pt-4 md:pt-0">
           <div className="w-full max-w-[420px] flex flex-col items-start md:items-end text-left md:text-right">
             
-            <p className="text-[16px] md:text-[20px] font-bold tracking-[0.2em] uppercase text-white/80 mb-2 md:mb-3">
+            <p className="text-[12px] md:text-[20px] font-bold tracking-[0.2em] uppercase text-white/80 mb-2 md:mb-3">
               — STAY CONNECTED —
             </p>
             

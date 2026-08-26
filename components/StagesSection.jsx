@@ -30,7 +30,7 @@ export default function StagesSection() {
         
         {/* Section Subtitle */}
         <p
-          className="text-[16px] md:text-[20px] font-bold tracking-[0.2em] text-[#0B306F] uppercase mb-3 text-center md:text-left"
+          className="text-[12px] md:text-[20px] font-bold tracking-[0.2em] text-[#0B306F] uppercase mb-3 text-center md:text-left"
           style={{ fontFamily: "'Quicksand', sans-serif" }}
         >
           — WHAT WE HELP WITH —
