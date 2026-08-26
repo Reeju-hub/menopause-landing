@@ -67,19 +67,21 @@ export default function Footer() {
           {/* Links Area */}
           <div className="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-3 w-full md:w-auto">
             
-            {/* ========================================= */}
-            {/* UPDATED: Download Link using onClick logic */}
-            {/* ========================================= */}
-            <a 
-              href="#" 
-              onClick={handleDownload}
-              className="text-slate-600 hover:text-[#D9185F] transition text-[13px] md:text-[14px] font-bold flex items-center gap-1.5 cursor-pointer"
-            >
-              <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-              </svg>
-              Onboarding & Consent Form
-            </a>
+           {/* ========================================= */}
+{/* CLEAN & SAFE PDF LINK */}
+{/* ========================================= */}
+<a 
+  href="/Menoessence Client Onboarding Form.pdf" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  download="Menoessence-Client-Onboarding-Form.pdf"
+  className="text-slate-600 hover:text-[#D9185F] transition text-[13px] md:text-[14px] font-bold flex items-center gap-1.5"
+>
+  <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+  </svg>
+  Onboarding & Consent Form
+</a>
 
             {/* Privacy Policy Link */}
             <Link 
