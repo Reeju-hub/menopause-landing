@@ -27,7 +27,7 @@ export default function Home() {
           
           {/* YAHAN FIX KIYA HAI: Normal spaces ki jagah &nbsp; laga diya hai taaki Safari isko tod na sake */}
           <p
-            className="text-[#0B306F] uppercase font-bold tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.16em] text-[10.5px] sm:text-[12px] md:text-[16px] mb-4 whitespace-nowrap block"
+            className="text-[#0B306F] uppercase font-bold tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.16em] text-[10.9px] sm:text-[12px] md:text-[16px] mb-4 whitespace-nowrap block"
             style={{ fontFamily: 'Quicksand, sans-serif' }}
           >
             —&nbsp;SHAPE&nbsp;YOUR&nbsp;MIDLIFE&nbsp;JOURNEY&nbsp;—
