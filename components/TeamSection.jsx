@@ -30,7 +30,7 @@ export default function TeamSection() {
       subtitle: "",
       image: "/team-2.jpg",
       // NOTE: Aap yahan Nahida ka actual bio update kar sakte hain
-      bio: "OB-GYN with over a decade of clinical experience in providing evidence-based, compassionate women’s health care across hospital, community and global health settings, with a focus on midlife women's health and gynaecologic oncology."
+      bio: "Registered Dietitian and Certified Menopausal Nutritionist with 20 years of experience in clinical nutrition, women’s health, diabetes care, weight management, and nutrition product development."
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ export default function TeamSection() {
       subtitle: "",
       image: "/team-3.jpg",
       // NOTE: Aap yahan Deepa ka actual bio update kar sakte hain
-      bio: "OB-GYN with over a decade of clinical experience in providing evidence-based, compassionate women’s health care across hospital, community and global health settings, with a focus on midlife women's health and gynaecologic oncology."
+      bio: "Certified psychotherapist with 15+ years of experience who integrates Transactional Analysis, yoga-based somatic practices, and insights from competitive sports into her therapeutic work."
     }
   ];
 
@@ -109,7 +109,7 @@ export default function TeamSection() {
                 <div className="mt-5 pt-4 border-t border-[#F2E5D3] animate-fadeIn">
                   {/* YAHAN COLOR, SIZE AUR FONT UPDATE KIYA GAYA HAI */}
                   <p 
-                    className="text-[#221f1f] text-[20px] leading-relaxed font-medium" 
+                    className="text-[#221f1f] text-[15px] leading-relaxed font-medium" 
                     style={{ fontFamily: "'Quicksand', sans-serif" }}
                   >
                     {member.bio}
