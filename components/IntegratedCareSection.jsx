@@ -125,9 +125,8 @@ export default function IntegratedCareSection() {
           ref={scrollRef}
           className="flex gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-4 text-left pr-6 md:pr-12 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
-          
           {cardsData.map((card) => (
-            <div key={card.id} className="shrink-0 w-[360px] h-[312px] snap-start rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group">
+            <div key={card.id} className="shrink-0 w-[280px] sm:w-[320px] md:w-[360px] h-[312px] snap-start rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group">
               
               {/* Background Image (Fades out when clicked) */}
               <img 
