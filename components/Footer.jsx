@@ -3,6 +3,38 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
+  
+  // =========================================
+  // NAYA FIX: Force Download via JavaScript Blob
+  // =========================================
+  const handleDownload = async (e) => {
+    e.preventDefault(); // Normal click behavior ko rokna
+    
+    try {
+      // Dhyan dein: Yahan PDF ka exact naam likhna hai jo public folder mein hai
+      const fileUrl = "/Menoessence Client Onboarding Form.pdf"; 
+      
+      const response = await fetch(fileUrl);
+      const blob = await response.blob(); // File ko raw data mein convert karna
+      const blobUrl = window.URL.createObjectURL(blob);
+      
+      const link = document.createElement("a");
+      link.href = blobUrl;
+      link.download = "Menoessence-Client-Onboarding-Form.pdf"; // Jis naam se device me save hogi
+      
+      document.body.appendChild(link);
+      link.click(); // Zabardasti click karwana
+      
+      // Safai (Memory leak bachane ke liye)
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.error("Download failed:", error);
+      // Agar JS fail ho jaye (rare), toh fallback normal download
+      window.open("/Menoessence Client Onboarding Form.pdf", "_blank");
+    }
+  };
+
   return (
     <footer className="w-full bg-[#FEFCF8] pt-12 pb-6 px-6 md:px-12 border-t border-gray-200 relative z-10">
       <div className="max-w-[1200px] mx-auto flex flex-col">
@@ -24,9 +56,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* ========================================= */}
         {/* Absolute Bottom Section: Copyright & Links */}
-        {/* ========================================= */}
         <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-6 pt-6 border-t border-gray-200/80">
           
           {/* Copyright Area */}
@@ -34,16 +64,16 @@ export default function Footer() {
             © {new Date().getFullYear()} MenoEssence. All rights reserved.
           </p>
 
-          {/* Links Area (Ekdum neeche) */}
+          {/* Links Area */}
           <div className="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-3 w-full md:w-auto">
             
             {/* ========================================= */}
-            {/* UPDATED: Single Combined Onboarding & Consent Form Download */}
+            {/* UPDATED: Download Link using onClick logic */}
             {/* ========================================= */}
             <a 
-              href="/Menoessence Client Onboarding Form.pdf" 
-              download 
-              className="text-slate-600 hover:text-[#D9185F] transition text-[13px] md:text-[14px] font-bold flex items-center gap-1.5"
+              href="#" 
+              onClick={handleDownload}
+              className="text-slate-600 hover:text-[#D9185F] transition text-[13px] md:text-[14px] font-bold flex items-center gap-1.5 cursor-pointer"
             >
               <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
