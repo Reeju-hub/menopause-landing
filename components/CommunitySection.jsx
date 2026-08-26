@@ -117,16 +117,14 @@ export default function CommunitySection() {
       <div className="block md:hidden h-[100px] w-full bg-[#0A0A0A]"></div>
 
       {/* ========================================= */}
-      {/* FLOATING MOBILE BOTTOM BUTTON (FOOTER AWARE) */}
+      {/* YAHAN CHANGES HUE HAIN (White Background & Compact Height) */}
       {/* ========================================= */}
       <div 
-        className="fixed bottom-0 left-0 w-full px-6 flex justify-center md:hidden z-[100] pointer-events-none"
+        className="fixed bottom-0 left-0 w-full px-6 pt-3 flex justify-center md:hidden z-[100] bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-[0_-8px_20px_rgba(0,0,0,0.06)]"
         style={{ 
-          // 1. iPhone Safari Safe Area Fix (as it was)
-          paddingBottom: "calc(40px + env(safe-area-inset-bottom))",
-          // 2. NAYA FIX: Button ko dynamcially footer ke height jitna upar shift karna
+          // Padding bottom 40px se 20px kar di hai taaki height compact rahe
+          paddingBottom: "calc(20px + env(safe-area-inset-bottom))",
           transform: `translateY(-${pushUp}px)`,
-          // 3. Smooth transition taaki dhakka lagne jaisa na lage
           transition: "transform 0.1s ease-out"
         }}
       >
@@ -134,7 +132,7 @@ export default function CommunitySection() {
           href="https://wa.me/919008934945?text=Hi%20MenoEssence,%20I%20would%20like%20to%20book%20a%20discovery%20call!"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#004D40] text-white w-full max-w-[380px] py-3.5 rounded-full font-bold text-[15px] hover:bg-[#00332A] transition shadow-2xl text-center inline-block pointer-events-auto"
+          className="bg-[#004D40] text-white w-full max-w-[380px] py-3.5 rounded-full font-bold text-[15px] hover:bg-[#00332A] transition shadow-md text-center inline-block"
           style={{ fontFamily: "'Quicksand', sans-serif" }}
         >
           Book a discovery call
