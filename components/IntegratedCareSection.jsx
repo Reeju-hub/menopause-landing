@@ -114,20 +114,17 @@ export default function IntegratedCareSection() {
             <div 
               key={card.id} 
               // ========================================================
-              // FIXED HEIGHT AND FULL COVERAGE CONTAINER
+              // FIGMA EXACT CONTAINER WITH BACKGROUND IMAGE COVER
               // ========================================================
-              className="flex-none snap-start w-[288px] md:w-[340px] h-[370px] rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE] flex flex-col"
+              className="flex-none snap-start w-[288px] md:w-[340px] h-[370px] rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE]"
+              style={{
+                backgroundImage: `url('${card.image}')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
             >
               
-              {/* Image poore container mein object-cover ke sath fit ho jayegi */}
-              <img 
-                src={card.image} 
-                alt={card.title} 
-                className={`w-full h-full object-cover block transition-opacity duration-500 ease-in-out ${
-                  flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
-                }`}
-              />
-
               {/* Flipped Back Content */}
               <div 
                 className={`absolute inset-0 bg-[#FAF4EE] p-8 flex flex-col justify-center transition-all duration-500 ease-in-out z-20 ${
