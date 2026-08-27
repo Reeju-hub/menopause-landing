@@ -3,50 +3,44 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 export default function CommunitySection() {
-  // NAYA TARIQA: React state ki jagah useRef use karenge taaki re-renders na hon
-  const buttonRef = useRef(null);
+  const sectionRef = useRef(null);
+  const buttonContainerRef = useRef(null);
 
   useEffect(() => {
-    let animationFrameId;
-
     const handleScroll = () => {
-      // requestAnimationFrame scroll ko ekdum smooth aur lag-free banata hai
-      animationFrameId = requestAnimationFrame(() => {
-        const footer = document.querySelector("footer");
-        if (!footer || !buttonRef.current) return;
+      if (!sectionRef.current || !buttonContainerRef.current) return;
 
-        const documentHeight = document.documentElement.scrollHeight;
-        const currentScroll = window.scrollY + window.innerHeight;
-        const distanceFromBottom = documentHeight - currentScroll;
-        const footerHeight = footer.offsetHeight;
+      // Section ka bottom screen par kahan hai, yeh nikalenge
+      const rect = sectionRef.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
 
-        // Agar footer screen par dikhne laga hai
-        if (distanceFromBottom < footerHeight) {
-          const pushUpValue = footerHeight - distanceFromBottom;
-          // Direct DOM ko update kar rahe hain (Super Fast)
-          buttonRef.current.style.transform = `translateY(-${pushUpValue}px)`;
-        } else {
-          // Footer nahi dikh raha toh wapas apni jagah
-          buttonRef.current.style.transform = `translateY(0px)`;
-        }
-      });
+      // Agar is section ka bottom screen ke bottom ko touch kar le (yaani footer aane wala hai)
+      if (rect.bottom <= viewportHeight) {
+        // Button ko screen se chhod kar section ke bottom par permanently lock kar do
+        buttonContainerRef.current.style.position = 'absolute';
+      } else {
+        // Warna button ko screen ke bottom par chipka kar rakho (Fixed)
+        buttonContainerRef.current.style.position = 'fixed';
+      }
     };
 
-    // { passive: true } browser ko batata hai ki scroll ko block na kare (Extra Smoothness)
+    // { passive: true } se scrolling frame-rate maximum rehti hai
     window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll);
+    window.addEventListener("resize", handleScroll, { passive: true });
     
-    setTimeout(handleScroll, 100);
+    // Page load hone par position set karna
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
-      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
   return (
-    <>
+    // NAYA FIX: Poore component ko ek <div className="relative w-full"> mein wrap kiya hai
+    <div className="relative w-full" ref={sectionRef}>
+      
       {/* Community Section with Background Image */}
       <section className="relative w-full h-[520px] md:h-[500px] flex px-6 md:px-12 overflow-hidden bg-[#0A0A0A]">
         
@@ -122,14 +116,14 @@ export default function CommunitySection() {
       <div className="block md:hidden h-[100px] w-full bg-[#0A0A0A]"></div>
 
       {/* ========================================= */}
-      {/* FLOATING MOBILE BOTTOM BUTTON (FOOTER AWARE) */}
+      {/* FLOATING MOBILE BOTTOM BUTTON (100% NATIVE SMOOTH) */}
       {/* ========================================= */}
       <div 
-        ref={buttonRef} // NAYA: ref yahan attach kiya
-        className="fixed bottom-0 left-0 w-full px-6 pt-3 flex justify-center md:hidden z-[100] bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-[0_-8px_20px_rgba(0,0,0,0.06)] will-change-transform"
+        ref={buttonContainerRef} 
+        className="fixed bottom-0 left-0 w-full px-6 pt-3 flex justify-center md:hidden z-[100] bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-[0_-8px_20px_rgba(0,0,0,0.06)]"
         style={{ 
           paddingBottom: "calc(20px + env(safe-area-inset-bottom))",
-          // Yahan se inline transform aur transition hata diya hai!
+          // JS se translateY wala sara jhanjhat hata diya hai
         }}
       >
         <a 
@@ -142,6 +136,6 @@ export default function CommunitySection() {
           Book a discovery call
         </a>
       </div>
-    </>
+    </div>
   );
 }

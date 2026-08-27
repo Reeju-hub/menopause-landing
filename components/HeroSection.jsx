@@ -22,7 +22,7 @@ export default function HeroSection() {
   // --- SWIPE LOGIC STATES ---
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-  const minSwipeDistance = 40; // Minimum 40px ka swipe hona chahiye slide change hone ke liye
+  const minSwipeDistance = 40; 
 
   // --- AUTO-SCROLL LOGIC ---
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function HeroSection() {
     }, 4000); 
 
     return () => clearInterval(slideInterval);
-  }, [activeIndex, slides.length]); // YAHAN FIX KIYA: activeIndex add kiya taaki swipe karne par timer reset ho jaye
+  }, [activeIndex, slides.length]); 
 
   // --- SCROLL ANIMATION LOGIC ---
   const [isBgVisible, setIsBgVisible] = useState(false);
@@ -78,18 +78,17 @@ export default function HeroSection() {
     if (!touchStart || !touchEnd) return;
     const distance = touchStart - touchEnd;
     
-    // Left swipe (Next slide)
     if (distance > minSwipeDistance) {
       setActiveIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     }
-    // Right swipe (Previous slide)
     if (distance < -minSwipeDistance) {
       setActiveIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
     }
   };
 
   return (
-    <section className="bg-[#FAF8F5] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-10">
+    // Section ki bottom padding (pb-20) badha di hai spacing ke liye
+    <section className="bg-[#FAF8F5] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-20">
       
       <style dangerouslySetInnerHTML={{__html: `
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
@@ -98,7 +97,6 @@ export default function HeroSection() {
         .force-playfair { font-family: 'Playfair Display', serif !important; }
         .force-quicksand { font-family: 'Quicksand', sans-serif !important; }
         
-        /* SLOW SPIN FOR FLOWERS */
         @keyframes spin-slow {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
@@ -107,7 +105,6 @@ export default function HeroSection() {
           animation: spin-slow 6s linear infinite;
         }
 
-        /* BOUNCY POP-UP EFFECT ON SCROLL */
         @keyframes popup-bg {
           0% { transform: scale(0.85); opacity: 0; }
           60% { transform: scale(1.05); opacity: 1; }
@@ -117,7 +114,6 @@ export default function HeroSection() {
           animation: popup-bg 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
-        /* FADE IN FOR SMOOTH TEXT CHANGE */
         @keyframes fadeIn {
           from { opacity: 0.3; }
           to { opacity: 1; }
@@ -201,43 +197,52 @@ export default function HeroSection() {
         </div>
 
         {/* ============================================== */}
-        {/* Separate Solid Deep Pink Box (SWIPE ENABLED) */}
+        {/* EXACT FIGMA MATCHED PINK BOX (SWIPE ENABLED) */}
         {/* ============================================== */}
         <div 
-          className="bg-[#9E0059] text-white py-9 px-6 text-center translate-y-7.5 shadow-lg w-[calc(100%-2rem)] mx-auto rounded-b-[36px] -mt-8 relative z-40"
+          className="w-[350px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 -mt-10 mb-[60px] shadow-lg"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
           
-          <h3 className="mb-2.5 flex justify-center items-center gap-3 tracking-wide pointer-events-none">
-            <img src="/flower.png" alt="flower" className="w-6 h-6 object-contain animate-spin-slow" />
-            <span className="force-caveat font-bold tracking-wide text-[36px]">
-              You're not alone
-            </span>
-            <img src="/flower.png" alt="flower" className="w-6 h-6 object-contain animate-spin-slow" />
-          </h3>
+          {/* Top Text & Flower Block */}
+          <div className="flex flex-col items-center gap-[12px] w-[310px] h-[101px] pointer-events-none">
+            
+            {/* Title with Flowers */}
+            <h3 className="flex flex-row justify-center items-center gap-[12px] w-[310px] h-[45px]">
+              <img src="/flower.png" alt="flower" className="w-[20px] h-[20px] object-contain animate-spin-slow" />
+              <span className="force-caveat font-bold text-[#FFFFFF] text-[36px] leading-[45px] text-center">
+                You're not alone
+              </span>
+              <img src="/flower.png" alt="flower" className="w-[20px] h-[20px] object-contain animate-spin-slow" />
+            </h3>
 
-          <p 
-            key={activeIndex}
-            className="text-[16px] text-white/95 font-medium mb-8 px-4 leading-relaxed transition-all duration-300 animate-fadeIn pointer-events-none"
-          >
-            {slides[activeIndex].text}
-          </p>
+            {/* Slider Description Text */}
+            <p 
+              key={activeIndex}
+              className="force-quicksand font-bold text-[#FFFFFF] text-[16px] leading-[22px] text-center w-full animate-fadeIn"
+            >
+              {slides[activeIndex].text}
+            </p>
 
-          <div className="flex justify-center items-center gap-2 cursor-pointer">
+          </div>
+
+          {/* Indicator Dots */}
+          <div className="flex flex-row justify-center items-center gap-[12px] h-[8px]">
             {slides.map((_, index) => (
               <div
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`transition-all duration-300 rounded-full ${
+                className={`transition-all duration-300 rounded-[4px] cursor-pointer ${
                   activeIndex === index
-                    ? "w-10 h-2 bg-[#F5A623] shadow-sm"
-                    : "w-2.5 h-2.5 bg-[#F5A623] opacity-60"
+                    ? "w-[64px] h-[8px] bg-[#FF7A21]"
+                    : "w-[16px] h-[8px] bg-[rgba(255,122,33,0.6)]"
                 }`}
               ></div>
             ))}
           </div>
+
         </div>
 
       </div>
