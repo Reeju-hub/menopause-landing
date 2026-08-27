@@ -112,21 +112,20 @@ export default function IntegratedCareSection() {
           {cardsData.map((card) => (
             <div 
               key={card.id} 
-              // ==============================================
-              // FIX: Card ka exact aspect ratio lock kar diya hai
-              // ==============================================
-              className="flex-none snap-start w-[288px] md:w-[340px] h-[340px] rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group"
+              // Card ki width aur natural height fix kar di hai taaki image bina kate fit aaye
+              className="flex-none snap-start w-[288px] md:w-[340px] rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group"
             >
               
-              {/* Background Image with perfect fit */}
+              {/* Image without any cropping or stretching */}
               <div 
-                className={`absolute inset-0 w-full h-full bg-no-repeat transition-opacity duration-500 ease-in-out ${
+                className={`w-full h-full bg-no-repeat transition-opacity duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
                 }`}
                 style={{
                   backgroundImage: `url('${card.image}')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
+                  backgroundSize: '100% auto', // Width 100% aur height automatic taaki text na kate
+                  backgroundPosition: 'top center',
+                  aspectRatio: '340 / 380' // Original image ke ratio ke mutabiq box ka shape
                 }}
                 aria-label={card.title}
                 role="img"
