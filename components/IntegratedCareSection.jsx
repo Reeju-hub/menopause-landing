@@ -112,10 +112,11 @@ export default function IntegratedCareSection() {
         </p>
 
         {/* Scroll Container */}
-        <div 
-          ref={scrollRef}
-          className="flex gap-4 md:gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-        >
+       <div 
+  ref={scrollRef}
+  className="flex gap-4 md:gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 md:px-12 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+  style={{ WebkitOverflowScrolling: 'touch' }}
+>
           {cardsData.map((card) => (
             <div key={card.id} className="shrink-0 w-[80vw] max-w-[360px] h-[312px] snap-center rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group">
               
