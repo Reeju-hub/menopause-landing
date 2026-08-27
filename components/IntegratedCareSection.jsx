@@ -122,7 +122,7 @@ export default function IntegratedCareSection() {
               <img 
                 src={card.image} 
                 alt={card.title} 
-                className={`absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out ${card.imgClass} ${flippedCards[card.id] ? 'opacity-0' : 'opacity-100'}`}
+                className={`absolute inset-0 w-auto h-full transition-opacity duration-500 ease-in-out ${card.imgClass} ${flippedCards[card.id] ? 'opacity-0' : 'opacity-100'}`}
               />
 
               <div 
