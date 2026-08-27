@@ -87,7 +87,8 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="bg-[#FAF8F5] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-20">
+    // FIX 1: pb-20 ko wapas pb-10 kar diya taaki overall gap kam ho jaye
+    <section className="bg-[#FAF8F5] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-10">
       
       <style dangerouslySetInnerHTML={{__html: `
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
@@ -196,10 +197,11 @@ export default function HeroSection() {
         </div>
 
         {/* ============================================== */}
-        {/* FIX: NO OVERLAP, PERFECT FIGMA SPECS */}
+        {/* EXACT FIGMA MATCHED PINK BOX (SWIPE ENABLED) */}
         {/* ============================================== */}
         <div 
-          className="w-full max-w-[350px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[60px] shadow-lg"
+          // FIX 2: mb-[60px] ko ghata kar mb-[30px] kar diya hai gap kam karne ke liye
+          className="w-full max-w-[350px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[30px] shadow-lg"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
