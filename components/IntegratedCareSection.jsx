@@ -116,10 +116,10 @@ export default function IntegratedCareSection() {
         {/* Scroll Container */}
         <div 
           ref={scrollRef}
-          className="flex gap-4 md:gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="flex gap-4 md:gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 scroll-pl-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {cardsData.map((card) => (
-            <div key={card.id} className="shrink-0 w-[80vw] max-w-[360px] h-[312px] snap-center rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group">
+            <div key={card.id} className="shrink-0 w-[80vw] max-w-[360px] h-[312px] snap-start rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group">
               
               {/* Wapas absolute aur w-full h-full laa diya hai jismein card.imgClass pass ho rahi hai */}
               <img 
