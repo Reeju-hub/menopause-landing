@@ -114,16 +114,16 @@ export default function IntegratedCareSection() {
             <div 
               key={card.id} 
               // ========================================================
-              // FINAL FIX: aspect-[340/360] aur object-cover taaki image poori tarah bhar jaye
+              // EXACT CONTAINER SIZE WITH object-top TO PREVENT CUTTING TOP TEXT
               // ========================================================
-              className="flex-none snap-start w-[288px] md:w-[340px] aspect-[340/360] relative group bg-[#FAF4EE] rounded-[24px] shadow-lg flex flex-col overflow-hidden"
+              className="flex-none snap-start w-[288px] md:w-[340px] aspect-[340/375] relative group bg-[#FAF4EE] rounded-[24px] shadow-lg flex flex-col overflow-hidden"
             >
               
-              {/* Image with object-cover */}
+              {/* Image with object-top so the top text/number stays completely visible */}
               <img 
                 src={card.image} 
                 alt={card.title} 
-                className={`w-full h-full object-cover block transition-opacity duration-500 ease-in-out ${
+                className={`w-full h-full object-cover object-top block transition-opacity duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
                 }`}
               />
