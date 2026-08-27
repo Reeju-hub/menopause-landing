@@ -27,58 +27,58 @@ export default function IntegratedCareSection() {
     {
       id: 1,
       image: "/video-thumb-1.jpg",
-      // FIX: object-cover ke sath scale aur origin-top diya hai 
-      // taaki upar ka '1' safe rahe aur neeche ka gap bhar jaye!
-      imgClass: "object-cover scale-[1.00] origin-top",
+      // Tumhara 1.02 wala fix yahan hai taaki kinare na katein
+      imgClass: "object-cover scale-[1.02]", 
       title: "Energy & vitality",
       desc: "We offer practical, realistic guidance to support hormonal health, energy, metabolic wellbeing, bone health, and overall vitality."
     },
     {
       id: 2,
       image: "/video-thumb-2.jpg",
-      imgClass: "object-cover scale-[1.00] origin-top",
+      imgClass: "object-cover scale-[1.02]",
       title: "Mood & Emotional Wellbeing",
       desc: "Mood changes, irritability, overwhelm, anxiety, or a quiet sense of not feeling like yourself can all be part of the menopausal transition. We help you understand these changes and support your emotional wellbeing with evidence-based approaches."
     },
     {
       id: 3,
       image: "/video-thumb-3.jpg",
-      imgClass: "object-cover scale-[1.00] origin-top",
+      imgClass: "object-cover scale-[1.02]",
       title: "Metabolism & Weight Changes",
       desc: "Should you be concerned about your weight? Or is bone health? Understanding hormonal, metabolic, and lifestyle factors involved helps you make informed, sustainable changes without guilt or guesswork."
     },
     {
       id: 4,
       image: "/video-thumb-4.jpg",
-      imgClass: "object-cover scale-[1.00] origin-top",
+      // Yahan tumhara original object-left wapas daal diya
+      imgClass: "object-left scale-[1.02]", 
       title: "Sleep Disturbances",
       desc: "Disturbed sleep patters or feeling tired despite a full night’s sleep are common in midlife. We explore the factors affecting your sleep and build practical, personalised strategies to improve rest and recovery."
     },
     {
       id: 5,
       image: "/video-thumb-5.jpg",
-      imgClass: "object-cover scale-[1.00] origin-top",
+      imgClass: "object-cover scale-[1.02]",
       title: "Brain Fog & Memory",
       desc: "Forgetting names, losing your train of thought, difficulty concentrating, or feeling mentally slower than usual can be unsettling. These experiences are common during perimenopause and deserve understanding, not dismissal."
     },
     {
       id: 6,
       image: "/video-thumb-6.jpg",
-      imgClass: "object-cover scale-[1.00] origin-top",
+      imgClass: "object-cover scale-[1.02]",
       title: "Movement & Strength",
       desc: "Movement plays a powerful role in supporting physical health, mood, sleep, strength, and long-term wellbeing. We help you find sustainable ways to stay active that fit your body, your lifestyle, and your goals."
     },
     {
       id: 7,
       image: "/video-thumb-7.jpg",
-      imgClass: "object-cover scale-[1.00] origin-top",
+      imgClass: "object-cover scale-[1.02]",
       title: "Sexual Wellbeing",
       desc: "Changes in desire, intimacy, vaginal comfort, and sexual health are common yet often under-discussed. We provide a safe, supportive space to explore concerns and identify solutions that work for you."
     },
     {
       id: 8,
       image: "/video-thumb-8.jpg",
-      imgClass: "object-cover scale-[1.00] origin-top",
+      imgClass: "object-cover scale-[1.02]",
       title: "Healthy Ageing",
       desc: "Midlife is an opportunity to invest in your future health. From bone health and cardiovascular wellbeing to cognitive resilience and vitality, we focus on helping women age with strength, confidence, and purpose."
     }
@@ -119,9 +119,10 @@ export default function IntegratedCareSection() {
           className="flex gap-4 md:gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {cardsData.map((card) => (
+            {/* Wapas wahi perfect structure: h-[312px] aur rounded-[24px] */}
             <div key={card.id} className="shrink-0 w-[80vw] max-w-[360px] h-[312px] snap-center rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group">
               
-              {/* FIX: w-auto ki jagah w-full wapas laaya taaki side mein ya neeche koi gap na bache */}
+              {/* Wapas absolute aur w-full h-full laa diya hai jismein card.imgClass pass ho rahi hai */}
               <img 
                 src={card.image} 
                 alt={card.title} 
