@@ -114,12 +114,12 @@ export default function IntegratedCareSection() {
             <div 
               key={card.id} 
               // ========================================================
-              // EXACT CONTAINER SIZE WITH object-top TO PREVENT CUTTING TOP TEXT
+              // FINAL FIX: aspect ratio aur padding tweak kiya hai taaki upar ka text safe rahe
               // ========================================================
-              className="flex-none snap-start w-[288px] md:w-[340px] aspect-[340/375] relative group bg-[#FAF4EE] rounded-[24px] shadow-lg flex flex-col overflow-hidden"
+              className="flex-none snap-start w-[288px] md:w-[340px] aspect-[340/385] relative group bg-[#FAF4EE] rounded-[24px] shadow-lg flex flex-col overflow-hidden p-0"
             >
               
-              {/* Image with object-top so the top text/number stays completely visible */}
+              {/* Image with object-cover and object-top to ensure zero cropping on the title area */}
               <img 
                 src={card.image} 
                 alt={card.title} 
