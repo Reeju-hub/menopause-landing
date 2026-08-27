@@ -45,7 +45,7 @@ export default function Home() {
           </h2>
         </div>
         
-        <div className="text-slate-700 text-xl md:text-base leading-relaxed space-y-4 font-medium" style={{ fontFamily: 'Quicksand, serif' }}>
+        <div className="text-slate-700 text-[16px] md:text-base leading-relaxed space-y-4 font-medium" style={{ fontFamily: 'Quicksand, serif' }}>
           <p>
            Midlife can affect your sleep, energy, mood, metabolism, relationships, identity, and how you experience everyday life.
           </p>
