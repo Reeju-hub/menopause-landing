@@ -29,48 +29,56 @@ export default function IntegratedCareSection() {
     {
       id: 1,
       image: "/video-thumb-1.jpg",
+      number: "1",
       title: "Energy & vitality",
       desc: "We offer practical, realistic guidance to support hormonal health, energy, metabolic wellbeing, bone health, and overall vitality."
     },
     {
       id: 2,
       image: "/video-thumb-2.jpg",
+      number: "2",
       title: "Mood & Emotional Wellbeing",
       desc: "Mood changes, irritability, overwhelm, anxiety, or a quiet sense of not feeling like yourself can all be part of the menopausal transition. We help you understand these changes and support your emotional wellbeing with evidence-based approaches."
     },
     {
       id: 3,
       image: "/video-thumb-3.jpg",
+      number: "3",
       title: "Metabolism & Weight Changes",
       desc: "Should you be concerned about your weight? Or is bone health? Understanding hormonal, metabolic, and lifestyle factors involved helps you make informed, sustainable changes without guilt or guesswork."
     },
     {
       id: 4,
       image: "/video-thumb-4.jpg",
+      number: "4",
       title: "Sleep Disturbances",
       desc: "Disturbed sleep patters or feeling tired despite a full night’s sleep are common in midlife. We explore the factors affecting your sleep and build practical, personalised strategies to improve rest and recovery."
     },
     {
       id: 5,
       image: "/video-thumb-5.jpg",
+      number: "5",
       title: "Brain Fog & Memory",
       desc: "Forgetting names, losing your train of thought, difficulty concentrating, or feeling mentally slower than usual can be unsettling. These experiences are common during perimenopause and deserve understanding, not dismissal."
     },
     {
       id: 6,
       image: "/video-thumb-6.jpg",
+      number: "6",
       title: "Movement & Strength",
       desc: "Movement plays a powerful role in supporting physical health, mood, sleep, strength, and long-term wellbeing. We help you find sustainable ways to stay active that fit your body, your lifestyle, and your goals."
     },
     {
       id: 7,
       image: "/video-thumb-7.jpg",
+      number: "7",
       title: "Sexual Wellbeing",
       desc: "Changes in desire, intimacy, vaginal comfort, and sexual health are common yet often under-discussed. We provide a safe, supportive space to explore concerns and identify solutions that work for you."
     },
     {
       id: 8,
       image: "/video-thumb-8.jpg",
+      number: "8",
       title: "Healthy Ageing",
       desc: "Midlife is an opportunity to invest in your future health. From bone health and cardiovascular wellbeing to cognitive resilience and vitality, we focus on helping women age with strength, confidence, and purpose."
     }
@@ -112,20 +120,26 @@ export default function IntegratedCareSection() {
           {cardsData.map((card) => (
             <div 
               key={card.id} 
-              // Card ki width aur natural height fix kar di hai taaki image bina kate fit aaye
-              className="flex-none snap-start w-[288px] md:w-[340px] rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group"
+              className="flex-none snap-start w-[288px] md:w-[340px] h-[400px] rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative flex flex-col group"
             >
               
-              {/* Image without any cropping or stretching */}
+              {/* Top White Header Box */}
+              <div className="bg-[#FAF4EE] px-6 py-4 flex items-center gap-4 z-20 shrink-0">
+                <span className="text-[#004D40] text-[20px] font-bold font-serif">{card.number}</span>
+                <h3 className="text-[#004D40] text-[18px] md:text-[20px] font-bold font-serif truncate">
+                  {card.title}
+                </h3>
+              </div>
+
+              {/* Image Area filling the rest */}
               <div 
-                className={`w-full h-full bg-no-repeat transition-opacity duration-500 ease-in-out ${
+                className={`relative w-full flex-grow bg-no-repeat transition-opacity duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
                 }`}
                 style={{
                   backgroundImage: `url('${card.image}')`,
-                  backgroundSize: '100% auto', // Width 100% aur height automatic taaki text na kate
-                  backgroundPosition: 'top center',
-                  aspectRatio: '340 / 380' // Original image ke ratio ke mutabiq box ka shape
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
                 }}
                 aria-label={card.title}
                 role="img"
@@ -133,8 +147,8 @@ export default function IntegratedCareSection() {
 
               {/* Flipped Back Content */}
               <div 
-                className={`absolute inset-0 bg-[#FAF4EE] p-8 flex flex-col justify-center transition-all duration-500 ease-in-out ${
-                  flippedCards[card.id] ? 'opacity-100 translate-y-0 z-20' : 'opacity-0 translate-y-4 -z-10 pointer-events-none'
+                className={`absolute inset-0 bg-[#FAF4EE] p-8 flex flex-col justify-center transition-all duration-500 ease-in-out z-30 ${
+                  flippedCards[card.id] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
                 }`}
               >
                 <h3 className="text-[#004D40] text-[22px] font-bold mb-3 font-serif leading-tight">
@@ -148,7 +162,7 @@ export default function IntegratedCareSection() {
               {/* Toggle Button */}
               <button 
                 onClick={() => toggleCard(card.id)}
-                className={`absolute bottom-5 right-5 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 z-30 shadow-md ${
+                className={`absolute bottom-5 right-5 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 z-40 shadow-md ${
                   flippedCards[card.id] 
                     ? 'bg-[#004D40] text-white hover:bg-[#00332a]' 
                     : 'bg-white/90 backdrop-blur-sm text-[#004D40] hover:bg-white'
