@@ -28,21 +28,21 @@ export default function IntegratedCareSection() {
       id: 1,
       image: "/video-thumb-1.jpg",
       // Tumhara 1.02 wala fix yahan hai taaki kinare na katein
-      imgClass: "object-cover scale-[1.02]", 
+      imgClass: "object-cover object-left", 
       title: "Energy & vitality",
       desc: "We offer practical, realistic guidance to support hormonal health, energy, metabolic wellbeing, bone health, and overall vitality."
     },
     {
       id: 2,
       image: "/video-thumb-2.jpg",
-      imgClass: "object-cover scale-[1.02]",
+      imgClass: "object-cover object-left",
       title: "Mood & Emotional Wellbeing",
       desc: "Mood changes, irritability, overwhelm, anxiety, or a quiet sense of not feeling like yourself can all be part of the menopausal transition. We help you understand these changes and support your emotional wellbeing with evidence-based approaches."
     },
     {
       id: 3,
       image: "/video-thumb-3.jpg",
-      imgClass: "object-cover scale-[1.02]",
+      imgClass: "object-cover object-left",
       title: "Metabolism & Weight Changes",
       desc: "Should you be concerned about your weight? Or is bone health? Understanding hormonal, metabolic, and lifestyle factors involved helps you make informed, sustainable changes without guilt or guesswork."
     },
@@ -50,35 +50,35 @@ export default function IntegratedCareSection() {
       id: 4,
       image: "/video-thumb-4.jpg",
       // Yahan tumhara original object-left wapas daal diya
-      imgClass: "object-left scale-[1.02]", 
+      imgClass: "object-left object-left", 
       title: "Sleep Disturbances",
       desc: "Disturbed sleep patters or feeling tired despite a full night’s sleep are common in midlife. We explore the factors affecting your sleep and build practical, personalised strategies to improve rest and recovery."
     },
     {
       id: 5,
       image: "/video-thumb-5.jpg",
-      imgClass: "object-cover scale-[1.02]",
+      imgClass: "object-cover object-left",
       title: "Brain Fog & Memory",
       desc: "Forgetting names, losing your train of thought, difficulty concentrating, or feeling mentally slower than usual can be unsettling. These experiences are common during perimenopause and deserve understanding, not dismissal."
     },
     {
       id: 6,
       image: "/video-thumb-6.jpg",
-      imgClass: "object-cover scale-[1.02]",
+      imgClass: "object-cover object-left",
       title: "Movement & Strength",
       desc: "Movement plays a powerful role in supporting physical health, mood, sleep, strength, and long-term wellbeing. We help you find sustainable ways to stay active that fit your body, your lifestyle, and your goals."
     },
     {
       id: 7,
       image: "/video-thumb-7.jpg",
-      imgClass: "object-cover scale-[1.02]",
+      imgClass: "object-cover object-left",
       title: "Sexual Wellbeing",
       desc: "Changes in desire, intimacy, vaginal comfort, and sexual health are common yet often under-discussed. We provide a safe, supportive space to explore concerns and identify solutions that work for you."
     },
     {
       id: 8,
       image: "/video-thumb-8.jpg",
-      imgClass: "object-cover scale-[1.02]",
+      imgClass: "object-cover object-left",
       title: "Healthy Ageing",
       desc: "Midlife is an opportunity to invest in your future health. From bone health and cardiovascular wellbeing to cognitive resilience and vitality, we focus on helping women age with strength, confidence, and purpose."
     }
