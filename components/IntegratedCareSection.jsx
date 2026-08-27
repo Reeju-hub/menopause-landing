@@ -114,16 +114,17 @@ export default function IntegratedCareSection() {
             <div 
               key={card.id} 
               // ========================================================
-              // FINAL FIX: aspect ratio aur padding tweak kiya hai taaki upar ka text safe rahe
+              // FINAL SAFARI FIX: overflow-hidden hata kar aur image ko object-contain 
+              // ke sath container mein perfectly place kiya hai taaki number bilkul na kate!
               // ========================================================
-              className="flex-none snap-start w-[288px] md:w-[340px] aspect-[340/385] relative group bg-[#FAF4EE] rounded-[24px] shadow-lg flex flex-col overflow-hidden p-0"
+              className="flex-none snap-start w-[288px] md:w-[340px] aspect-[340/385] relative group bg-[#FAF4EE] rounded-[24px] shadow-lg flex flex-col p-2"
             >
               
-              {/* Image with object-cover and object-top to ensure zero cropping on the title area */}
+              {/* Image with object-contain and rounded corners */}
               <img 
                 src={card.image} 
                 alt={card.title} 
-                className={`w-full h-full object-cover object-top block transition-opacity duration-500 ease-in-out ${
+                className={`w-full h-full object-contain rounded-[18px] block transition-opacity duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
                 }`}
               />
