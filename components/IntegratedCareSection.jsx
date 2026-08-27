@@ -105,6 +105,7 @@ export default function IntegratedCareSection() {
           A space where women can access evidence-based guidance, meaningful conversations, and a supportive community while navigating perimenopause, menopause and healthy ageing. We help you understand what is changing, why it matters, and what you can do about it.
         </p>
 
+        {/* Scroll Container */}
         <div 
           ref={scrollRef}
           className="flex gap-4 md:gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 scroll-pl-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
@@ -112,22 +113,17 @@ export default function IntegratedCareSection() {
           {cardsData.map((card) => (
             <div 
               key={card.id} 
-              // Card ki width aur exact aspect ratio jo original image ka hai
-              className="flex-none snap-start w-[288px] md:w-[340px] aspect-[340/380] rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group"
+              // Card ki width fixed aur height ko auto/natural proportions par rakha hai
+              className="flex-none snap-start w-[288px] md:w-[340px] rounded-[20px] overflow-hidden shadow-lg relative group bg-[#FAF4EE]"
             >
               
-              {/* Poori ki poori original image bina kisi duplicate text ke */}
-              <div 
-                className={`absolute inset-0 w-full h-full bg-no-repeat transition-opacity duration-500 ease-in-out ${
+              {/* Image tag use kar rahe hain taaki poori image apne original aspect ratio mein render ho */}
+              <img 
+                src={card.image} 
+                alt={card.title} 
+                className={`w-full h-auto block transition-opacity duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
                 }`}
-                style={{
-                  backgroundImage: `url('${card.image}')`,
-                  backgroundSize: '100% 100%',
-                  backgroundPosition: 'center'
-                }}
-                aria-label={card.title}
-                role="img"
               />
 
               {/* Flipped Back Content */}
@@ -144,7 +140,7 @@ export default function IntegratedCareSection() {
                 </p>
               </div>
 
-              {/* Toggle Button */}
+              {/* Toggle Button (+ icon) */}
               <button 
                 onClick={() => toggleCard(card.id)}
                 className={`absolute bottom-5 right-5 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 z-30 shadow-md ${
