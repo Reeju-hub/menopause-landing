@@ -114,12 +114,12 @@ export default function IntegratedCareSection() {
             <div 
               key={card.id} 
               // ========================================================
-              // SAFARI FIX: aspect-[340/410] use kiya hai taaki iOS Safari mein layout break na ho
+              // FIX: aspect-ratio ko [340/430] kar diya hai taaki upar se number "1" na kate
               // ========================================================
-              className="flex-none snap-start w-[288px] md:w-[340px] aspect-[340/410] rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE] flex flex-col"
+              className="flex-none snap-start w-[288px] md:w-[340px] aspect-[340/430] rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE] flex flex-col"
             >
               
-              {/* Image with w-full h-full object-cover to fit perfectly within the aspect ratio */}
+              {/* Image with object-cover to fit cleanly without any distortion */}
               <img 
                 src={card.image} 
                 alt={card.title} 
