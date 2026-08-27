@@ -87,7 +87,6 @@ export default function HeroSection() {
   };
 
   return (
-    // Section ki bottom padding (pb-20) badha di hai spacing ke liye
     <section className="bg-[#FAF8F5] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-20">
       
       <style dangerouslySetInnerHTML={{__html: `
@@ -197,10 +196,10 @@ export default function HeroSection() {
         </div>
 
         {/* ============================================== */}
-        {/* EXACT FIGMA MATCHED PINK BOX (SWIPE ENABLED) */}
+        {/* FIX: NO OVERLAP, PERFECT FIGMA SPECS */}
         {/* ============================================== */}
         <div 
-          className="w-[350px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 -mt-10 mb-[60px] shadow-lg"
+          className="w-full max-w-[350px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[60px] shadow-lg"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
@@ -210,9 +209,9 @@ export default function HeroSection() {
           <div className="flex flex-col items-center gap-[12px] w-[310px] h-[101px] pointer-events-none">
             
             {/* Title with Flowers */}
-            <h3 className="flex flex-row justify-center items-center gap-[12px] w-[310px] h-[45px]">
+            <h3 className="flex flex-row justify-center items-center gap-[12px] w-full h-[45px]">
               <img src="/flower.png" alt="flower" className="w-[20px] h-[20px] object-contain animate-spin-slow" />
-              <span className="force-caveat font-bold text-[#FFFFFF] text-[36px] leading-[45px] text-center">
+              <span className="force-caveat font-bold text-[#FFFFFF] text-[36px] leading-[45px] text-center whitespace-nowrap">
                 You're not alone
               </span>
               <img src="/flower.png" alt="flower" className="w-[20px] h-[20px] object-contain animate-spin-slow" />
