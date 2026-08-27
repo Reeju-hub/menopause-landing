@@ -8,19 +8,21 @@ export default function IntegratedCareSection() {
   const [flippedCards, setFlippedCards] = useState({});
 
   const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -384, behavior: "smooth" });
+    if (scrollRef.current && scrollRef.current.firstElementChild) {
+      // Ek card ki exact width nikalega aur usme gap add karega
+      const cardWidth = scrollRef.current.firstElementChild.offsetWidth;
+      const gap = window.innerWidth < 768 ? 16 : 24; // gap-4 (16px) on mobile, gap-6 (24px) on desktop
+      scrollRef.current.scrollBy({ left: -(cardWidth + gap), behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 384, behavior: "smooth" });
+    if (scrollRef.current && scrollRef.current.firstElementChild) {
+      // Ek card ki exact width nikalega aur usme gap add karega
+      const cardWidth = scrollRef.current.firstElementChild.offsetWidth;
+      const gap = window.innerWidth < 768 ? 16 : 24;
+      scrollRef.current.scrollBy({ left: (cardWidth + gap), behavior: "smooth" });
     }
-  };
-
-  const toggleCard = (id) => {
-    setFlippedCards((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   const cardsData = [
