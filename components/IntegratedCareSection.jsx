@@ -114,23 +114,23 @@ export default function IntegratedCareSection() {
             <div 
               key={card.id} 
               // ========================================================
-              // EXACT SHAPE & SIZE: Card container ab image ke mutabiq natural size lega aur rounded corners honge
+              // EXACT REFERENCE MATCH: h-[420px] height set ki hai taaki shape match ho
               // ========================================================
-              className="flex-none snap-start w-[288px] md:w-[340px] rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE] flex flex-col"
+              className="flex-none snap-start w-[288px] md:w-[340px] h-[420px] rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE]"
             >
               
-              {/* Image element with proper rounded shape */}
+              {/* Image with object-cover to match reference layout perfectly */}
               <img 
                 src={card.image} 
                 alt={card.title} 
-                className={`w-full h-auto block rounded-[24px] transition-opacity duration-500 ease-in-out ${
+                className={`w-full h-full object-cover block transition-opacity duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
                 }`}
               />
 
               {/* Flipped Back Content */}
               <div 
-                className={`absolute inset-0 bg-[#FAF4EE] p-8 flex flex-col justify-center rounded-[24px] transition-all duration-500 ease-in-out z-20 ${
+                className={`absolute inset-0 bg-[#FAF4EE] p-8 flex flex-col justify-center transition-all duration-500 ease-in-out z-20 ${
                   flippedCards[card.id] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
                 }`}
               >
