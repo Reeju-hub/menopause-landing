@@ -110,21 +110,24 @@ export default function IntegratedCareSection() {
           ref={scrollRef}
           className="flex gap-4 md:gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 scroll-pl-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
-          {cardsData.map((card) => (
+          {cardsData.main ? null : cardsData.map((card) => (
             <div 
               key={card.id} 
               // ========================================================
-              // FIGMA EXACT CONTAINER WITH BACKGROUND IMAGE COVER
+              // CARD KI HEIGHT AB IMAGE KE MUTABIK AUTOMATIC HOGI
               // ========================================================
-              className="flex-none snap-start w-[288px] md:w-[340px] h-[370px] rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE]"
-              style={{
-                backgroundImage: `url('${card.image}')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-              }}
+              className="flex-none snap-start w-[288px] md:w-[340px] h-auto rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE] flex flex-col"
             >
               
+              {/* Image apni original dimensions ke sath render hogi, koi cutting nahi hogi */}
+              <img 
+                src={card.image} 
+                alt={card.title} 
+                className={`w-full h-auto block transition-opacity duration-500 ease-in-out ${
+                  flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
+                }`}
+              />
+
               {/* Flipped Back Content */}
               <div 
                 className={`absolute inset-0 bg-[#FAF4EE] p-8 flex flex-col justify-center transition-all duration-500 ease-in-out z-20 ${
