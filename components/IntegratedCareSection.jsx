@@ -113,22 +113,23 @@ export default function IntegratedCareSection() {
             <div 
               key={card.id} 
               // ==============================================
-              // FIX: h-[312px] REMOVED! 
-              // Ab card ka height image ki height ke hisab se automatic banega.
+              // FIX: Card ka exact aspect ratio lock kar diya hai
               // ==============================================
-              className="flex-none snap-start w-[288px] md:w-[340px] rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group"
+              className="flex-none snap-start w-[288px] md:w-[340px] h-[340px] rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group"
             >
               
-              {/* ============================================== */}
-              {/* FIX: Natural standard img tag with h-auto */}
-              {/* Isse image 0% stretch hogi aur 100% fit rahegi */}
-              {/* ============================================== */}
-              <img 
-                src={card.image}
-                alt={card.title}
-                className={`w-full h-auto block transition-opacity duration-500 ease-in-out ${
+              {/* Background Image with perfect fit */}
+              <div 
+                className={`absolute inset-0 w-full h-full bg-no-repeat transition-opacity duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
                 }`}
+                style={{
+                  backgroundImage: `url('${card.image}')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+                aria-label={card.title}
+                role="img"
               />
 
               {/* Flipped Back Content */}
