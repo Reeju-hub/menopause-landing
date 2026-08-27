@@ -111,19 +111,22 @@ export default function IntegratedCareSection() {
           A space where women can access evidence-based guidance, meaningful conversations, and a supportive community while navigating perimenopause, menopause and healthy ageing. We help you understand what is changing, why it matters, and what you can do about it.
         </p>
 
-        {/* YAHAN FIX KIYA HAI: Container Padding aur snap behavior */}
         <div 
           ref={scrollRef}
           className="flex gap-4 md:gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {cardsData.map((card) => (
             <div key={card.id} className="shrink-0 w-[80vw] max-w-[360px] h-[312px] snap-center rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group">
-              {/* YAHAN FIX KIYA HAI: w-[80vw] aur snap-center jisse card center mein rahe aur kate nahi */}
               
-              <img 
+              {/* ============================================== */}
+              {/* FIX: NEXT.JS IMAGE TAG USED FOR SAFARI BUG FIX */}
+              {/* ============================================== */}
+              <Image 
                 src={card.image} 
                 alt={card.title} 
-                className={`absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out ${card.imgClass} ${flippedCards[card.id] ? 'opacity-0' : 'opacity-100'}`}
+                fill
+                unoptimized
+                className={`transition-opacity duration-500 ease-in-out ${card.imgClass} ${flippedCards[card.id] ? 'opacity-0' : 'opacity-100'}`}
               />
 
               <div 
