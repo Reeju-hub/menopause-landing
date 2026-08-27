@@ -114,14 +114,18 @@ export default function StepsSection() {
                   {step.desc}
                 </p>
 
-                {/* ANIMATED FLOWERS SECTIONS */}
+                {/* ========================================= */}
+                {/* YAHAN CHANGES HUE HAIN (Flower Size & Spacing) */}
+                {/* ========================================= */}
                 {step.hasFlowers && (
-                  <div className="flex gap-[10px] items-center pt-1 mt-auto">
-                    <span className="text-[#FFB627] text-[20px] animate-spin-slow">✿</span>
-                    <span className="text-[#B31217] text-[20px] animate-spin-slow">✿</span>
-                    <span className="text-[#FFB627] text-[20px] animate-spin-slow">✿</span>
-                    <span className="text-[#B31217] text-[20px] animate-spin-slow">✿</span>
-                    <span className="text-[#FFB627] text-[20px] animate-spin-slow">✿</span>
+                  // gap-[10px] ko gap-[16px] kar diya taaki saaf dikhein
+                  <div className="flex gap-[16px] items-center pt-3 mt-auto">
+                    {/* text-[20px] ko badha kar text-[32px] (mobile) aur md:text-[40px] (desktop) kar diya hai, aur leading-none lagaya hai taaki box ka size na bigde */}
+                    <span className="text-[#FFB627] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
+                    <span className="text-[#B31217] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
+                    <span className="text-[#FFB627] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
+                    <span className="text-[#B31217] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
+                    <span className="text-[#FFB627] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
                   </div>
                 )}
               </div>
