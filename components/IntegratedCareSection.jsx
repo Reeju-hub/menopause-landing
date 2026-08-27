@@ -113,17 +113,15 @@ export default function IntegratedCareSection() {
           {cardsData.map((card) => (
             <div 
               key={card.id} 
-              // ==============================================
-              // FIX: h-[360px] lagaya hai taaki card aur image bilkul fit aaye
-              // ==============================================
-              className="flex-none snap-start w-[288px] md:w-[340px] h-[360px] rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE] flex flex-col"
+              // Card ki width aur natural image aspect ratio ke mutabiq setup
+              className="flex-none snap-start w-[288px] md:w-[340px] rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE] flex flex-col"
             >
               
-              {/* Image tag with object-cover to completely fill the container */}
+              {/* Direct image tag taki thumbnail ka text aur photo bina kate poori fit aaye */}
               <img 
                 src={card.image} 
                 alt={card.title} 
-                className={`w-full h-full object-cover transition-opacity duration-500 ease-in-out ${
+                className={`w-full h-auto object-cover block transition-opacity duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
                 }`}
               />
