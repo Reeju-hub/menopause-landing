@@ -103,36 +103,32 @@ export default function IntegratedCareSection() {
           A space where women can access evidence-based guidance, meaningful conversations, and a supportive community while navigating perimenopause, menopause and healthy ageing. We help you understand what is changing, why it matters, and what you can do about it.
         </p>
 
+        {/* ============================================== */}
+        {/* FIX 1: scroll-pl-6 ADD KIYA HAI */}
+        {/* Isse har card left side se exact ek hi jagah aakar rukega */}
+        {/* ============================================== */}
         <div 
           ref={scrollRef}
-          className="flex gap-4 md:gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="flex gap-4 md:gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 scroll-pl-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {cardsData.map((card) => (
             <div 
               key={card.id} 
-              className="snap-center rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group"
               // ==============================================
-              // FIX 1: Safari Flex Collapse Bug Bypass 
-              // Yeh code Safari ko cards patle karne se rokega!
+              // FIX 2: flex-none aur snap-start
+              // flex-none isko Safari mein patla hone se rokega.
+              // snap-start isko hamesha left mein align karega, taaki next card jhaank sake!
               // ==============================================
-              style={{
-                flex: "0 0 auto",
-                width: "80vw",
-                maxWidth: "360px",
-                height: "312px"
-              }}
+              className="flex-none snap-start w-[85vw] max-w-[340px] h-[312px] rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group"
             >
               
-              {/* ============================================== */}
-              {/* FIX 2: Wapas <Image> lagaya with 'object-fill' */}
-              {/* Isse image corner se katega nahi aur ekdum fit baithega */}
-              {/* ============================================== */}
               <Image 
                 src={card.image} 
                 alt={card.title} 
                 fill
                 unoptimized
-                className={`object-fill transition-opacity duration-500 ease-in-out ${flippedCards[card.id] ? 'opacity-0' : 'opacity-100'}`}
+                // object-cover wapas lagaya hai taaki image bina stretch hue fit aaye
+                className={`object-cover transition-opacity duration-500 ease-in-out ${flippedCards[card.id] ? 'opacity-0' : 'opacity-100'}`}
               />
 
               <div 
