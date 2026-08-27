@@ -87,7 +87,6 @@ export default function HeroSection() {
   };
 
   return (
-    // FIX 1: pb-20 ko wapas pb-10 kar diya taaki overall gap kam ho jaye
     <section className="bg-[#FAF8F5] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-10">
       
       <style dangerouslySetInnerHTML={{__html: `
@@ -197,23 +196,23 @@ export default function HeroSection() {
         </div>
 
         {/* ============================================== */}
-        {/* EXACT FIGMA MATCHED PINK BOX (SWIPE ENABLED) */}
+        {/* FIX: PERFECT WIDTH DYNAMIC BOX */}
         {/* ============================================== */}
         <div 
-          // FIX 2: mb-[60px] ko ghata kar mb-[30px] kar diya hai gap kam karne ke liye
-          className="w-full max-w-[350px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[30px] shadow-lg"
+          // YAHAN FIX KIYA: w-[calc(100%-2rem)] aur max-w-[380px] kar diya taaki choda dikhe
+          className="w-[calc(100%-2rem)] max-w-[380px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[30px] shadow-lg"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
           
           {/* Top Text & Flower Block */}
-          <div className="flex flex-col items-center gap-[12px] w-[310px] h-[101px] pointer-events-none">
+          <div className="flex flex-col items-center gap-[12px] w-full max-w-[310px] h-[101px] pointer-events-none">
             
             {/* Title with Flowers */}
             <h3 className="flex flex-row justify-center items-center gap-[12px] w-full h-[45px]">
               <img src="/flower.png" alt="flower" className="w-[20px] h-[20px] object-contain animate-spin-slow" />
-              <span className="force-caveat font-bold text-[#FFFFFF] text-[36px] leading-[45px] text-center whitespace-nowrap">
+              <span className="force-caveat font-bold text-[#FFFFFF] text-[34px] sm:text-[36px] leading-[45px] text-center whitespace-nowrap">
                 You're not alone
               </span>
               <img src="/flower.png" alt="flower" className="w-[20px] h-[20px] object-contain animate-spin-slow" />
@@ -222,7 +221,7 @@ export default function HeroSection() {
             {/* Slider Description Text */}
             <p 
               key={activeIndex}
-              className="force-quicksand font-bold text-[#FFFFFF] text-[16px] leading-[22px] text-center w-full animate-fadeIn"
+              className="force-quicksand font-bold text-[#FFFFFF] text-[15.5px] sm:text-[16px] leading-[22px] text-center w-full animate-fadeIn"
             >
               {slides[activeIndex].text}
             </p>
