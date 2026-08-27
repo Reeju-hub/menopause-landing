@@ -114,17 +114,17 @@ export default function IntegratedCareSection() {
             <div 
               key={card.id} 
               // ========================================================
-              // FIX: overflow-hidden hatakar rounded corners image par shift kiye hain
-              // taaki upar ka number "1" bilkul na kate!
+              // SAFARI FIX: object-contain aur background color match kar diya hai
+              // taaki image poori ki poori dikhe aur kuch bhi kate nahi!
               // ========================================================
-              className="flex-none snap-start w-[288px] md:w-[340px] aspect-[340/430] relative group bg-[#FAF4EE] rounded-[24px] shadow-lg flex flex-col"
+              className="flex-none snap-start w-[288px] md:w-[340px] aspect-[340/410] relative group bg-[#FAF4EE] rounded-[24px] shadow-lg flex flex-col overflow-hidden"
             >
               
-              {/* Image with rounded corners matching the card container */}
+              {/* Image with object-contain */}
               <img 
                 src={card.image} 
                 alt={card.title} 
-                className={`w-full h-full object-cover rounded-[24px] block transition-opacity duration-500 ease-in-out ${
+                className={`w-full h-full object-contain block transition-opacity duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
                 }`}
               />
