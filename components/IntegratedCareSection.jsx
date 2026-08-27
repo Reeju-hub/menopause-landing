@@ -114,16 +114,16 @@ export default function IntegratedCareSection() {
             <div 
               key={card.id} 
               // ========================================================
-              // FIXED HEIGHT CORRECTED TO MATCH FULL IMAGE WITHOUT CROPPING TEXT
+              // SAFARI FIX: aspect-[340/410] use kiya hai taaki iOS Safari mein layout break na ho
               // ========================================================
-              className="flex-none snap-start w-[288px] md:w-[340px] h-[345px] rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE]"
+              className="flex-none snap-start w-[288px] md:w-[340px] aspect-[340/410] rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE] flex flex-col"
             >
               
-              {/* Image with object-fill to ensure it touches all edges of the card container cleanly */}
+              {/* Image with w-full h-full object-cover to fit perfectly within the aspect ratio */}
               <img 
                 src={card.image} 
                 alt={card.title} 
-                className={`w-full h-full object-fill block transition-opacity duration-500 ease-in-out ${
+                className={`w-full h-full object-cover block transition-opacity duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
                 }`}
               />
