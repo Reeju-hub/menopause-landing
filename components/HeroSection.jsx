@@ -87,7 +87,8 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="bg-[#FAF8F5] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-10">
+    // FIX 1: pb-10 (40px) se hata kar pb-4 (16px) kar diya hai
+    <section className="bg-[#FAF8F5] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-4">
       
       <style dangerouslySetInnerHTML={{__html: `
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
@@ -196,11 +197,10 @@ export default function HeroSection() {
         </div>
 
         {/* ============================================== */}
-        {/* FIX: PERFECT WIDTH DYNAMIC BOX */}
+        {/* FIX 2: mb-[30px] ko mb-[10px] kar diya gap kam karne ke liye */}
         {/* ============================================== */}
         <div 
-          // YAHAN FIX KIYA: w-[calc(100%-2rem)] aur max-w-[380px] kar diya taaki choda dikhe
-          className="w-[calc(100%-2rem)] max-w-[380px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[30px] shadow-lg"
+          className="w-[calc(100%-2rem)] max-w-[380px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[10px] shadow-lg"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
