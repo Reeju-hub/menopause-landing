@@ -9,7 +9,6 @@ export default function IntegratedCareSection() {
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      // Mobile pe card width (288) + gap (16) = 304 scroll hoga
       const scrollAmount = window.innerWidth < 768 ? 304 : 364;
       scrollRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     }
@@ -114,26 +113,25 @@ export default function IntegratedCareSection() {
             <div 
               key={card.id} 
               // ==============================================
-              // FIX: vw ki jagah fixed width (w-[288px]) di hai. 
-              // Isse image ka shape fix rahega aur 2nd card perfect peek karega.
+              // FIX: h-[312px] REMOVED! 
+              // Ab card ka height image ki height ke hisab se automatic banega.
               // ==============================================
-              className="flex-none snap-start w-[288px] md:w-[340px] h-[312px] rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group"
+              className="flex-none snap-start w-[288px] md:w-[340px] rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group"
             >
               
-              <div 
-                className={`absolute inset-0 w-full h-full bg-no-repeat transition-opacity duration-500 ease-in-out ${
+              {/* ============================================== */}
+              {/* FIX: Natural standard img tag with h-auto */}
+              {/* Isse image 0% stretch hogi aur 100% fit rahegi */}
+              {/* ============================================== */}
+              <img 
+                src={card.image}
+                alt={card.title}
+                className={`w-full h-auto block transition-opacity duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
                 }`}
-                style={{
-                  backgroundImage: `url('${card.image}')`,
-                  // Fixed width hone ki wajah se 100% 100% ab exactly fit baithega
-                  backgroundSize: '100% 100%', 
-                  backgroundPosition: 'center'
-                }}
-                aria-label={card.title}
-                role="img"
               />
 
+              {/* Flipped Back Content */}
               <div 
                 className={`absolute inset-0 bg-[#FAF4EE] p-8 flex flex-col justify-center transition-all duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-100 translate-y-0 z-20' : 'opacity-0 translate-y-4 -z-10 pointer-events-none'
@@ -147,6 +145,7 @@ export default function IntegratedCareSection() {
                 </p>
               </div>
 
+              {/* Toggle Button */}
               <button 
                 onClick={() => toggleCard(card.id)}
                 className={`absolute bottom-5 right-5 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 z-30 shadow-md ${
