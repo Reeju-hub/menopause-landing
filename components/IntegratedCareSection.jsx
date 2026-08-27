@@ -9,13 +9,16 @@ export default function IntegratedCareSection() {
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -384, behavior: "smooth" });
+      // Mobile pe card width (288) + gap (16) = 304 scroll hoga
+      const scrollAmount = window.innerWidth < 768 ? 304 : 364;
+      scrollRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 384, behavior: "smooth" });
+      const scrollAmount = window.innerWidth < 768 ? 304 : 364;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
@@ -103,10 +106,6 @@ export default function IntegratedCareSection() {
           A space where women can access evidence-based guidance, meaningful conversations, and a supportive community while navigating perimenopause, menopause and healthy ageing. We help you understand what is changing, why it matters, and what you can do about it.
         </p>
 
-        {/* ============================================== */}
-        {/* FIX 1: scroll-pl-6 ADD KIYA HAI */}
-        {/* Isse har card left side se exact ek hi jagah aakar rukega */}
-        {/* ============================================== */}
         <div 
           ref={scrollRef}
           className="flex gap-4 md:gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 scroll-pl-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
@@ -115,20 +114,24 @@ export default function IntegratedCareSection() {
             <div 
               key={card.id} 
               // ==============================================
-              // FIX 2: flex-none aur snap-start
-              // flex-none isko Safari mein patla hone se rokega.
-              // snap-start isko hamesha left mein align karega, taaki next card jhaank sake!
+              // FIX: vw ki jagah fixed width (w-[288px]) di hai. 
+              // Isse image ka shape fix rahega aur 2nd card perfect peek karega.
               // ==============================================
-              className="flex-none snap-start w-[85vw] max-w-[340px] h-[312px] rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group"
+              className="flex-none snap-start w-[288px] md:w-[340px] h-[312px] rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group"
             >
               
-              <Image 
-                src={card.image} 
-                alt={card.title} 
-                fill
-                unoptimized
-                // object-cover wapas lagaya hai taaki image bina stretch hue fit aaye
-                className={`object-cover transition-opacity duration-500 ease-in-out ${flippedCards[card.id] ? 'opacity-0' : 'opacity-100'}`}
+              <div 
+                className={`absolute inset-0 w-full h-full bg-no-repeat transition-opacity duration-500 ease-in-out ${
+                  flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
+                }`}
+                style={{
+                  backgroundImage: `url('${card.image}')`,
+                  // Fixed width hone ki wajah se 100% 100% ab exactly fit baithega
+                  backgroundSize: '100% 100%', 
+                  backgroundPosition: 'center'
+                }}
+                aria-label={card.title}
+                role="img"
               />
 
               <div 
