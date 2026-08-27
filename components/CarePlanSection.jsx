@@ -93,7 +93,7 @@ export default function CarePlanSection() {
       {/* Content Container */}
       <div className="relative z-20 w-full max-w-[1200px] mx-auto flex flex-col justify-center items-start">
         
-        <h2 className="text-white text-5xl md:text-[64px] font-bold mb-8 drop-shadow-md" style={{ fontFamily: 'Caveat, serif' }}>
+        <h2 className="text-white text-[60px] md:text-[64px] font-bold mb-8 drop-shadow-md" style={{ fontFamily: 'Caveat, serif' }}>
           Your Care Plan
         </h2>
 

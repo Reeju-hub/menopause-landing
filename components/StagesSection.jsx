@@ -37,7 +37,7 @@ export default function StagesSection() {
         </p>
 
         {/* Section Heading */}
-        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-12 text-center md:text-left" style={{ fontFamily: "'Playfair Display', sans-serif" }}>
+        <h2 className="text-[36px] md:text-5xl font-bold text-slate-900 mb-12 text-center md:text-left" style={{ fontFamily: "'Playfair Display', sans-serif" }}>
           Stages
         </h2>
 
@@ -90,7 +90,7 @@ export default function StagesSection() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <img src="/icon-menopause.svg" alt="Menopause Icon" className="w-12 h-12 object-contain" />
-                <h3 className="text-slate-900 font-bold text-[17px]" style={{ fontFamily: "'Quicksand', sans-serif" }}>Menopause</h3>
+                <h3 className="text-slate-900 font-bold text-[18px]" style={{ fontFamily: "'Quicksand', sans-serif" }}>Menopause</h3>
               </div>
               
               {/* Thin plus/minus icon matching the image */}
@@ -132,7 +132,7 @@ export default function StagesSection() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <img src="/icon-perimenopause.svg" alt="Perimenopause Icon" className="w-9 h-9 object-contain" />
-                <h3 className="text-slate-900 font-bold text-xl"style={{ fontFamily: "'Quicksand', sans-serif" }}>Perimenopause</h3>
+                <h3 className="text-slate-900 font-bold text-[18px]"style={{ fontFamily: "'Quicksand', sans-serif" }}>Perimenopause</h3>
               </div>
               
               <div className="w-7 h-7 rounded-full border-[1.5px] border-[#004d40] text-[#004d40] flex items-center justify-center hover:bg-[#004d40] hover:text-white transition-colors shrink-0">

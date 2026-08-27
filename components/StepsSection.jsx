@@ -80,7 +80,7 @@ export default function StepsSection() {
           <p className="force-quicksand text-[12px] font-bold tracking-[0.16em] text-[#FDF6EC] uppercase text-center w-full leading-[20px]">
             — HOW WE HELP —
           </p>
-          <h2 className="force-playfair text-[32px] md:text-[52px] font-bold text-[#FDF6EC] text-center md:leading-[69px] w-full">
+          <h2 className="force-playfair text-[36px] md:text-[52px] font-bold text-[#FDF6EC] text-center md:leading-[69px] w-full">
             We provide you the integrated care you deserve in your midlife. <span className="text-[#FFB627] italic">As easy as 1, 2, 3....Go</span>
           </h2>
         </div>

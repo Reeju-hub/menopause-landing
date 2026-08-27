@@ -102,7 +102,7 @@ export default function IntegratedCareSection() {
           <p className="text-[12px] md:text-[20px] font-bold tracking-[0.16em] uppercase text-[#FDF6EC]" style={{ fontFamily: "'Quicksand', sans-serif" }}>
             — HOW DO WE HELP —
           </p>
-          <h2 className="text-3xl md:text-[52px] font-serif font-bold leading-tight md:leading-[69px] max-w-4xl text-white">
+          <h2 className="text-[36px] md:text-[52px] font-serif font-bold leading-tight md:leading-[69px] max-w-4xl text-white">
             The integrated care you deserve in <span className="text-[#F5A623] italic font-bold">midlife.</span>
           </h2>
         </div>

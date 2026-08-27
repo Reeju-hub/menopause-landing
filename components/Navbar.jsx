@@ -7,7 +7,8 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-[#FDF4E7] py-4 md:py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50 shadow-md relative">
+    // YAHAN FIX KIYA: bg-[#FDF4E7] ki jagah bg-white kar diya
+    <nav className="w-full bg-white py-4 md:py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50 shadow-md relative">
       
       {/* Left Side: Logo */}
       <div className="flex-shrink-0">
@@ -84,7 +85,8 @@ export default function Navbar() {
       {/* MOBILE DROPDOWN MENU */}
       {/* ========================================= */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#FDF4E7] shadow-lg flex flex-col items-center py-6 gap-6 md:hidden border-t border-white/40">
+        // YAHAN FIX KIYA: Mobile menu ko bhi bg-white diya aur border halka gray kiya (border-gray-100)
+        <div className="absolute top-full left-0 w-full bg-white shadow-lg flex flex-col items-center py-6 gap-6 md:hidden border-t border-gray-100">
           <a href="#" className="text-slate-800 font-semibold text-[16px] hover:text-[#D9185F] transition" style={{ fontFamily: "'Quicksand', sans-serif" }}>Why MenoEssence</a>
           <a href="#" className="text-slate-800 font-semibold text-[16px] hover:text-[#D9185F] transition" style={{ fontFamily: "'Quicksand', sans-serif" }}>How we help</a>
           <a href="#" className="text-slate-800 font-semibold text-[16px] hover:text-[#D9185F] transition" style={{ fontFamily: "'Quicksand', sans-serif" }}>Team</a>

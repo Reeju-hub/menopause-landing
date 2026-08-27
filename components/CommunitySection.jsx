@@ -1,42 +1,47 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function CommunitySection() {
-  // Footer se kitna upar push karna hai usko track karne ke liye state
-  const [pushUp, setPushUp] = useState(0);
+  // NAYA TARIQA: React state ki jagah useRef use karenge taaki re-renders na hon
+  const buttonRef = useRef(null);
 
   useEffect(() => {
+    let animationFrameId;
+
     const handleScroll = () => {
-      // Page mein <footer /> element ko dhundho (Jo aapne Footer.jsx mein banaya hai)
-      const footer = document.querySelector("footer");
-      if (!footer) return;
+      // requestAnimationFrame scroll ko ekdum smooth aur lag-free banata hai
+      animationFrameId = requestAnimationFrame(() => {
+        const footer = document.querySelector("footer");
+        if (!footer || !buttonRef.current) return;
 
-      const documentHeight = document.documentElement.scrollHeight;
-      const currentScroll = window.scrollY + window.innerHeight;
-      const distanceFromBottom = documentHeight - currentScroll;
-      const footerHeight = footer.offsetHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const currentScroll = window.scrollY + window.innerHeight;
+        const distanceFromBottom = documentHeight - currentScroll;
+        const footerHeight = footer.offsetHeight;
 
-      // Agar footer screen par dikhne laga hai
-      if (distanceFromBottom < footerHeight) {
-        // Jitna footer dikh raha hai, button ko utna upar push kar do
-        setPushUp(footerHeight - distanceFromBottom);
-      } else {
-        // Agar footer nahi dikh raha, toh button ko wapas normal bottom par le aao
-        setPushUp(0);
-      }
+        // Agar footer screen par dikhne laga hai
+        if (distanceFromBottom < footerHeight) {
+          const pushUpValue = footerHeight - distanceFromBottom;
+          // Direct DOM ko update kar rahe hain (Super Fast)
+          buttonRef.current.style.transform = `translateY(-${pushUpValue}px)`;
+        } else {
+          // Footer nahi dikh raha toh wapas apni jagah
+          buttonRef.current.style.transform = `translateY(0px)`;
+        }
+      });
     };
 
-    // Scroll aur window resize hone par position update karo
-    window.addEventListener("scroll", handleScroll);
+    // { passive: true } browser ko batata hai ki scroll ko block na kare (Extra Smoothness)
+    window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleScroll);
     
-    // Initial check (Page load hone ke thodi der baad)
     setTimeout(handleScroll, 100);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
@@ -117,15 +122,14 @@ export default function CommunitySection() {
       <div className="block md:hidden h-[100px] w-full bg-[#0A0A0A]"></div>
 
       {/* ========================================= */}
-      {/* YAHAN CHANGES HUE HAIN (White Background & Compact Height) */}
+      {/* FLOATING MOBILE BOTTOM BUTTON (FOOTER AWARE) */}
       {/* ========================================= */}
       <div 
-        className="fixed bottom-0 left-0 w-full px-6 pt-3 flex justify-center md:hidden z-[100] bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-[0_-8px_20px_rgba(0,0,0,0.06)]"
+        ref={buttonRef} // NAYA: ref yahan attach kiya
+        className="fixed bottom-0 left-0 w-full px-6 pt-3 flex justify-center md:hidden z-[100] bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-[0_-8px_20px_rgba(0,0,0,0.06)] will-change-transform"
         style={{ 
-          // Padding bottom 40px se 20px kar di hai taaki height compact rahe
           paddingBottom: "calc(20px + env(safe-area-inset-bottom))",
-          transform: `translateY(-${pushUp}px)`,
-          transition: "transform 0.1s ease-out"
+          // Yahan se inline transform aur transition hata diya hai!
         }}
       >
         <a 

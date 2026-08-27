@@ -70,10 +70,10 @@ export default function TeamSection() {
                 
                 {/* Text Details */}
                 <div className="flex flex-col ml-4 flex-grow">
-                  <h4 className="text-[17px] md:text-[18px] font-bold text-slate-900 leading-tight">
+                  <h4 className="text-[18px] md:text-[18px] font-bold text-slate-900 leading-tight">
                     {member.name}
                   </h4>
-                  <p className="text-[#D9185F] font-bold mt-1 text-[13px] md:text-[15px] leading-tight">
+                  <p className="text-[#D9185F] font-bold mt-1 text-[14px] md:text-[15px] leading-tight">
                     {member.title}
                   </p>
                   {member.subtitle && (

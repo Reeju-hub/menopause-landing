@@ -19,6 +19,11 @@ export default function HeroSection() {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // --- SWIPE LOGIC STATES ---
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const minSwipeDistance = 40; // Minimum 40px ka swipe hona chahiye slide change hone ke liye
+
   // --- AUTO-SCROLL LOGIC ---
   useEffect(() => {
     const slideInterval = setInterval(() => {
@@ -26,7 +31,7 @@ export default function HeroSection() {
     }, 4000); 
 
     return () => clearInterval(slideInterval);
-  }, [slides.length]);
+  }, [activeIndex, slides.length]); // YAHAN FIX KIYA: activeIndex add kiya taaki swipe karne par timer reset ho jaye
 
   // --- SCROLL ANIMATION LOGIC ---
   const [isBgVisible, setIsBgVisible] = useState(false);
@@ -39,14 +44,12 @@ export default function HeroSection() {
         const entry = entries[0];
         if (entry.isIntersecting) {
           setIsBgVisible(true); 
-          setBounceKey(prev => prev + 1); // Naya pop-up bounce chalayega
+          setBounceKey(prev => prev + 1);
         } else {
-          setIsBgVisible(false); // Jaise hi scroll away karenge, reset ho jayega
+          setIsBgVisible(false); 
         }
       },
       { 
-        // YAHAN FIX KIYA HAI: Threshold ko 0.4 kiya hai. 
-        // Ab thoda sa bhi scroll karne par yeh hide ho jayega aur wapas aane par harr baar pop hoga.
         threshold: 0.4, 
         rootMargin: "0px 0px 0px 0px" 
       } 
@@ -60,6 +63,30 @@ export default function HeroSection() {
       if (bgRef.current) observer.unobserve(bgRef.current);
     };
   }, []);
+
+  // --- TOUCH HANDLERS ---
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    
+    // Left swipe (Next slide)
+    if (distance > minSwipeDistance) {
+      setActiveIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }
+    // Right swipe (Previous slide)
+    if (distance < -minSwipeDistance) {
+      setActiveIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    }
+  };
 
   return (
     <section className="bg-[#FAF8F5] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-10">
@@ -103,8 +130,8 @@ export default function HeroSection() {
       {/* --- DESKTOP Top Text & Button --- */}
       <div className="hidden md:flex relative z-30 flex-col items-center px-4 md:px-6">
          <p className="force-quicksand text-[12px] font-bold tracking-[0.2em] text-[#1D3557] uppercase mb-2">
-            — WOMEN'S MIDLIFE HEALTH —
-          </p>
+           — WOMEN'S MIDLIFE HEALTH —
+         </p>
 
          <h1 className="force-playfair text-[52px] font-bold text-slate-900 leading-[1.15]">
             <span className="font-bold">Your midlife health: </span>
@@ -161,12 +188,8 @@ export default function HeroSection() {
           />
         </div>
         
-        {/* ============================================== */}
         {/* Background Image Container */}
-        {/* ============================================== */}
-        
         <div ref={bgRef} className="w-full relative z-35 -mt-[25%] aspect-[6/5]">
-          
           <div 
             key={`bounce-${bounceKey}`} 
             className={`w-full h-full bg-no-repeat bg-center ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
@@ -175,25 +198,29 @@ export default function HeroSection() {
               backgroundSize: '100% 100%'
             }}
           ></div>
-
         </div>
 
-        {/* Separate Solid Deep Pink Box */}
-       <div className="bg-[#9E0059] text-white py-9 px-6 text-center translate-y-7.5 shadow-lg w-[calc(100%-2rem)] mx-auto rounded-b-[36px] -mt-8 relative z-40">
+        {/* ============================================== */}
+        {/* Separate Solid Deep Pink Box (SWIPE ENABLED) */}
+        {/* ============================================== */}
+        <div 
+          className="bg-[#9E0059] text-white py-9 px-6 text-center translate-y-7.5 shadow-lg w-[calc(100%-2rem)] mx-auto rounded-b-[36px] -mt-8 relative z-40"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           
-          <h3 className="mb-2.5 flex justify-center items-center gap-3 tracking-wide">
+          <h3 className="mb-2.5 flex justify-center items-center gap-3 tracking-wide pointer-events-none">
             <img src="/flower.png" alt="flower" className="w-6 h-6 object-contain animate-spin-slow" />
-            
-            <span className="force-caveat font-bold tracking-wide text-[40px]">
+            <span className="force-caveat font-bold tracking-wide text-[36px]">
               You're not alone
             </span>
-            
             <img src="/flower.png" alt="flower" className="w-6 h-6 object-contain animate-spin-slow" />
           </h3>
 
           <p 
             key={activeIndex}
-            className="text-[16px] text-white/95 font-medium mb-8 px-4 leading-relaxed transition-all duration-300 animate-fadeIn"
+            className="text-[16px] text-white/95 font-medium mb-8 px-4 leading-relaxed transition-all duration-300 animate-fadeIn pointer-events-none"
           >
             {slides[activeIndex].text}
           </p>
