@@ -114,23 +114,24 @@ export default function IntegratedCareSection() {
             <div 
               key={card.id} 
               // ========================================================
-              // FIX: aspect-ratio ko [340/430] kar diya hai taaki upar se number "1" na kate
+              // FIX: overflow-hidden hatakar rounded corners image par shift kiye hain
+              // taaki upar ka number "1" bilkul na kate!
               // ========================================================
-              className="flex-none snap-start w-[288px] md:w-[340px] aspect-[340/430] rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE] flex flex-col"
+              className="flex-none snap-start w-[288px] md:w-[340px] aspect-[340/430] relative group bg-[#FAF4EE] rounded-[24px] shadow-lg flex flex-col"
             >
               
-              {/* Image with object-cover to fit cleanly without any distortion */}
+              {/* Image with rounded corners matching the card container */}
               <img 
                 src={card.image} 
                 alt={card.title} 
-                className={`w-full h-full object-cover block transition-opacity duration-500 ease-in-out ${
+                className={`w-full h-full object-cover rounded-[24px] block transition-opacity duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
                 }`}
               />
 
               {/* Flipped Back Content */}
               <div 
-                className={`absolute inset-0 bg-[#FAF4EE] p-8 flex flex-col justify-center transition-all duration-500 ease-in-out z-20 ${
+                className={`absolute inset-0 bg-[#FAF4EE] rounded-[24px] p-8 flex flex-col justify-center transition-all duration-500 ease-in-out z-20 ${
                   flippedCards[card.id] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
                 }`}
               >
