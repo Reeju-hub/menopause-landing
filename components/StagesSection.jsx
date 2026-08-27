@@ -149,7 +149,7 @@ export default function StagesSection() {
             </div>
             
             {desktopState.perimenopause && (
-              <p className="text-slate-950 text-[20px] leading-relaxed font-medium mt-6 transition-all border-t border-[#E8D9C5] pt-4"style={{ fontFamily: "'Quicksand', sans-serif" }}>
+              <p className="text-slate-950 text-[16px] leading-relaxed font-medium mt-6 transition-all border-t border-[#E8D9C5] pt-4"style={{ fontFamily: "'Quicksand', sans-serif" }}>
                 Perimenopause can begin years before periods stop, and its symptoms are often subtle, confusing, and overlooked. We help you identify your stage, whats coming up and how to navigate with confidence.
               </p>
             )}
@@ -180,7 +180,7 @@ export default function StagesSection() {
             </div>
 
             {desktopState.menopause && (
-              <p className="text-slate-950 text-[20px] leading-relaxed font-medium mt-6 transition-all border-t border-[#E8D9C5] pt-4" style={{ fontFamily: "'Quicksand', sans-serif" }}>
+              <p className="text-slate-950 text-[16px] leading-relaxed font-medium mt-6 transition-all border-t border-[#E8D9C5] pt-4" style={{ fontFamily: "'Quicksand', sans-serif" }}>
                 Menopause marks a significant life transition, not simply the end of periods. We help you with symptom management, long-term health considerations, and practical strategies to help you feel well and informed at every stage.
               </p>
             )}
