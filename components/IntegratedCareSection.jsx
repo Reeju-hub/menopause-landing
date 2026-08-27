@@ -108,23 +108,31 @@ export default function IntegratedCareSection() {
           className="flex gap-4 md:gap-6 w-full overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {cardsData.map((card) => (
-            <div key={card.id} className="shrink-0 w-[80vw] max-w-[360px] h-[312px] snap-center rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group">
+            <div 
+              key={card.id} 
+              className="snap-center rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group"
+              // ==============================================
+              // FIX 1: Safari Flex Collapse Bug Bypass 
+              // Yeh code Safari ko cards patle karne se rokega!
+              // ==============================================
+              style={{
+                flex: "0 0 auto",
+                width: "80vw",
+                maxWidth: "360px",
+                height: "312px"
+              }}
+            >
               
               {/* ============================================== */}
-              {/* FIX: 100% EXACT FIT WITHOUT CROPPING */}
+              {/* FIX 2: Wapas <Image> lagaya with 'object-fill' */}
+              {/* Isse image corner se katega nahi aur ekdum fit baithega */}
               {/* ============================================== */}
-              <div 
-                className={`absolute inset-0 w-full h-full bg-no-repeat transition-opacity duration-500 ease-in-out ${
-                  flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
-                }`}
-                style={{
-                  backgroundImage: `url('${card.image}')`,
-                  // YAHAN FIX KIYA: 'cover' ko hatakar '100% 100%' kar diya
-                  backgroundSize: '100% 100%', 
-                  backgroundPosition: 'center'
-                }}
-                aria-label={card.title}
-                role="img"
+              <Image 
+                src={card.image} 
+                alt={card.title} 
+                fill
+                unoptimized
+                className={`object-fill transition-opacity duration-500 ease-in-out ${flippedCards[card.id] ? 'opacity-0' : 'opacity-100'}`}
               />
 
               <div 
