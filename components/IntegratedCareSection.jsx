@@ -114,16 +114,16 @@ export default function IntegratedCareSection() {
             <div 
               key={card.id} 
               // ========================================================
-              // EXACT REFERENCE MATCH: h-[420px] height set ki hai taaki shape match ho
+              // SAFARI FIX: h-auto aur flex-col taaki image apne asli natural aspect ratio mein rahe
               // ========================================================
-              className="flex-none snap-start w-[288px] md:w-[340px] h-[420px] rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE]"
+              className="flex-none snap-start w-[288px] md:w-[340px] h-auto rounded-[24px] overflow-hidden shadow-lg relative group bg-[#FAF4EE] flex flex-col"
             >
               
-              {/* Image with object-cover to match reference layout perfectly */}
+              {/* Image with w-full h-auto to completely prevent squeezing on iOS Safari */}
               <img 
                 src={card.image} 
                 alt={card.title} 
-                className={`w-full h-full object-cover block transition-opacity duration-500 ease-in-out ${
+                className={`w-full h-auto block object-contain transition-opacity duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-0' : 'opacity-100'
                 }`}
               />
