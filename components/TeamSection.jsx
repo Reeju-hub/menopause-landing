@@ -109,7 +109,7 @@ export default function TeamSection() {
                 <div className="mt-5 pt-4 border-t border-[#F2E5D3] animate-fadeIn">
                   {/* YAHAN COLOR, SIZE AUR FONT UPDATE KIYA GAYA HAI */}
                   <p 
-                    className="text-[#221f1f] text-[15px] leading-relaxed font-medium" 
+                    className="text-[#221f1f] text-[16px] leading-relaxed font-medium" 
                     style={{ fontFamily: "'Quicksand', sans-serif" }}
                   >
                     {member.bio}

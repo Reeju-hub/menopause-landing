@@ -138,7 +138,7 @@ export default function IntegratedCareSection() {
                 <h3 className="text-[#004D40] text-[22px] font-bold mb-3 font-serif leading-tight">
                   {card.title}
                 </h3>
-                <p className="text-slate-700 text-[15px] leading-relaxed font-medium" style={{ fontFamily: "'Quicksand', sans-serif" }}>
+                <p className="text-slate-700 text-[16px] leading-relaxed font-medium" style={{ fontFamily: "'Quicksand', sans-serif" }}>
                   {card.desc}
                 </p>
               </div>
