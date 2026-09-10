@@ -88,16 +88,14 @@ export default function StepsSection() {
         {/* 2x2 Grid for Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[36px] w-full mt-4 justify-items-center px-4 md:px-0">
           {steps.map((step, index) => (
-            
-            <div key={index} className="flex flex-col items-start w-full md:w-[560px] gap-[12px]">
+            <div key={index} className="flex flex-col items-start w-full md:w-[560px] gap-[12px] h-full">
               
               <span className="force-playfair text-[#FFB627] text-[36px] font-bold leading-[48px]">
                 {step.num}
               </span>
 
-              {/* === ALL SIDES SHINING GLASS EFFECT === */}
               <div 
-                className="w-full h-full rounded-[12px] p-[20px] flex flex-col items-start gap-[12px] backdrop-blur-md relative overflow-hidden"
+                className="w-full flex-1 rounded-[12px] p-[20px] flex flex-col items-start gap-[12px] backdrop-blur-md relative overflow-hidden"
                 style={{
                   background: "linear-gradient(135deg, rgba(253, 246, 236, 0.25) 0%, rgba(253, 246, 236, 0.15) 100%)",
                   boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(253, 246, 236, 0.4), inset 0 0 16px rgba(253, 246, 236, 0.1)"
@@ -114,13 +112,8 @@ export default function StepsSection() {
                   {step.desc}
                 </p>
 
-                {/* ========================================= */}
-                {/* YAHAN CHANGES HUE HAIN (Flower Size & Spacing) */}
-                {/* ========================================= */}
                 {step.hasFlowers && (
-                  // gap-[10px] ko gap-[16px] kar diya taaki saaf dikhein
                   <div className="flex gap-[16px] items-center pt-3 mt-auto">
-                    {/* text-[20px] ko badha kar text-[32px] (mobile) aur md:text-[40px] (desktop) kar diya hai, aur leading-none lagaya hai taaki box ka size na bigde */}
                     <span className="text-[#FFB627] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
                     <span className="text-[#B31217] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
                     <span className="text-[#FFB627] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
