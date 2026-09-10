@@ -36,8 +36,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#FEFCF8] pt-12 pb-6 px-6 md:px-12 border-t border-gray-200 relative z-10">
-      <div className="max-w-[1200px] mx-auto flex flex-col">
+    // YAHAN FIX KIYA HAI: md:px-12 ko md:px-[100px] kar diya taaki footer alignment exact baaki page se match ho
+    <footer className="w-full bg-[#FEFCF8] pt-12 pb-6 px-6 md:px-[100px] border-t border-gray-200 relative z-10">
+      
+      {/* YAHAN FIX KIYA HAI: max-w-[1200px] ko max-w-[1560px] kar diya */}
+      <div className="max-w-[1560px] mx-auto flex flex-col">
         
         {/* Top Section: Logo & Brand Text */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left mb-10 md:mb-16">
@@ -67,16 +70,16 @@ export default function Footer() {
           {/* Links Area */}
           <div className="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-3 w-full md:w-auto">
             
-          <a 
-  href="/api/download" 
-  download="Menoessence-Client-Onboarding-Form.pdf"
-  className="text-slate-600 hover:text-[#D9185F] transition text-[13px] md:text-[14px] font-bold flex items-center gap-1.5"
->
-  <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-  </svg>
-  Onboarding & Consent Form
-</a>
+            <a 
+              href="/api/download" 
+              download="Menoessence-Client-Onboarding-Form.pdf"
+              className="text-slate-600 hover:text-[#D9185F] transition text-[13px] md:text-[14px] font-bold flex items-center gap-1.5"
+            >
+              <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              </svg>
+              Onboarding & Consent Form
+            </a>
 
             {/* Privacy Policy Link */}
             <Link 

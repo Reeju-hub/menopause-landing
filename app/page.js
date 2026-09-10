@@ -21,11 +21,13 @@ export default function Home() {
       {/* Pehli leti hui aurat */}
       <ImageDivider />
       
-      {/* Text Section (Exact Figma Match for Safari) */}
-      <section className="py-16 md:py-24 px-6 md:px-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-w-0">
-        <div className="min-w-0">
+      {/* Text Section (Exact Figma Match for Safari & Desktop) */}
+      {/* YAHAN FIX KIYA HAI: Grid hata kar Flex lagaya, items-start kiya, max-width badhayi aur exact Figma gaps (100px padding, 60px gap) set kiye */}
+      <section className="py-16 md:py-24 px-6 md:px-[100px] max-w-[1560px] mx-auto flex flex-col md:flex-row items-center md:items-start justify-center gap-8 md:gap-[60px] min-w-0">
+        
+        {/* Left Column (Exact 580px for Desktop) */}
+        <div className="min-w-0 md:w-[580px] shrink-0">
           
-          {/* YAHAN FIX KIYA HAI: Normal spaces ki jagah &nbsp; laga diya hai taaki Safari isko tod na sake */}
           <p
             className="text-[#0B306F] uppercase font-bold tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.16em] text-[12px] sm:text-[12px] md:text-[16px] mb-4 whitespace-nowrap block"
             style={{ fontFamily: 'Quicksand, sans-serif' }}
@@ -45,7 +47,8 @@ export default function Home() {
           </h2>
         </div>
         
-        <div className="text-slate-700 text-[16px] md:text-base leading-relaxed space-y-4 font-medium" style={{ fontFamily: 'Quicksand, serif' }}>
+        {/* Right Column (Exact 720px for Desktop) */}
+        <div className="text-slate-700 text-[16px] md:text-base leading-relaxed space-y-4 font-medium md:max-w-[720px] w-full" style={{ fontFamily: 'Quicksand, serif' }}>
           <p>
            Midlife can affect your sleep, energy, mood, metabolism, relationships, identity, and how you experience everyday life.
           </p>
@@ -56,6 +59,7 @@ export default function Home() {
            Together, we create your personalised midlife care roadmap shaped around your symptoms, priorities, and goals.
           </p>
         </div>
+
       </section>
 
       {/* Doosri leti hui aurat */}

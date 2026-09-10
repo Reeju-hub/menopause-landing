@@ -63,7 +63,8 @@ export default function CarePlanSection() {
   };
 
   return (
-    <section className="relative z-40 w-full pt-20 pb-0 md:py-28 px-6 md:px-12 flex items-center">
+    // YAHAN FIX KIYA HAI: md:px-12 ko md:px-[100px] kar diya taaki outer padding baaki page jaisi ho
+    <section className="relative z-40 w-full pt-20 pb-0 md:py-28 px-6 md:px-[100px] flex items-center">
       
       {/* Background Images */}
       <div className="absolute inset-0 z-0">
@@ -91,15 +92,16 @@ export default function CarePlanSection() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-20 w-full max-w-[1200px] mx-auto flex flex-col justify-center items-start">
+      {/* YAHAN FIX KIYA HAI: max-w-[1200px] ko max-w-[1560px] kar diya taaki exact left alignment match ho */}
+      <div className="relative z-20 w-full max-w-[1560px] mx-auto flex flex-col justify-center items-start">
         
         <h2 className="text-white text-[60px] md:text-[64px] font-bold mb-8 drop-shadow-md" style={{ fontFamily: 'Caveat, serif' }}>
           Your Care Plan
         </h2>
 
-        {/* Cream Card Container (Yahan se padding hata di hai) */}
+        {/* Cream Card Container */}
         <div 
-          className="bg-[#F6C4A3] rounded-[32px] max-w-[480px] w-full relative z-30 mt-4 md:mt-0 -mb-[100px] md:mb-0 overflow-hidden shadow-lg"
+          className="bg-white/20 backdrop-blur-md border border-white/30 rounded-[32px] max-w-[480px] w-full relative z-30 mt-4 md:mt-0 -mb-[100px] md:mb-0 overflow-hidden shadow-lg"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
@@ -108,10 +110,10 @@ export default function CarePlanSection() {
           {/* Static Navigation Arrows (Top Right) */}
           <div className="absolute top-6 right-6 md:top-8 md:right-8 flex gap-2 shrink-0 z-20">
             <button onClick={handlePrev} className="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity cursor-pointer shrink-0 bg-transparent border-none p-0 relative">
-              <img src="/leftcare.png" alt="Previous" className="w-full h-full object-contain" />
+              <img src="/leftcare.png"  alt="Previous" className="w-full h-full object-contain" />
             </button>
             <button onClick={handleNext} className="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity cursor-pointer shrink-0 bg-transparent border-none p-0 relative">
-              <img src="/rightcare.png" alt="Next" className="w-full h-full object-contain" />
+              <img src="/rightcare.png"  alt="Next" className="w-full h-full object-contain" />
             </button>
           </div>
 
@@ -122,16 +124,15 @@ export default function CarePlanSection() {
           >
             {plans.map((plan, idx) => (
               
-              // YAHAN FIX HAI: min-w-0 aur p-6 yahan add kiya hai taaki slide 100% lock rahe
               <div key={idx} className="w-full shrink-0 min-w-0 flex flex-col p-6 md:p-8">
                 
                 {/* Quote (pr-20 isliye taaki text arrows se overlap na ho) */}
-                <h3 className="text-[22px] md:text-[26px] pr-20 font-serif font-extrabold text-slate-900 leading-snug mb-6" style={{ fontFamily: "'Playfair Display', sans-serif" }}>
+                <h3 className="text-[22px] md:text-[26px] pr-20 font-serif font-extrabold text-[#ffffff] leading-snug mb-6" style={{ fontFamily: "'Playfair Display', sans-serif" }}>
                   {plan.quote}
                 </h3>
 
                 {/* Subtitle */}
-                <p className="text-[12px] md:text-sm uppercase tracking-[0.16em] font-bold text-[#323232] mb-4" style={{ fontFamily: "'Quicksand', sans-serif" }}>
+                <p className="text-[12px] md:text-sm uppercase tracking-[0.16em] font-bold text-[#ffffff] mb-4" style={{ fontFamily: "'Quicksand', sans-serif" }}>
                   YOUR CARE PLAN MAY INCLUDE
                 </p>
 

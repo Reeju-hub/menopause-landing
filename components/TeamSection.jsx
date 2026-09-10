@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function TeamSection() {
-  // Kaunsa card khula hai usko track karne ke liye state
+  // Kaunsa card khula hai usko track karne ke liye state (sirf mobile ke liye relevant rahega)
   const [expandedCards, setExpandedCards] = useState({});
 
   const toggleCard = (id) => {
@@ -29,7 +29,6 @@ export default function TeamSection() {
       title: <>Registered Dietitian &<br/>Certified Menopausal<br/>Nutritionist</>,
       subtitle: "",
       image: "/team-2.jpg",
-      // NOTE: Aap yahan Nahida ka actual bio update kar sakte hain
       bio: "Registered Dietitian and Certified Menopausal Nutritionist with 20 years of experience in clinical nutrition, women’s health, diabetes care, weight management, and nutrition product development."
     },
     {
@@ -38,16 +37,17 @@ export default function TeamSection() {
       title: <>Certified<br/>Psychotherapist</>,
       subtitle: "",
       image: "/team-3.jpg",
-      // NOTE: Aap yahan Deepa ka actual bio update kar sakte hain
       bio: "Certified psychotherapist with 15+ years of experience who integrates Transactional Analysis, yoga-based somatic practices, and insights from competitive sports into her therapeutic work."
     }
   ];
 
   return (
-    <section className="w-full py-16 md:py-20 px-6 md:px-12 flex justify-center bg-white overflow-hidden">
+    // YAHAN FIX KIYA HAI: md:px-12 ko md:px-[100px] kar diya taaki page margins sync hon
+    <section className="w-full py-16 md:py-20 px-6 md:px-[100px] flex justify-center bg-white overflow-hidden">
       
       {/* Content Container */}
-      <div className="w-full max-w-[1200px] flex flex-col">
+      {/* YAHAN FIX KIYA HAI: max-w-[1200px] ko max-w-[1560px] kar diya */}
+      <div className="w-full max-w-[1560px] flex flex-col mx-auto">
         
         {/* Section Heading */}
         <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-8 md:mb-10 text-left">
@@ -55,10 +55,13 @@ export default function TeamSection() {
         </h2>
 
         {/* Cards Container - Desktop pe Grid (3 columns), Mobile pe Vertical Stack (flex-col) */}
-        <div className="flex flex-col md:grid md:grid-cols-3 gap-4 md:gap-6 w-full items-start">
+        {/* YAHAN FIX KIYA HAI: md:gap-6 ko md:gap-[60px] kar diya taaki boxes ke beech ka gap perfect rahe */}
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-4 md:gap-[60px] w-full items-start">
           
+          {/* Loop over Team Data */}
           {teamData.map((member) => (
-            <div key={member.id} className="bg-[#FDF4E7] rounded-[24px] p-5 md:p-6 flex flex-col w-full shadow-sm transition-all duration-300">
+            // YAHAN FIX KIYA HAI: 'h-full' add kiya taaki agar bio content ki wajah se height alag ho, toh saare cards equal height ke dikhein
+            <div key={member.id} className="bg-[#FDF4E7] rounded-[24px] p-5 md:p-6 flex flex-col w-full h-full shadow-sm transition-all duration-300">
               
               {/* Top Section: Photo, Name, and Button */}
               <div className="flex items-center w-full">
@@ -84,9 +87,10 @@ export default function TeamSection() {
                 </div>
 
                 {/* Plus / Minus Toggle Button */}
+                {/* YAHAN FIX KIYA HAI: 'md:hidden' class lagayi taaki desktop pe button hide ho jaye */}
                 <button 
                   onClick={() => toggleCard(member.id)}
-                  className={`shrink-0 w-8 h-8 rounded-full border-[1.5px] border-[#004D40] flex items-center justify-center transition cursor-pointer ml-2 ${
+                  className={`md:hidden shrink-0 w-8 h-8 rounded-full border-[1.5px] border-[#004D40] flex items-center justify-center transition cursor-pointer ml-2 ${
                     expandedCards[member.id] ? "bg-[#004D40] text-white" : "text-[#004D40] hover:bg-[#004D40] hover:text-white"
                   }`}
                 >
@@ -104,18 +108,16 @@ export default function TeamSection() {
                 </button>
               </div>
 
-              {/* Bottom Section: Bio Content (Visible only when expanded) */}
-              {expandedCards[member.id] && (
-                <div className="mt-5 pt-4 border-t border-[#F2E5D3] animate-fadeIn">
-                  {/* YAHAN COLOR, SIZE AUR FONT UPDATE KIYA GAYA HAI */}
-                  <p 
-                    className="text-[#221f1f] text-[16px] leading-relaxed font-medium" 
-                    style={{ fontFamily: "'Quicksand', sans-serif" }}
-                  >
-                    {member.bio}
-                  </p>
-                </div>
-              )}
+              {/* Bottom Section: Bio Content */}
+              {/* YAHAN FIX KIYA HAI: Mobile pe expanded state check karega, par desktop (md) pe hamesha 'md:block' ki wajah se dikhega */}
+              <div className={`mt-5 pt-4 border-t border-[#F2E5D3] animate-fadeIn ${expandedCards[member.id] ? 'block' : 'hidden md:block'}`}>
+                <p 
+                  className="text-[#221f1f] text-[16px] leading-relaxed font-medium" 
+                  style={{ fontFamily: "'Quicksand', sans-serif" }}
+                >
+                  {member.bio}
+                </p>
+              </div>
 
             </div>
           ))}

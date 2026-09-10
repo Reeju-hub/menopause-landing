@@ -98,7 +98,7 @@ export default function Navbar() {
             href="https://wa.me/919008934945?text=Hi%20MenoEssence,%20I%20would%20like%20to%20book%20a%20discovery%20call!"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#004D40] text-white px-8 py-3 rounded-full font-bold text-[15px] hover:bg-[#00332A] transition shadow-sm mt-2 text-center"
+            className="bg-[#004D40] text-white px-8 py-2.5 rounded-full font-bold text-[15px] hover:bg-[#00332A] transition shadow-sm mt-2 text-center"
             style={{ fontFamily: "'Quicksand', sans-serif" }}
           >
             Book a discovery call

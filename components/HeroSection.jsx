@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image"; // YAHAN ADD KIYA HAI
 import { useState, useEffect, useRef } from "react";
 
 export default function HeroSection() {
@@ -87,8 +88,7 @@ export default function HeroSection() {
   };
 
   return (
-    // FIX 1: pb-10 (40px) se hata kar pb-4 (16px) kar diya hai
-    <section className="bg-[#FAF8F5] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-4">
+    <section className="bg-[#FFFFFF] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-4">
       
       <style dangerouslySetInnerHTML={{__html: `
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
@@ -121,11 +121,19 @@ export default function HeroSection() {
         .animate-fadeIn {
           animation: fadeIn 0.4s ease-in forwards;
         }
+
+        @keyframes desktop-blob-dynamic {
+          0%, 100% { transform: scale(1) translateY(0); }
+          50% { transform: scale(1.015) translateY(-8px); }
+        }
+        .animate-desktop-dynamic {
+          animation: desktop-blob-dynamic 7s ease-in-out infinite;
+        }
       `}} />
 
       {/* --- DESKTOP Top Text & Button --- */}
       <div className="hidden md:flex relative z-30 flex-col items-center px-4 md:px-6">
-         <p className="force-quicksand text-[12px] font-bold tracking-[0.2em] text-[#1D3557] uppercase mb-2">
+         <p className="force-quicksand text-[15px] font-bold tracking-[0.2em] text-[#1D3557] uppercase mb-2">
            — WOMEN'S MIDLIFE HEALTH —
          </p>
 
@@ -148,12 +156,34 @@ export default function HeroSection() {
       </div>
 
       {/* --- DESKTOP VIEW IMAGE --- */}
-      <div className="hidden md:flex flex-col items-center w-full relative mt-2">
-        <div className="relative flex justify-center items-center w-full">
-          <img
+      {/* Container ko wapas mt-2 kar diya hai taaki flowers wahi rahein */}
+      <div className="hidden md:flex flex-col items-center w-full relative -mt-17">
+        <div className="relative flex justify-center items-center w-full animate-desktop-dynamic">
+          
+          {/* YAHAN FIX KIYA HAI: Normal img ko hata kar Next.js Image lagaya aur aapki classes same rakhi */}
+          <Image
             src="/full-hero-section.png"
             alt="Hero Section"
-            className="w-full max-w-none h-auto object-cover pointer-events-none"
+            width={1920}
+            height={1080}
+            quality={100}
+            unoptimized
+            priority
+            className="w-full max-w-none h-auto object-cover pointer-events-none translate-y-30"
+          />
+
+          {/* 🌸 DESKTOP FLOWERS OVERLAY 🌸 (Yeh ab apni jagah fix rahenge) */}
+          <img 
+            src="/flower.png" 
+            alt="flower" 
+            className="absolute w-[20px] h-[20px] object-contain animate-spin-slow pointer-events-none"
+            style={{ top: '77%', left: '38.37%' }} 
+          />
+          <img 
+            src="/flower.png" 
+            alt="flower" 
+            className="absolute w-[20px] h-[20px] min-w-[25px] object-contain animate-spin-slow pointer-events-none"
+            style={{ top: '77%', right: '38.37%' }} 
           />
         </div>
       </div>
@@ -177,10 +207,16 @@ export default function HeroSection() {
 
         {/* Mobile Hero Image */}
         <div className="w-full flex justify-center relative z-10 translate-y-75 mb-6 -mt-75">
-          <img
+          {/* YAHAN FIX KIYA HAI: Mobile image bhi quality=100 kar di */}
+          <Image
             src="/hero-mobile.png"
             alt="Menopause Care Mobile"
-            className="w-full max-w-[600px] object-cover"
+            width={800}
+            height={800}
+            quality={100}
+            unoptimized
+            priority
+            className="w-full max-w-[600px] h-auto object-cover"
           />
         </div>
         
@@ -196,9 +232,7 @@ export default function HeroSection() {
           ></div>
         </div>
 
-        {/* ============================================== */}
-        {/* FIX 2: mb-[30px] ko mb-[10px] kar diya gap kam karne ke liye */}
-        {/* ============================================== */}
+        {/* Pink Box Container */}
         <div 
           className="w-[calc(100%-2rem)] max-w-[380px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[10px] shadow-lg"
           onTouchStart={onTouchStart}

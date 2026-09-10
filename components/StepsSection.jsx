@@ -26,7 +26,8 @@ export default function StepsSection() {
   ];
 
   return (
-    <section className="relative w-full flex justify-center bg-[#093566] overflow-hidden py-16 md:pt-[60px] md:pb-[80px] md:px-[100px]">
+    // YAHAN FIX KIYA HAI: md:px-[100px] apply kiya taaki Home.js jaisi same padding mile
+    <section className="relative w-full flex justify-center bg-[#093566] overflow-hidden py-16 md:pt-[60px] md:pb-[80px] px-6 md:px-[100px]">
       
       {/* DIRECT GOOGLE FONT & CUSTOM ANIMATION INJECTION */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -73,22 +74,23 @@ export default function StepsSection() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full md:w-[1200px] flex flex-col items-center gap-[24px]">
+      {/* YAHAN FIX KIYA HAI: max-w-[1560px] kiya taaki Home.js ke alignment se properly sync ho */}
+      <div className="relative z-10 w-full max-w-[1560px] mx-auto flex flex-col items-center gap-[24px]">
         
         {/* Header Frame */}
         <div className="flex flex-col items-center gap-[12px] w-full px-4 md:px-0">
           <p className="force-quicksand text-[12px] font-bold tracking-[0.16em] text-[#FDF6EC] uppercase text-center w-full leading-[20px]">
             — HOW WE HELP —
           </p>
-          <h2 className="force-playfair text-[36px] md:text-[52px] font-bold text-[#FDF6EC] text-center md:leading-[69px] w-full">
+          <h2 className="force-playfair text-[36px] md:text-[52px] font-bold text-[#FDF6EC] text-center md:leading-[69px] w-full max-w-4xl">
             We provide you the integrated care you deserve in your midlife. <span className="text-[#FFB627] italic">As easy as 1, 2, 3....Go</span>
           </h2>
         </div>
 
         {/* 2x2 Grid for Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[36px] w-full mt-4 justify-items-center px-4 md:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[36px] w-full mt-4 px-0">
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-start w-full md:w-[560px] gap-[12px] h-full">
+            <div key={index} className="flex flex-col items-start w-full gap-[12px] h-full">
               
               <span className="force-playfair text-[#FFB627] text-[36px] font-bold leading-[48px]">
                 {step.num}
@@ -115,9 +117,9 @@ export default function StepsSection() {
                 {step.hasFlowers && (
                   <div className="flex gap-[16px] items-center pt-3 mt-auto">
                     <span className="text-[#FFB627] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
-                    <span className="text-[#B31217] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
+                    <span className="text-[#AC0066] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
                     <span className="text-[#FFB627] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
-                    <span className="text-[#B31217] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
+                    <span className="text-[#AC0066] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
                     <span className="text-[#FFB627] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
                   </div>
                 )}

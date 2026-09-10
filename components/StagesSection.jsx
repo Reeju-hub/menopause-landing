@@ -25,8 +25,11 @@ export default function StagesSection() {
   };
 
   return (
-    <section className="bg-white md:bg-[#FAF8F5] pt-[140px] md:pt-20 pb-20 px-6 md:px-12 flex flex-col items-center relative z-10">
-      <div className="w-full max-w-5xl">
+    // YAHAN FIX KIYA HAI: md:px-12 ko md:px-[100px] kar diya taaki page ke edges sync ho jayein
+    <section className="bg-white md:bg-[#FAF8F5] pt-[140px] md:pt-20 pb-20 px-6 md:px-[100px] flex flex-col items-center relative z-10">
+      
+      {/* YAHAN FIX KIYA HAI: max-w-5xl ko max-w-[1560px] mx-auto kiya taaki left/right alignment baaki sections se match kare */}
+      <div className="w-full max-w-[1560px] mx-auto">
         
         {/* Section Subtitle */}
         <p
@@ -122,7 +125,8 @@ export default function StagesSection() {
         {/* ========================================= */}
         {/* DESKTOP VIEW (Shows only on md and larger)  */}
         {/* ========================================= */}
-        <div className="hidden md:grid grid-cols-2 gap-8 items-start">
+        {/* YAHAN FIX KIYA HAI: md:gap-[60px] lagaya taaki boxes ke beech ka gap perfect rahe */}
+        <div className="hidden md:grid grid-cols-2 gap-8 md:gap-[60px] items-start">
           
           {/* Desktop Card 1: Perimenopause */}
           <div 
