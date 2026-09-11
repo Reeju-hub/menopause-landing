@@ -39,7 +39,7 @@ export default function IntegratedCareSection() {
     {
       id: 2,
       image: "/video-thumb-2.jpg",
-      imgClass: "object-cover scale-[1.00]",
+      imgClass: "object-left scale-[1.02]",
       title: "Mood & Emotional Wellbeing",
       desc: "Mood changes, irritability, overwhelm, anxiety, or a quiet sense of not feeling like yourself can all be part of the menopausal transition. We help you understand these changes and support your emotional wellbeing with evidence-based approaches."
     },
