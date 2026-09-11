@@ -101,7 +101,7 @@ export default function IntegratedCareSection() {
         />
       </div>
 
-      {/* YAHAN FIX KIYA HAI: max-w-[1560px] aur md:px-[100px] apply kiya taaki left se baaki page jaisa exact same margin rahe */}
+      {/* YAHAN FIX KIYA HAI: max-w-[1560px] aur md:px-[100px] add kiya sirf desktop ke liye. Mobile px-0 same hai. */}
       <div className="relative z-10 w-full max-w-[1560px] px-0 md:px-[100px] flex flex-col mx-auto">
         
         <div className="flex flex-col items-start md:items-center text-left md:text-center gap-3 w-full mb-6 px-6 md:px-0">
@@ -120,8 +120,9 @@ export default function IntegratedCareSection() {
         {/* Scroll Container */}
         <div 
           ref={scrollRef}
-          // YAHAN FIX KIYA HAI: md:-mr-[100px] add kiya taaki slider right side edge tak bleed kare, aur inner left padding hatakar zero kar di (md:px-0) kyunki outer container ki 100px padding left side sambhal rahi hai.
-          className="flex gap-4 md:gap-6 w-full md:w-[calc(100%+100px)] md:-mr-[100px] overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 md:px-0 scroll-pl-6 md:scroll-pl-0 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          // YAHAN FIX KIYA HAI: md:w-[calc(100%+100px)] md:-mr-[100px] add kiya taaki desktop pe right tak bleed ho.
+          // Aur md:pl-0 md:pr-[100px] lagaya taaki desktop par left side zero rahe (parent container margin sambhalega) aur right side mein thoda gap bache end par. Mobile ki classes px-6 waisi hi hain.
+          className="flex gap-4 md:gap-6 w-full md:w-[calc(100%+100px)] md:-mr-[100px] overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 md:pl-0 md:pr-[100px] scroll-pl-6 md:scroll-pl-0 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {cardsData.map((card) => (
             <div key={card.id} className="shrink-0 w-[80vw] max-w-[360px] h-[312px] snap-start snap-always rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group">
