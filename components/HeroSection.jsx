@@ -122,12 +122,22 @@ export default function HeroSection() {
           animation: fadeIn 0.4s ease-in forwards;
         }
 
+        /* YAHAN FIX KIYA HAI: Desktop animation ki intensity badha di (scale 1.04 aur translateY -20px) */
         @keyframes desktop-blob-dynamic {
           0%, 100% { transform: scale(1) translateY(0); }
-          50% { transform: scale(1.015) translateY(-8px); }
+          50% { transform: scale(1.04) translateY(-20px); }
         }
         .animate-desktop-dynamic {
-          animation: desktop-blob-dynamic 7s ease-in-out infinite;
+          animation: desktop-blob-dynamic 6s ease-in-out infinite;
+        }
+
+        /* YAHAN FIX KIYA HAI: Mobile pink blob ke liye naya animation banaya */
+        @keyframes mobile-blob-bounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-12px); }
+        }
+        .animate-mobile-blob {
+          animation: mobile-blob-bounce 5s ease-in-out infinite;
         }
       `}} />
 
@@ -160,7 +170,6 @@ export default function HeroSection() {
       <div className="hidden md:flex flex-col items-center w-full relative -mt-17">
         <div className="relative flex justify-center items-center w-full animate-desktop-dynamic">
           
-          {/* YAHAN FIX KIYA HAI: Normal img ko hata kar Next.js Image lagaya aur aapki classes same rakhi */}
           <Image
             src="/full-hero-section.png"
             alt="Hero Section"
@@ -207,7 +216,6 @@ export default function HeroSection() {
 
         {/* Mobile Hero Image */}
         <div className="w-full flex justify-center relative z-10 translate-y-75 mb-6 -mt-75">
-          {/* YAHAN FIX KIYA HAI: Mobile image bhi quality=100 kar di */}
           <Image
             src="/hero-mobile.png"
             alt="Menopause Care Mobile"
@@ -233,8 +241,9 @@ export default function HeroSection() {
         </div>
 
         {/* Pink Box Container */}
+        {/* YAHAN FIX KIYA HAI: animate-mobile-blob class add ki hai jisse yeh bounce karega */}
         <div 
-          className="w-[calc(100%-2rem)] max-w-[380px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[10px] shadow-lg"
+          className="w-[calc(100%-2rem)] max-w-[380px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[10px] shadow-lg animate-mobile-blob"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}

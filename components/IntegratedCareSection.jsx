@@ -46,7 +46,7 @@ export default function IntegratedCareSection() {
     {
       id: 3,
       image: "/video-thumb-3.jpg",
-      imgClass: "object-cover scale-[1.02]",
+      imgClass: "object-left scale-[1.02]",
       title: "Metabolism & Weight Changes",
       desc: "Should you be concerned about your weight? Or is bone health? Understanding hormonal, metabolic, and lifestyle factors involved helps you make informed, sustainable changes without guilt or guesswork."
     },
@@ -60,28 +60,28 @@ export default function IntegratedCareSection() {
     {
       id: 5,
       image: "/video-thumb-5.jpg",
-      imgClass: "object-cover scale-[1.02]",
+      imgClass: "object-left scale-[1.02]",
       title: "Brain Fog & Memory",
       desc: "Forgetting names, losing your train of thought, difficulty concentrating, or feeling mentally slower than usual can be unsettling. These experiences are common during perimenopause and deserve understanding, not dismissal."
     },
     {
       id: 6,
       image: "/video-thumb-6.jpg",
-      imgClass: "object-cover scale-[1.02]",
+      imgClass: "object-left scale-[1.02]",
       title: "Movement & Strength",
       desc: "Movement plays a powerful role in supporting physical health, mood, sleep, strength, and long-term wellbeing. We help you find sustainable ways to stay active that fit your body, your lifestyle, and your goals."
     },
     {
       id: 7,
       image: "/video-thumb-7.jpg",
-      imgClass: "object-cover scale-[1.02]",
+      imgClass: "object-left scale-[1.02]",
       title: "Sexual Wellbeing",
       desc: "Changes in desire, intimacy, vaginal comfort, and sexual health are common yet often under-discussed. We provide a safe, supportive space to explore concerns and identify solutions that work for you."
     },
     {
       id: 8,
       image: "/video-thumb-8.jpg",
-      imgClass: "object-cover scale-[1.02]",
+      imgClass: "object-left scale-[1.02]",
       title: "Healthy Ageing",
       desc: "Midlife is an opportunity to invest in your future health. From bone health and cardiovascular wellbeing to cognitive resilience and vitality, we focus on helping women age with strength, confidence, and purpose."
     }
