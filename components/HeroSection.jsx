@@ -212,8 +212,6 @@ export default function HeroSection() {
           {/* 🎈 GOOEY METABALLS CONTAINER (DESKTOP) 🎈 */}
           <div className="absolute top-0 left-0 w-full h-[65%] z-0 pointer-events-none" style={{ filter: 'url(#goo)' }}>
             
-            {/* YAHAN FIX KIYA HAI: Disfigured/organic blob shapes instead of rounded-full */}
-            
             {/* Far Left */}
             <div className="absolute top-[10%] left-[5%] w-[85px] h-[85px] bg-[#ED4CA8] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] animate-[blob-float-1_14s_ease-in-out_infinite] z-0 pointer-events-none"></div>
             <div className="absolute top-[25%] left-[10%] w-[45px] h-[45px] bg-[#ED4CA8] rounded-[60%_40%_30%_70%/50%_60%_40%_50%] animate-[blob-float-2_16s_ease-in-out_infinite] z-0 pointer-events-none"></div>
@@ -273,7 +271,7 @@ export default function HeroSection() {
       {/* --- EXACT MOBILE VIEW --- */}
       <div className="flex flex-col md:hidden w-full max-w-[600px] mx-auto relative z-20 mt-1 px-0">
         
-        {/* Mobile Header Text - FIX: Added relative z-30 to keep it strictly above anything floating up */}
+        {/* Mobile Header Text - Kept relative z-30 to stay above everything */}
         <div className="flex flex-col items-center text-center px-4 mb-1 relative z-30">
           <p className="force-quicksand text-[12px] font-bold tracking-[0.2em] text-[#1D3557] uppercase mb-2">
             — WOMEN'S MIDLIFE HEALTH —
@@ -290,10 +288,10 @@ export default function HeroSection() {
         {/* Mobile Hero Image Container */}
         <div className="w-full flex justify-center relative z-10 translate-y-75 mb-6 -mt-75 animate-mobile-dynamic">
           
-          {/* 🎈 GOOEY METABALLS CONTAINER (MOBILE) - FIX: Start from top-[20%] so it stays clear of top text! 🎈 */}
-          <div className="absolute top-[20%] left-0 w-full h-[50%] z-0 pointer-events-none" style={{ filter: 'url(#goo)' }}>
+          {/* 🎈 GOOEY METABALLS CONTAINER (MOBILE) - FIX: Brought back to top-[5%] so they float around the head space properly 🎈 */}
+          <div className="absolute top-[5%] left-0 w-full h-[60%] z-0 pointer-events-none" style={{ filter: 'url(#goo)' }}>
             
-            {/* Shapes updated to organic/disfigured */}
+            {/* Shapes organic/disfigured and positioned correctly */}
             <div className="absolute top-[8%] left-[10%] w-[35px] h-[35px] bg-[#ED4CA8] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] animate-[blob-float-1_13s_ease-in-out_infinite] z-0 pointer-events-none"></div>
             <div className="absolute top-[22%] left-[25%] w-[25px] h-[25px] bg-[#ED4CA8] rounded-[60%_40%_30%_70%/50%_60%_40%_50%] animate-[blob-float-2_15s_ease-in-out_infinite] z-0 pointer-events-none"></div>
             <div className="absolute top-[10%] left-[45%] w-[30px] h-[30px] bg-[#ED4CA8] rounded-[50%_50%_70%_30%/30%_70%_50%_50%] animate-[blob-float-3_12s_ease-in-out_infinite] z-0 pointer-events-none"></div>
