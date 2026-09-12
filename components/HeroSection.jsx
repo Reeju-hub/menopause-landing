@@ -271,7 +271,7 @@ export default function HeroSection() {
       {/* --- EXACT MOBILE VIEW --- */}
       <div className="flex flex-col md:hidden w-full max-w-[600px] mx-auto relative z-20 mt-1 px-0">
         
-        {/* Mobile Header Text */}
+        {/* Mobile Header Text - Kept relative z-30 to stay above everything */}
         <div className="flex flex-col items-center text-center px-4 mb-1 relative z-30">
           <p className="force-quicksand text-[12px] font-bold tracking-[0.2em] text-[#1D3557] uppercase mb-2">
             — WOMEN'S MIDLIFE HEALTH —
@@ -288,8 +288,8 @@ export default function HeroSection() {
         {/* Mobile Hero Image Container */}
         <div className="w-full flex justify-center relative z-10 translate-y-75 mb-6 -mt-75 animate-mobile-dynamic">
           
-          {/* 🎈 GOOEY METABALLS CONTAINER (MOBILE) - FIX: Set to top-[15%] so they stay safely below the text! 🎈 */}
-          <div className="absolute top-[15%] left-0 w-full h-[55%] z-0 pointer-events-none" style={{ filter: 'url(#goo)' }}>
+          {/* 🎈 GOOEY METABALLS CONTAINER (MOBILE) - FIX: Shifted up to top-[8%] to glide gracefully behind the text! 🎈 */}
+          <div className="absolute top-[8%] left-0 w-full h-[60%] z-0 pointer-events-none" style={{ filter: 'url(#goo)' }}>
             
             {/* Shapes organic/disfigured and perfectly positioned */}
             <div className="absolute top-[8%] left-[10%] w-[35px] h-[35px] bg-[#ED4CA8] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] animate-[blob-float-1_13s_ease-in-out_infinite] z-0 pointer-events-none"></div>
