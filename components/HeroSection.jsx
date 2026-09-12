@@ -94,9 +94,8 @@ export default function HeroSection() {
       <svg width="0" height="0" className="absolute hidden">
         <defs>
           <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-            <feBlend in="SourceGraphic" in2="goo" />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -9" result="goo" />
           </filter>
         </defs>
       </svg>
@@ -149,36 +148,36 @@ export default function HeroSection() {
             animation: mobile-blob-dynamic 5s ease-in-out infinite;
         }
 
-        /* 💦 YAHAN FIX KIYA HAI: Ab movement ka radius bahut bada (faila hua) kar diya hai 💦 */
+        /* 💦 Wide Trajectories for perfect page flow 💦 */
         @keyframes blob-float-1 {
           0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(120px, -60px) scale(1.1); }
-          66% { transform: translate(-60px, 80px) scale(0.9); }
+          33% { transform: translate(150px, -50px) scale(1.1); }
+          66% { transform: translate(-80px, 80px) scale(0.9); }
         }
         @keyframes blob-float-2 {
           0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(-100px, 50px) scale(0.85); }
-          66% { transform: translate(80px, -60px) scale(1.15); }
+          33% { transform: translate(-130px, 60px) scale(0.85); }
+          66% { transform: translate(120px, -70px) scale(1.15); }
         }
         @keyframes blob-float-3 {
           0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(80px, 100px) scale(1.2); }
-          66% { transform: translate(-80px, -40px) scale(0.8); }
+          33% { transform: translate(100px, 120px) scale(1.2); }
+          66% { transform: translate(-140px, -40px) scale(0.8); }
         }
         @keyframes blob-float-4 {
           0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(-80px, -90px) scale(0.9); }
-          66% { transform: translate(100px, 40px) scale(1.2); }
+          33% { transform: translate(-110px, -90px) scale(0.9); }
+          66% { transform: translate(150px, 50px) scale(1.2); }
         }
         @keyframes blob-float-5 {
           0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(140px, 10px) scale(1.3); }
-          66% { transform: translate(-50px, -100px) scale(0.7); }
+          33% { transform: translate(180px, 20px) scale(1.3); }
+          66% { transform: translate(-90px, -110px) scale(0.7); }
         }
         @keyframes blob-float-6 {
           0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(-40px, 120px) scale(0.8); }
-          66% { transform: translate(110px, -30px) scale(1.2); }
+          33% { transform: translate(-100px, 150px) scale(0.8); }
+          66% { transform: translate(130px, -60px) scale(1.2); }
         }
       `}} />
 
@@ -211,28 +210,35 @@ export default function HeroSection() {
         <div className="relative flex justify-center items-center w-full animate-desktop-dynamic">
           
           {/* 🎈 GOOEY METABALLS CONTAINER (DESKTOP) 🎈 */}
-          <div className="absolute top-0 left-0 w-full h-[60%] z-20 pointer-events-none" style={{ filter: 'url(#goo)' }}>
+          <div className="absolute top-0 left-0 w-full h-[65%] z-0 pointer-events-none" style={{ filter: 'url(#goo)' }}>
             
-            {/* YAHAN FIX KIYA HAI: Left Side Spread - Kaafi door tak faila diya hai */}
-            <div className="absolute top-[10%] left-[12%] w-[80px] h-[80px] bg-[#E01D91] rounded-full animate-[blob-float-1_12s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[2%] left-[26%] w-[35px] h-[35px] bg-[#E01D91] rounded-full animate-[blob-float-2_15s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[25%] left-[8%] w-[50px] h-[50px] bg-[#E01D91] rounded-full animate-[blob-float-3_11s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[18%] left-[32%] w-[20px] h-[20px] bg-[#E01D91] rounded-full animate-[blob-float-4_14s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[35%] left-[18%] w-[40px] h-[40px] bg-[#E01D91] rounded-full animate-[blob-float-5_16s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[5%] left-[40%] w-[15px] h-[15px] bg-[#E01D91] rounded-full animate-[blob-float-6_10s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[15%] left-[5%] w-[60px] h-[60px] bg-[#E01D91] rounded-full animate-[blob-float-1_18s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[30%] left-[28%] w-[25px] h-[25px] bg-[#E01D91] rounded-full animate-[blob-float-2_13s_ease-in-out_infinite]"></div>
+            {/* Far Left */}
+            <div className="absolute top-[10%] left-[5%] w-[85px] h-[85px] bg-[#ED4CA8] rounded-full animate-[blob-float-1_14s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[25%] left-[10%] w-[45px] h-[45px] bg-[#ED4CA8] rounded-full animate-[blob-float-2_16s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            
+            {/* Mid Left */}
+            <div className="absolute top-[5%] left-[20%] w-[60px] h-[60px] bg-[#ED4CA8] rounded-full animate-[blob-float-3_13s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[30%] left-[25%] w-[35px] h-[35px] bg-[#ED4CA8] rounded-full animate-[blob-float-4_15s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[15%] left-[30%] w-[55px] h-[55px] bg-[#ED4CA8] rounded-full animate-[blob-float-5_17s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            
+            {/* Center Area */}
+            <div className="absolute top-[8%] left-[45%] w-[70px] h-[70px] bg-[#ED4CA8] rounded-full animate-[blob-float-6_12s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[20%] left-[55%] w-[40px] h-[40px] bg-[#ED4CA8] rounded-full animate-[blob-float-1_18s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[12%] left-[65%] w-[50px] h-[50px] bg-[#ED4CA8] rounded-full animate-[blob-float-2_14s_ease-in-out_infinite] z-0 pointer-events-none"></div>
 
-            {/* YAHAN FIX KIYA HAI: Right Side Spread - Kaafi door tak faila diya hai */}
-            <div className="absolute top-[5%] right-[15%] w-[70px] h-[70px] bg-[#E01D91] rounded-full animate-[blob-float-2_14s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[20%] right-[8%] w-[45px] h-[45px] bg-[#E01D91] rounded-full animate-[blob-float-4_11s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[8%] right-[35%] w-[30px] h-[30px] bg-[#E01D91] rounded-full animate-[blob-float-6_16s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[32%] right-[22%] w-[55px] h-[55px] bg-[#E01D91] rounded-full animate-[blob-float-1_13s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[15%] right-[28%] w-[25px] h-[25px] bg-[#E01D91] rounded-full animate-[blob-float-3_15s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[2%] right-[42%] w-[40px] h-[40px] bg-[#E01D91] rounded-full animate-[blob-float-5_10s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[28%] right-[12%] w-[18px] h-[18px] bg-[#E01D91] rounded-full animate-[blob-float-2_18s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[12%] right-[5%] w-[65px] h-[65px] bg-[#E01D91] rounded-full animate-[blob-float-1_15s_ease-in-out_infinite]"></div>
+            {/* Mid Right */}
+            <div className="absolute top-[25%] left-[75%] w-[30px] h-[30px] bg-[#ED4CA8] rounded-full animate-[blob-float-3_16s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[5%] left-[80%] w-[65px] h-[65px] bg-[#ED4CA8] rounded-full animate-[blob-float-4_13s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[18%] left-[85%] w-[45px] h-[45px] bg-[#ED4CA8] rounded-full animate-[blob-float-5_15s_ease-in-out_infinite] z-0 pointer-events-none"></div>
 
+            {/* Far Right */}
+            <div className="absolute top-[10%] left-[92%] w-[80px] h-[80px] bg-[#ED4CA8] rounded-full animate-[blob-float-6_17s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[32%] left-[95%] w-[35px] h-[35px] bg-[#ED4CA8] rounded-full animate-[blob-float-1_14s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+
+            {/* Extra bridging small blobs */}
+            <div className="absolute top-[22%] left-[38%] w-[25px] h-[25px] bg-[#ED4CA8] rounded-full animate-[blob-float-2_11s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[10%] left-[70%] w-[20px] h-[20px] bg-[#ED4CA8] rounded-full animate-[blob-float-3_10s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            
           </div>
 
           <Image
@@ -279,28 +285,51 @@ export default function HeroSection() {
           </h1>
         </div>
 
-        {/* Mobile Hero Image */}
+        {/* Mobile Hero Image Container */}
         <div className="w-full flex justify-center relative z-10 translate-y-75 mb-6 -mt-75 animate-mobile-dynamic">
           
-          {/* 🎈 GOOEY METABALLS CONTAINER (MOBILE) 🎈 */}
-          <div className="absolute top-0 left-0 w-full h-[60%] z-20 pointer-events-none" style={{ filter: 'url(#goo)' }}>
+          {/* 🎈 GOOEY METABALLS CONTAINER (MOBILE) - FIX: Doubled the amount of balloons for dense effect 🎈 */}
+          <div className="absolute top-0 left-0 w-full h-[60%] z-0 pointer-events-none" style={{ filter: 'url(#goo)' }}>
             
-            {/* Left Cluster - Mobile Spread */}
-            <div className="absolute top-[5%] left-[5%] w-[45px] h-[45px] bg-[#E01D91] rounded-full animate-[blob-float-1_12s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[18%] left-[25%] w-[25px] h-[25px] bg-[#E01D91] rounded-full animate-[blob-float-2_15s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[10%] left-[35%] w-[15px] h-[15px] bg-[#E01D91] rounded-full animate-[blob-float-3_11s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[28%] left-[12%] w-[35px] h-[35px] bg-[#E01D91] rounded-full animate-[blob-float-4_14s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[15%] left-[15%] w-[12px] h-[12px] bg-[#E01D91] rounded-full animate-[blob-float-5_10s_ease-in-out_infinite]"></div>
+            {/* Original Set */}
+            <div className="absolute top-[8%] left-[10%] w-[35px] h-[35px] bg-[#ED4CA8] rounded-full animate-[blob-float-1_13s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[22%] left-[25%] w-[25px] h-[25px] bg-[#ED4CA8] rounded-full animate-[blob-float-2_15s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[10%] left-[45%] w-[30px] h-[30px] bg-[#ED4CA8] rounded-full animate-[blob-float-3_12s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[12%] left-[70%] w-[35px] h-[35px] bg-[#ED4CA8] rounded-full animate-[blob-float-5_16s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[20%] left-[85%] w-[28px] h-[28px] bg-[#ED4CA8] rounded-full animate-[blob-float-1_15s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+
+            <div className="absolute top-[15%] left-[5%] w-[12px] h-[12px] bg-[#ED4CA8] rounded-full animate-[blob-float-4_11s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[28%] left-[15%] w-[15px] h-[15px] bg-[#ED4CA8] rounded-full animate-[blob-float-6_14s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[5%] left-[30%] w-[10px] h-[10px] bg-[#ED4CA8] rounded-full animate-[blob-float-2_10s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[22%] left-[40%] w-[18px] h-[18px] bg-[#ED4CA8] rounded-full animate-[blob-float-4_14s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[12%] left-[55%] w-[14px] h-[14px] bg-[#ED4CA8] rounded-full animate-[blob-float-6_11s_ease-in-out_infinite] z-0 pointer-events-none"></div>
             
-            {/* Right Cluster - Mobile Spread */}
-            <div className="absolute top-[8%] right-[8%] w-[40px] h-[40px] bg-[#E01D91] rounded-full animate-[blob-float-2_13s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[20%] right-[28%] w-[20px] h-[20px] bg-[#E01D91] rounded-full animate-[blob-float-1_16s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[12%] right-[38%] w-[30px] h-[30px] bg-[#E01D91] rounded-full animate-[blob-float-4_11s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[25%] right-[15%] w-[15px] h-[15px] bg-[#E01D91] rounded-full animate-[blob-float-6_14s_ease-in-out_infinite]"></div>
-            <div className="absolute top-[5%] right-[22%] w-[25px] h-[25px] bg-[#E01D91] rounded-full animate-[blob-float-3_12s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[25%] left-[60%] w-[16px] h-[16px] bg-[#ED4CA8] rounded-full animate-[blob-float-1_17s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[5%] left-[80%] w-[12px] h-[12px] bg-[#ED4CA8] rounded-full animate-[blob-float-3_13s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[28%] left-[92%] w-[18px] h-[18px] bg-[#ED4CA8] rounded-full animate-[blob-float-2_17s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[18%] left-[75%] w-[10px] h-[10px] bg-[#ED4CA8] rounded-full animate-[blob-float-4_9s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[8%] left-[95%] w-[15px] h-[15px] bg-[#ED4CA8] rounded-full animate-[blob-float-5_14s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+
+            {/* 🔥 NEW EXTRA DENSE BLOBS FOR MOBILE 🔥 */}
+            <div className="absolute top-[5%] left-[20%] w-[22px] h-[22px] bg-[#ED4CA8] rounded-full animate-[blob-float-1_14s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[18%] left-[35%] w-[18px] h-[18px] bg-[#ED4CA8] rounded-full animate-[blob-float-2_12s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[25%] left-[50%] w-[28px] h-[28px] bg-[#ED4CA8] rounded-full animate-[blob-float-3_16s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[8%] left-[60%] w-[16px] h-[16px] bg-[#ED4CA8] rounded-full animate-[blob-float-4_13s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[15%] left-[80%] w-[24px] h-[24px] bg-[#ED4CA8] rounded-full animate-[blob-float-5_11s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[30%] left-[5%] w-[15px] h-[15px] bg-[#ED4CA8] rounded-full animate-[blob-float-6_15s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[22%] left-[15%] w-[14px] h-[14px] bg-[#ED4CA8] rounded-full animate-[blob-float-1_10s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[12%] left-[40%] w-[20px] h-[20px] bg-[#ED4CA8] rounded-full animate-[blob-float-2_14s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[5%] left-[75%] w-[12px] h-[12px] bg-[#ED4CA8] rounded-full animate-[blob-float-3_12s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[28%] left-[70%] w-[26px] h-[26px] bg-[#ED4CA8] rounded-full animate-[blob-float-4_17s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[18%] left-[90%] w-[14px] h-[14px] bg-[#ED4CA8] rounded-full animate-[blob-float-5_13s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[35%] left-[30%] w-[18px] h-[18px] bg-[#ED4CA8] rounded-full animate-[blob-float-6_16s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[32%] left-[65%] w-[22px] h-[22px] bg-[#ED4CA8] rounded-full animate-[blob-float-1_12s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[20%] left-[5%] w-[10px] h-[10px] bg-[#ED4CA8] rounded-full animate-[blob-float-2_9s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+            <div className="absolute top-[10%] left-[95%] w-[16px] h-[16px] bg-[#ED4CA8] rounded-full animate-[blob-float-3_11s_ease-in-out_infinite] z-0 pointer-events-none"></div>
 
           </div>
 
+          {/* Hero Mobile Image */}
           <Image
             src="/hero-mobile.png"
             alt="Menopause Care Mobile"
