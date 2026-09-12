@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image"; // YAHAN ADD KIYA HAI
+import Image from "next/image"; 
 import { useState, useEffect, useRef } from "react";
 
 export default function HeroSection() {
@@ -122,7 +122,6 @@ export default function HeroSection() {
           animation: fadeIn 0.4s ease-in forwards;
         }
 
-        /* YAHAN FIX KIYA HAI: Desktop animation thoda aur intense/visible kar diya */
         @keyframes desktop-blob-dynamic {
           0%, 100% { transform: scale(1) translateY(0); }
           50% { transform: scale(1.025) translateY(-12px); }
@@ -131,7 +130,6 @@ export default function HeroSection() {
           animation: desktop-blob-dynamic 6s ease-in-out infinite;
         }
         
-        /* YAHAN FIX KIYA HAI: Mobile blob animation add kiya */
         @keyframes mobile-blob-dynamic {
             0%, 100% { transform: scale(1) translateY(0); }
             50% { transform: scale(1.02) translateY(-6px); }
@@ -139,6 +137,29 @@ export default function HeroSection() {
         .animate-mobile-dynamic {
             animation: mobile-blob-dynamic 5s ease-in-out infinite;
         }
+
+        /* Circular Orbit Animations */
+        @keyframes circle-orbit-1 {
+          0% { transform: rotate(0deg) translateX(70px) rotate(0deg); }
+          100% { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+        }
+        @keyframes circle-orbit-2 {
+          0% { transform: rotate(0deg) translateX(110px) rotate(0deg); }
+          100% { transform: rotate(-360deg) translateX(110px) rotate(360deg); }
+        }
+        @keyframes circle-orbit-3 {
+          0% { transform: rotate(90deg) translateX(60px) rotate(-90deg); }
+          100% { transform: rotate(450deg) translateX(60px) rotate(-450deg); }
+        }
+        @keyframes circle-orbit-4 {
+          0% { transform: rotate(180deg) translateX(90px) rotate(-180deg); }
+          100% { transform: rotate(-180deg) translateX(90px) rotate(180deg); }
+        }
+        
+        .blob-1 { animation: circle-orbit-1 12s linear infinite; }
+        .blob-2 { animation: circle-orbit-2 16s linear infinite; }
+        .blob-3 { animation: circle-orbit-3 14s linear infinite; }
+        .blob-4 { animation: circle-orbit-4 18s linear infinite; }
       `}} />
 
       {/* --- DESKTOP Top Text & Button --- */}
@@ -166,10 +187,26 @@ export default function HeroSection() {
       </div>
 
       {/* --- DESKTOP VIEW IMAGE --- */}
-      {/* Container ko wapas mt-2 kar diya hai taaki flowers wahi rahein */}
       <div className="hidden md:flex flex-col items-center w-full relative -mt-17">
         <div className="relative flex justify-center items-center w-full animate-desktop-dynamic">
           
+          {/* 🎈 MULTIPLE PERFECT CIRCULAR BLOBS (DESKTOP) - Dher saare aur ekdum gol 🎈 */}
+          {/* Left Side Blobs */}
+          <div className="absolute top-[2%] left-[20%] w-[25px] h-[25px] bg-[#E01D91] rounded-full opacity-90 blob-1 z-20 pointer-events-none"></div>
+          <div className="absolute top-[12%] left-[28%] w-[18px] h-[18px] bg-[#AC0066] rounded-full opacity-80 blob-2 z-20 pointer-events-none"></div>
+          <div className="absolute top-[5%] left-[35%] w-[12px] h-[12px] bg-[#E01D91] rounded-full opacity-100 blob-3 z-20 pointer-events-none"></div>
+          <div className="absolute top-[20%] left-[22%] w-[20px] h-[20px] bg-[#AC0066] rounded-full opacity-70 blob-4 z-20 pointer-events-none"></div>
+          <div className="absolute top-[15%] left-[15%] w-[14px] h-[14px] bg-[#E01D91] rounded-full opacity-85 blob-1 z-20 pointer-events-none"></div>
+          <div className="absolute top-[8%] left-[42%] w-[16px] h-[16px] bg-[#AC0066] rounded-full opacity-90 blob-2 z-20 pointer-events-none"></div>
+
+          {/* Right Side Blobs */}
+          <div className="absolute top-[8%] right-[22%] w-[20px] h-[20px] bg-[#AC0066] rounded-full opacity-85 blob-4 z-20 pointer-events-none"></div>
+          <div className="absolute top-[18%] right-[30%] w-[15px] h-[15px] bg-[#E01D91] rounded-full opacity-90 blob-1 z-20 pointer-events-none"></div>
+          <div className="absolute top-[5%] right-[40%] w-[28px] h-[28px] bg-[#AC0066] rounded-full opacity-75 blob-3 z-20 pointer-events-none"></div>
+          <div className="absolute top-[12%] right-[15%] w-[12px] h-[12px] bg-[#E01D91] rounded-full opacity-100 blob-2 z-20 pointer-events-none"></div>
+          <div className="absolute top-[22%] right-[20%] w-[18px] h-[18px] bg-[#AC0066] rounded-full opacity-80 blob-3 z-20 pointer-events-none"></div>
+          <div className="absolute top-[3%] right-[32%] w-[22px] h-[22px] bg-[#E01D91] rounded-full opacity-85 blob-4 z-20 pointer-events-none"></div>
+
           <Image
             src="/full-hero-section.png"
             alt="Hero Section"
@@ -178,20 +215,20 @@ export default function HeroSection() {
             quality={100}
             unoptimized
             priority
-            className="w-full max-w-none h-auto object-cover pointer-events-none translate-y-30"
+            className="w-full max-w-none h-auto object-cover pointer-events-none translate-y-30 relative z-10"
           />
 
-          {/* 🌸 DESKTOP FLOWERS OVERLAY 🌸 (Yeh ab apni jagah fix rahenge) */}
+          {/* 🌸 DESKTOP FLOWERS OVERLAY 🌸 */}
           <img 
             src="/flower.png" 
             alt="flower" 
-            className="absolute w-[20px] h-[20px] object-contain animate-spin-slow pointer-events-none"
+            className="absolute w-[20px] h-[20px] object-contain animate-spin-slow pointer-events-none z-30"
             style={{ top: '77%', left: '38.37%' }} 
           />
           <img 
             src="/flower.png" 
             alt="flower" 
-            className="absolute w-[20px] h-[20px] min-w-[25px] object-contain animate-spin-slow pointer-events-none"
+            className="absolute w-[20px] h-[20px] min-w-[25px] object-contain animate-spin-slow pointer-events-none z-30"
             style={{ top: '77%', right: '38.37%' }} 
           />
         </div>
@@ -215,8 +252,19 @@ export default function HeroSection() {
         </div>
 
         {/* Mobile Hero Image */}
-        {/* YAHAN FIX KIYA HAI: animate-mobile-dynamic yahan mobile image container par lagaya hai, position bilkul unchanged */}
         <div className="w-full flex justify-center relative z-10 translate-y-75 mb-6 -mt-75 animate-mobile-dynamic">
+          
+          {/* 🎈 MULTIPLE PERFECT CIRCULAR BLOBS (MOBILE) 🎈 */}
+          <div className="absolute top-[5%] left-[12%] w-[18px] h-[18px] bg-[#E01D91] rounded-full opacity-90 blob-1 z-20 pointer-events-none"></div>
+          <div className="absolute top-[15%] left-[22%] w-[12px] h-[12px] bg-[#AC0066] rounded-full opacity-80 blob-3 z-20 pointer-events-none"></div>
+          <div className="absolute top-[22%] left-[10%] w-[15px] h-[15px] bg-[#E01D91] rounded-full opacity-85 blob-4 z-20 pointer-events-none"></div>
+          <div className="absolute top-[8%] left-[30%] w-[14px] h-[14px] bg-[#AC0066] rounded-full opacity-75 blob-2 z-20 pointer-events-none"></div>
+          
+          <div className="absolute top-[8%] right-[12%] w-[20px] h-[20px] bg-[#AC0066] rounded-full opacity-85 blob-2 z-20 pointer-events-none"></div>
+          <div className="absolute top-[18%] right-[25%] w-[14px] h-[14px] bg-[#E01D91] rounded-full opacity-90 blob-4 z-20 pointer-events-none"></div>
+          <div className="absolute top-[5%] right-[32%] w-[16px] h-[16px] bg-[#E01D91] rounded-full opacity-95 blob-1 z-20 pointer-events-none"></div>
+          <div className="absolute top-[25%] right-[15%] w-[12px] h-[12px] bg-[#AC0066] rounded-full opacity-80 blob-3 z-20 pointer-events-none"></div>
+
           <Image
             src="/hero-mobile.png"
             alt="Menopause Care Mobile"
@@ -225,7 +273,7 @@ export default function HeroSection() {
             quality={100}
             unoptimized
             priority
-            className="w-full max-w-[600px] h-auto object-cover"
+            className="w-full max-w-[600px] h-auto object-cover relative z-10"
           />
         </div>
         
