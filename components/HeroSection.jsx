@@ -90,6 +90,17 @@ export default function HeroSection() {
   return (
     <section className="bg-[#FFFFFF] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-4">
       
+      {/* 🧪 SVG Filter for the Liquid/Gooey Effect 🧪 */}
+      <svg width="0" height="0" className="absolute hidden">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+
       <style dangerouslySetInnerHTML={{__html: `
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
         
@@ -138,28 +149,37 @@ export default function HeroSection() {
             animation: mobile-blob-dynamic 5s ease-in-out infinite;
         }
 
-        /* Circular Orbit Animations */
-        @keyframes circle-orbit-1 {
-          0% { transform: rotate(0deg) translateX(70px) rotate(0deg); }
-          100% { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+        /* 💦 YAHAN FIX KIYA HAI: Ab movement ka radius bahut bada (faila hua) kar diya hai 💦 */
+        @keyframes blob-float-1 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(120px, -60px) scale(1.1); }
+          66% { transform: translate(-60px, 80px) scale(0.9); }
         }
-        @keyframes circle-orbit-2 {
-          0% { transform: rotate(0deg) translateX(110px) rotate(0deg); }
-          100% { transform: rotate(-360deg) translateX(110px) rotate(360deg); }
+        @keyframes blob-float-2 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(-100px, 50px) scale(0.85); }
+          66% { transform: translate(80px, -60px) scale(1.15); }
         }
-        @keyframes circle-orbit-3 {
-          0% { transform: rotate(90deg) translateX(60px) rotate(-90deg); }
-          100% { transform: rotate(450deg) translateX(60px) rotate(-450deg); }
+        @keyframes blob-float-3 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(80px, 100px) scale(1.2); }
+          66% { transform: translate(-80px, -40px) scale(0.8); }
         }
-        @keyframes circle-orbit-4 {
-          0% { transform: rotate(180deg) translateX(90px) rotate(-180deg); }
-          100% { transform: rotate(-180deg) translateX(90px) rotate(180deg); }
+        @keyframes blob-float-4 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(-80px, -90px) scale(0.9); }
+          66% { transform: translate(100px, 40px) scale(1.2); }
         }
-        
-        .blob-1 { animation: circle-orbit-1 12s linear infinite; }
-        .blob-2 { animation: circle-orbit-2 16s linear infinite; }
-        .blob-3 { animation: circle-orbit-3 14s linear infinite; }
-        .blob-4 { animation: circle-orbit-4 18s linear infinite; }
+        @keyframes blob-float-5 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(140px, 10px) scale(1.3); }
+          66% { transform: translate(-50px, -100px) scale(0.7); }
+        }
+        @keyframes blob-float-6 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(-40px, 120px) scale(0.8); }
+          66% { transform: translate(110px, -30px) scale(1.2); }
+        }
       `}} />
 
       {/* --- DESKTOP Top Text & Button --- */}
@@ -190,22 +210,30 @@ export default function HeroSection() {
       <div className="hidden md:flex flex-col items-center w-full relative -mt-17">
         <div className="relative flex justify-center items-center w-full animate-desktop-dynamic">
           
-          {/* 🎈 MULTIPLE PERFECT CIRCULAR BLOBS (DESKTOP) - Dher saare aur ekdum gol 🎈 */}
-          {/* Left Side Blobs */}
-          <div className="absolute top-[2%] left-[20%] w-[25px] h-[25px] bg-[#E01D91] rounded-full opacity-90 blob-1 z-20 pointer-events-none"></div>
-          <div className="absolute top-[12%] left-[28%] w-[18px] h-[18px] bg-[#AC0066] rounded-full opacity-80 blob-2 z-20 pointer-events-none"></div>
-          <div className="absolute top-[5%] left-[35%] w-[12px] h-[12px] bg-[#E01D91] rounded-full opacity-100 blob-3 z-20 pointer-events-none"></div>
-          <div className="absolute top-[20%] left-[22%] w-[20px] h-[20px] bg-[#AC0066] rounded-full opacity-70 blob-4 z-20 pointer-events-none"></div>
-          <div className="absolute top-[15%] left-[15%] w-[14px] h-[14px] bg-[#E01D91] rounded-full opacity-85 blob-1 z-20 pointer-events-none"></div>
-          <div className="absolute top-[8%] left-[42%] w-[16px] h-[16px] bg-[#AC0066] rounded-full opacity-90 blob-2 z-20 pointer-events-none"></div>
+          {/* 🎈 GOOEY METABALLS CONTAINER (DESKTOP) 🎈 */}
+          <div className="absolute top-0 left-0 w-full h-[60%] z-20 pointer-events-none" style={{ filter: 'url(#goo)' }}>
+            
+            {/* YAHAN FIX KIYA HAI: Left Side Spread - Kaafi door tak faila diya hai */}
+            <div className="absolute top-[10%] left-[12%] w-[80px] h-[80px] bg-[#E01D91] rounded-full animate-[blob-float-1_12s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[2%] left-[26%] w-[35px] h-[35px] bg-[#E01D91] rounded-full animate-[blob-float-2_15s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[25%] left-[8%] w-[50px] h-[50px] bg-[#E01D91] rounded-full animate-[blob-float-3_11s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[18%] left-[32%] w-[20px] h-[20px] bg-[#E01D91] rounded-full animate-[blob-float-4_14s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[35%] left-[18%] w-[40px] h-[40px] bg-[#E01D91] rounded-full animate-[blob-float-5_16s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[5%] left-[40%] w-[15px] h-[15px] bg-[#E01D91] rounded-full animate-[blob-float-6_10s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[15%] left-[5%] w-[60px] h-[60px] bg-[#E01D91] rounded-full animate-[blob-float-1_18s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[30%] left-[28%] w-[25px] h-[25px] bg-[#E01D91] rounded-full animate-[blob-float-2_13s_ease-in-out_infinite]"></div>
 
-          {/* Right Side Blobs */}
-          <div className="absolute top-[8%] right-[22%] w-[20px] h-[20px] bg-[#AC0066] rounded-full opacity-85 blob-4 z-20 pointer-events-none"></div>
-          <div className="absolute top-[18%] right-[30%] w-[15px] h-[15px] bg-[#E01D91] rounded-full opacity-90 blob-1 z-20 pointer-events-none"></div>
-          <div className="absolute top-[5%] right-[40%] w-[28px] h-[28px] bg-[#AC0066] rounded-full opacity-75 blob-3 z-20 pointer-events-none"></div>
-          <div className="absolute top-[12%] right-[15%] w-[12px] h-[12px] bg-[#E01D91] rounded-full opacity-100 blob-2 z-20 pointer-events-none"></div>
-          <div className="absolute top-[22%] right-[20%] w-[18px] h-[18px] bg-[#AC0066] rounded-full opacity-80 blob-3 z-20 pointer-events-none"></div>
-          <div className="absolute top-[3%] right-[32%] w-[22px] h-[22px] bg-[#E01D91] rounded-full opacity-85 blob-4 z-20 pointer-events-none"></div>
+            {/* YAHAN FIX KIYA HAI: Right Side Spread - Kaafi door tak faila diya hai */}
+            <div className="absolute top-[5%] right-[15%] w-[70px] h-[70px] bg-[#E01D91] rounded-full animate-[blob-float-2_14s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[20%] right-[8%] w-[45px] h-[45px] bg-[#E01D91] rounded-full animate-[blob-float-4_11s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[8%] right-[35%] w-[30px] h-[30px] bg-[#E01D91] rounded-full animate-[blob-float-6_16s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[32%] right-[22%] w-[55px] h-[55px] bg-[#E01D91] rounded-full animate-[blob-float-1_13s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[15%] right-[28%] w-[25px] h-[25px] bg-[#E01D91] rounded-full animate-[blob-float-3_15s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[2%] right-[42%] w-[40px] h-[40px] bg-[#E01D91] rounded-full animate-[blob-float-5_10s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[28%] right-[12%] w-[18px] h-[18px] bg-[#E01D91] rounded-full animate-[blob-float-2_18s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[12%] right-[5%] w-[65px] h-[65px] bg-[#E01D91] rounded-full animate-[blob-float-1_15s_ease-in-out_infinite]"></div>
+
+          </div>
 
           <Image
             src="/full-hero-section.png"
@@ -254,16 +282,24 @@ export default function HeroSection() {
         {/* Mobile Hero Image */}
         <div className="w-full flex justify-center relative z-10 translate-y-75 mb-6 -mt-75 animate-mobile-dynamic">
           
-          {/* 🎈 MULTIPLE PERFECT CIRCULAR BLOBS (MOBILE) 🎈 */}
-          <div className="absolute top-[5%] left-[12%] w-[18px] h-[18px] bg-[#E01D91] rounded-full opacity-90 blob-1 z-20 pointer-events-none"></div>
-          <div className="absolute top-[15%] left-[22%] w-[12px] h-[12px] bg-[#AC0066] rounded-full opacity-80 blob-3 z-20 pointer-events-none"></div>
-          <div className="absolute top-[22%] left-[10%] w-[15px] h-[15px] bg-[#E01D91] rounded-full opacity-85 blob-4 z-20 pointer-events-none"></div>
-          <div className="absolute top-[8%] left-[30%] w-[14px] h-[14px] bg-[#AC0066] rounded-full opacity-75 blob-2 z-20 pointer-events-none"></div>
-          
-          <div className="absolute top-[8%] right-[12%] w-[20px] h-[20px] bg-[#AC0066] rounded-full opacity-85 blob-2 z-20 pointer-events-none"></div>
-          <div className="absolute top-[18%] right-[25%] w-[14px] h-[14px] bg-[#E01D91] rounded-full opacity-90 blob-4 z-20 pointer-events-none"></div>
-          <div className="absolute top-[5%] right-[32%] w-[16px] h-[16px] bg-[#E01D91] rounded-full opacity-95 blob-1 z-20 pointer-events-none"></div>
-          <div className="absolute top-[25%] right-[15%] w-[12px] h-[12px] bg-[#AC0066] rounded-full opacity-80 blob-3 z-20 pointer-events-none"></div>
+          {/* 🎈 GOOEY METABALLS CONTAINER (MOBILE) 🎈 */}
+          <div className="absolute top-0 left-0 w-full h-[60%] z-20 pointer-events-none" style={{ filter: 'url(#goo)' }}>
+            
+            {/* Left Cluster - Mobile Spread */}
+            <div className="absolute top-[5%] left-[5%] w-[45px] h-[45px] bg-[#E01D91] rounded-full animate-[blob-float-1_12s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[18%] left-[25%] w-[25px] h-[25px] bg-[#E01D91] rounded-full animate-[blob-float-2_15s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[10%] left-[35%] w-[15px] h-[15px] bg-[#E01D91] rounded-full animate-[blob-float-3_11s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[28%] left-[12%] w-[35px] h-[35px] bg-[#E01D91] rounded-full animate-[blob-float-4_14s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[15%] left-[15%] w-[12px] h-[12px] bg-[#E01D91] rounded-full animate-[blob-float-5_10s_ease-in-out_infinite]"></div>
+            
+            {/* Right Cluster - Mobile Spread */}
+            <div className="absolute top-[8%] right-[8%] w-[40px] h-[40px] bg-[#E01D91] rounded-full animate-[blob-float-2_13s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[20%] right-[28%] w-[20px] h-[20px] bg-[#E01D91] rounded-full animate-[blob-float-1_16s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[12%] right-[38%] w-[30px] h-[30px] bg-[#E01D91] rounded-full animate-[blob-float-4_11s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[25%] right-[15%] w-[15px] h-[15px] bg-[#E01D91] rounded-full animate-[blob-float-6_14s_ease-in-out_infinite]"></div>
+            <div className="absolute top-[5%] right-[22%] w-[25px] h-[25px] bg-[#E01D91] rounded-full animate-[blob-float-3_12s_ease-in-out_infinite]"></div>
+
+          </div>
 
           <Image
             src="/hero-mobile.png"
