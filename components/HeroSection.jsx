@@ -286,7 +286,7 @@ export default function HeroSection() {
         </div>
 
         {/* MOBILE HERO WRAPPER - (Fix: Changed to z-10 so it stays BEHIND the gradient background) */}
-        <div className="w-full relative z-10 translate-y-[75px] mb-[54px] -mt-[75px] [transform:translateZ(0)]">
+        <div className="w-full relative z-10 translate-y-[75px] mb-[40px] -mt-[75px] [transform:translateZ(0)]">
           
           {/* Inner Animated Container */}
           <div className="w-full flex justify-center relative animate-mobile-dynamic">
