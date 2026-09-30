@@ -286,7 +286,7 @@ export default function HeroSection() {
         </div>
 
         {/* Mobile Hero Image Container */}
-        <div className="w-full flex justify-center relative z-10 translate-y-75 mb-54 -mt-75 animate-mobile-dynamic">
+        <div className="w-full flex justify-center relative z-20 translate-y-75 mb-54 -mt-75 animate-mobile-dynamic">
           
           {/* 🎈 GOOEY METABALLS CONTAINER (MOBILE) - FIX: Shifted up to top-[8%] to glide gracefully behind the text! 🎈 */}
           <div className="absolute top-[8%] left-0 w-full h-[60%] z-0 pointer-events-none" style={{ filter: 'url(#goo)' }}>
