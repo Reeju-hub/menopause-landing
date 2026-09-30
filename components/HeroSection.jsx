@@ -333,7 +333,7 @@ export default function HeroSection() {
             src="/hero-mobile.png"
             alt="Menopause Care Mobile"
             width={800}
-            height={800}
+            height={1000}
             quality={100}
             unoptimized
             priority
