@@ -286,7 +286,7 @@ export default function HeroSection() {
         </div>
 
         {/* Mobile Hero Image Container */}
-        <div className="w-full flex justify-center relative z-10 translate-y-75 mb-6 -mt-75 animate-mobile-dynamic">
+        <div className="w-full flex justify-center relative z-10 translate-y-75 mb-54 -mt-75 animate-mobile-dynamic">
           
           {/* 🎈 GOOEY METABALLS CONTAINER (MOBILE) - FIX: Shifted up to top-[8%] to glide gracefully behind the text! 🎈 */}
           <div className="absolute top-[8%] left-0 w-full h-[60%] z-0 pointer-events-none" style={{ filter: 'url(#goo)' }}>
@@ -333,7 +333,7 @@ export default function HeroSection() {
             src="/hero-mobile.png"
             alt="Menopause Care Mobile"
             width={800}
-            height={1000}
+            height={800}
             quality={100}
             unoptimized
             priority
@@ -342,7 +342,7 @@ export default function HeroSection() {
         </div>
         
         {/* Background Image Container */}
-        <div ref={bgRef} className="w-full relative z-35 -mt-[6%] aspect-[6/5]">
+        <div ref={bgRef} className="w-full relative z-35 -mt-[25%] aspect-[6/5]">
           <div 
             key={`bounce-${bounceKey}`} 
             className={`w-full h-full bg-no-repeat bg-center ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
