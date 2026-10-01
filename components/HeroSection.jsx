@@ -347,7 +347,7 @@ export default function HeroSection() {
             style={{ 
               backgroundImage: `url('/gradient-bg.png')`, 
               backgroundSize: '131% 157%',
-              backdropFilter: 'blur(15px)',
+              backdropFilter: 'blur(35px)',
               ImageRendering: 'quality(100%)',
             }}
           ></div>
