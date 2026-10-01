@@ -279,7 +279,7 @@ export default function HeroSection() {
         </div>
 
         {/* MOBILE HERO WRAPPER */}
-        <div className="w-full relative z-10 translate-y-[190px] mb-[6px] -mt-[75px] [transform:translateZ(0)]">
+        <div className="w-full relative z-10 translate-y-[75px] mb-[6px] -mt-[75px] [transform:translateZ(0)]">
           
           {/* Inner Animated Container */}
           <div className="w-full flex justify-center relative animate-mobile-dynamic">
