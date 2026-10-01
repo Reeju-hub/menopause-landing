@@ -271,7 +271,7 @@ export default function HeroSection() {
         
         {/* Mobile Header Text */}
         <div className="flex flex-col items-center text-center px-4 mb-1 relative z-30">
-         
+          
           
           <h1 className="force-playfair text-[36px] font-bold text-slate-900 leading-[1.15]">
             <span className="font-bold">Your midlife health:</span><br />
@@ -340,14 +340,15 @@ export default function HeroSection() {
         </div>
         
         {/* BACKGROUND IMAGE CONTAINER - (Fix: Maintained z-20, Added Glass Effect classes for Figma look, and optimized image rendering quality) */}
-        <div ref={bgRef} className="w-full relative z-20 -mt-[45%] aspect-[6/5] pointer-events-none [transform:translateZ(0)]">
+        <div ref={bgRef} className="w-full relative z-20 -mt-[50%] aspect-[6/5] pointer-events-none [transform:translateZ(0)]">
           <div 
             key={`bounce-${bounceKey}`} 
-            className={`absolute inset-0 bg-no-repeat bg-center bg-white/20 backdrop-blur-md rounded-t-[40px] ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
+            className={`absolute inset-0 bg-no-repeat right-[-27px] mt-[12%] aspect-[6/5] left-[0px] bg-center  rounded-t-[90px] rounded-b-[50px] ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
             style={{ 
               backgroundImage: `url('/gradient-bg.png')`, 
-              backgroundSize: '100% 100%',
-              imageRendering: '-webkit-optimize-contrast'
+              backgroundSize: '131% 157%',
+              backdropFilter: 'blur(15px)',
+              ImageRendering: 'quality(100%)',
             }}
           ></div>
         </div>
