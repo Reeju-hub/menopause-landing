@@ -278,7 +278,7 @@ export default function HeroSection() {
         </div>
 
         {/* MOBILE HERO WRAPPER */}
-        <div className="w-full relative z-10 translate-y-[75px] mb-[54px] -mt-[-10px] [transform:translateZ(0)]">
+        <div className="w-full relative z-10 translate-y-[75px] mb-[54px] -mt-[0px] [transform:translateZ(0)]">
           
           {/* Inner Animated Container */}
           <div className="w-full flex justify-center relative animate-mobile-dynamic">
@@ -336,10 +336,10 @@ export default function HeroSection() {
         </div>
         
         {/* BACKGROUND IMAGE CONTAINER */}
-        <div ref={bgRef} className="w-full relative z-20 -mt-[75%] aspect-[4/5] pointer-events-none [transform:translateZ(0)]">
+        <div ref={bgRef} className="w-full relative z-20 -mt-[75%] aspect-[5/5] pointer-events-none [transform:translateZ(0)]">
           <div 
             key={`bounce-${bounceKey}`} 
-            className={`absolute inset-0 bg-no-repeat right-[0px] mt-[12%]  left-[0px] bg-center  rounded-t-[40px] rounded-b-[50px] ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
+            className={`absolute inset-0 bg-no-repeat right-[0px] mt-[12%]  left-[0px] bg-center  rounded-t-[40px]  ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
             style={{ 
               backgroundImage: `url('/gradient-bg.png')`, 
               backgroundSize: '100% 100%',
