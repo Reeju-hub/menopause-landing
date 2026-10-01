@@ -343,7 +343,7 @@ export default function HeroSection() {
         <div ref={bgRef} className="w-full relative z-20 -mt-[50%] aspect-[6/5] pointer-events-none [transform:translateZ(0)]">
           <div 
             key={`bounce-${bounceKey}`} 
-            className={`absolute inset-0 bg-no-repeat right-[-27px] mt-[12%] aspect-[6/5] left-[10px] bg-center  rounded-t-[40px] rounded-b-[50px] ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
+            className={`absolute inset-0 bg-no-repeat right-[0px] mt-[12%] aspect-[6/5] left-[0px] bg-center  rounded-t-[40px] rounded-b-[50px] ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
             style={{ 
               backgroundImage: `url('/gradient-bg.png')`, 
               backgroundSize: '131% 157%',
