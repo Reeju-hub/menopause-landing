@@ -267,8 +267,7 @@ export default function HeroSection() {
       <div className="flex flex-col md:hidden w-full max-w-[600px] mx-auto relative z-20 mt-9 px-0">
         
         {/* Mobile Header Text */}
-        <div className="flex flex-col items-center text-center px-4 mb-9 relative z-30">
-          
+        <div className="flex flex-col items-center text-center px-4 mb-5 relative z-30">
           
           <h1 className="force-MontierFlare text-[36px] font-medium text-slate-900 leading-[1.15]">
             <span className="font-medium">Your midlife health:</span><br />
@@ -279,7 +278,7 @@ export default function HeroSection() {
         </div>
 
         {/* MOBILE HERO WRAPPER */}
-        <div className="w-full relative z-10 translate-y-[75px] mb-[6px] -mt-[75px] [transform:translateZ(0)]">
+        <div className="w-full relative z-10 translate-y-[75px] mb-[54px] -mt-[-10px] [transform:translateZ(0)]">
           
           {/* Inner Animated Container */}
           <div className="w-full flex justify-center relative animate-mobile-dynamic">
@@ -331,123 +330,73 @@ export default function HeroSection() {
               quality={100}
               unoptimized
               priority
-              className="w-full max-w-[600px] h-auto object-cover relative z-10"
+              className="w-full max-w-[600px] h-auto object-cover relative z-10 scale-[1.17]"
             />
           </div>
         </div>
-        {/* BACKGROUND IMAGE CONTAINER - (Fix: Maintained z-20, Added Glass Effect classes for Figma look, and optimized image rendering quality) */}
-        <div ref={bgRef} className="w-full relative z-20 -mt-[25%] aspect-[6/5] pointer-events-none [transform:translateZ(0)]">
+        
+        {/* BACKGROUND IMAGE CONTAINER */}
+        <div ref={bgRef} className="w-full relative z-20 -mt-[75%] aspect-[4/5] pointer-events-none [transform:translateZ(0)]">
           <div 
             key={`bounce-${bounceKey}`} 
-            className={`absolute inset-0 bg-no-repeat bg-center bg-white/20 backdrop-blur-md rounded-t-[40px] ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
+            className={`absolute inset-0 bg-no-repeat right-[0px] mt-[12%]  left-[0px] bg-center  rounded-t-[40px] rounded-b-[50px] ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
             style={{ 
               backgroundImage: `url('/gradient-bg.png')`, 
               backgroundSize: '100% 100%',
-              imageRendering: '-webkit-optimize-contrast'
+              backdropFilter: 'blur(35px)',
+              ImageRendering: 'quality(100%)',
             }}
           ></div>
         </div>
 
-
         {/* Pink Box Container */}
-
-        <div
-
+        <div 
           className="w-[calc(100%-2rem)] max-w-[380px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[10px] shadow-lg"
-
           onTouchStart={onTouchStart}
-
           onTouchMove={onTouchMove}
-
           onTouchEnd={onTouchEnd}
-
         >
-
-         
-
+          
           {/* Top Text & Flower Block */}
-
           <div className="flex flex-col items-center gap-[12px] w-full max-w-[310px] h-[101px] pointer-events-none">
-
-           
-
+            
             {/* Title with Flowers */}
-
             <h3 className="flex flex-row justify-center items-center gap-[12px] w-full h-[45px]">
-
               <img src="/flower.png" alt="flower" className="w-[20px] h-[20px] object-contain animate-spin-slow" />
-
-              <span className="force-caveat font-bold text-[#FFFFFF] text-[34px] sm:text-[36px] leading-[45px] text-center whitespace-nowrap">
-
+              <span className="force-MontierFlare font-medium text-[#FFFFFF] text-[34px] sm:text-[36px] leading-[45px] text-center whitespace-nowrap">
                 You're not alone
-
               </span>
-
               <img src="/flower.png" alt="flower" className="w-[20px] h-[20px] object-contain animate-spin-slow" />
-
             </h3>
 
-
-
             {/* Slider Description Text */}
-
-            <p
-
+            <p 
               key={activeIndex}
-
-              className="force-quicksand font-bold text-[#FFFFFF] text-[15.5px] sm:text-[16px] leading-[22px] text-center w-full animate-fadeIn"
-
+              className="force-MontierFlare font-medium text-[#FFFFFF] text-[15.5px] sm:text-[16px] leading-[22px] text-center w-full animate-fadeIn"
             >
-
               {slides[activeIndex].text}
-
             </p>
 
-
-
           </div>
-
-
 
           {/* Indicator Dots */}
-
           <div className="flex flex-row justify-center items-center gap-[12px] h-[8px]">
-
             {slides.map((_, index) => (
-
               <div
-
                 key={index}
-
                 onClick={() => setActiveIndex(index)}
-
                 className={`transition-all duration-300 rounded-[4px] cursor-pointer ${
-
                   activeIndex === index
-
                     ? "w-[64px] h-[8px] bg-[#FF7A21]"
-
                     : "w-[16px] h-[8px] bg-[rgba(255,122,33,0.6)]"
-
                 }`}
-
               ></div>
-
             ))}
-
           </div>
-
-
 
         </div>
 
-
-
       </div>
-
     </section>
-
   );
-
-} 
-
+}
