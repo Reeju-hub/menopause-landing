@@ -20,7 +20,7 @@ export default function Navbar() {
             src="/logo.svg" 
             alt="MenoEssence Logo Desktop" 
             className="h-16 w-auto object-contain"
-            Quality={100}
+            
           />
         </div>
         
@@ -31,7 +31,7 @@ export default function Navbar() {
             src="/logo-mobile.svg" 
             alt="MenoEssence Logo Mobile" 
             className="w-[220px] h-auto object-contain"
-            Quality={100}
+            
           />
         </div>
       </div>

@@ -42,7 +42,7 @@ export default function CommunitySection() {
     <div className="relative w-full" ref={sectionRef}>
       
       {/* Community Section with Background Image */}
-      <section className="relative w-full h-[520px] md:h-[500px] flex px-6 md:px-12 overflow-hidden bg-[#0A0A0A]">
+      <section className="relative w-full h-[700px] md:h-[500px] flex px-6 md:px-12 overflow-hidden bg-[#0A0A0A]">
         
         {/* Background Image Area */}
         <div className="absolute inset-0 z-0">
@@ -66,12 +66,12 @@ export default function CommunitySection() {
               unoptimized
               className="object-cover object-bottom"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/90 via-[#0A0A0A]/40 to-transparent"></div>
+           <div className="absolute inset-0 bg-gradient-to-b from-[#111111]/80 via-[#111111]/30 to-transparent"></div>
           </div>
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 w-full max-w-[1200px] mx-auto flex justify-start md:justify-end items-start md:items-center pt-4 md:pt-0">
+        <div className="relative z-10 w-full max-w-[1200px] mx-auto flex justify-start md:justify-end items-start md:items-center pt-[60px] md:pt-0">
           <div className="w-full max-w-[420px] flex flex-col items-start md:items-end text-left md:text-right">
             
             <p className="text-[12px] md:text-[20px] font-bold tracking-[0.2em] uppercase text-white/80 mb-2 md:mb-3">
