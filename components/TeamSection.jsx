@@ -43,14 +43,14 @@ export default function TeamSection() {
 
   return (
     // YAHAN FIX KIYA HAI: md:px-12 ko md:px-[100px] kar diya taaki page margins sync hon
-    <section className="w-full py-16 md:py-20 px-6 md:px-[100px] flex justify-center bg-white overflow-hidden">
+    <section className="w-full py-16 md:py-20 px-6 md:px-[100px] flex justify-center bg-[#7A1F3A] overflow-hidden">
       
       {/* Content Container */}
       {/* YAHAN FIX KIYA HAI: max-w-[1200px] ko max-w-[1560px] kar diya */}
       <div className="w-full max-w-[1560px] flex flex-col mx-auto">
         
         {/* Section Heading */}
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-8 md:mb-10 text-left">
+        <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#FFFFFF] mb-8 md:mb-10 text-left">
           Meet your team
         </h2>
 

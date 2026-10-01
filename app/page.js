@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import ImageDivider from '../components/ImageDivider';
+import ImageDivider2 from '../components/ImageDivider2';
 import StepsSection from '../components/StepsSection';
 import StagesSection from '../components/StagesSection';
 import IntegratedCareSection from '../components/IntegratedCareSection';
@@ -63,7 +64,7 @@ export default function Home() {
       </section>
 
       {/* Doosri leti hui aurat */}
-      <ImageDivider />
+      <ImageDivider2 />
       
       <StepsSection />
       <CarePlanSection />

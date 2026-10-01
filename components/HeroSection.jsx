@@ -194,9 +194,9 @@ export default function HeroSection() {
           href="https://wa.me/919008934945?text=Hi%20MenoEssence,%20I%20would%20like%20to%20book%20a%20discovery%20call!"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-block bg-[#004D40] text-white px-8 py-2.5 rounded-full font-medium text-[15px] hover:bg-[#00332A] transition shadow-sm text-center force-MontierFlare"
+          className="hidden md:inline-flex items-center justify-center bg-[#FFB627] text-[#231F20] px-10 py-[10px] rounded-[16px] font-bold text-[18px] hover:bg-[#ffaa00] transition duration-300 shadow-sm text-center force-MontierFlare"
         >
-          Book a discovery call
+          Book a Discovery Call
         </a>
       </div>
 
@@ -252,13 +252,13 @@ export default function HeroSection() {
             src="/flower.png" 
             alt="flower" 
             className="absolute w-[20px] h-[20px] object-contain animate-spin-slow pointer-events-none z-30"
-            style={{ top: '77%', left: '38.37%' }} 
+            style={{ top: '77.1%', left: '38.46%' }} 
           />
           <img 
             src="/flower.png" 
             alt="flower" 
             className="absolute w-[20px] h-[20px] min-w-[25px] object-contain animate-spin-slow pointer-events-none z-30"
-            style={{ top: '77%', right: '38.37%' }} 
+            style={{ top: '77.3%', right: '38.37%' }} 
           />
         </div>
       </div>
@@ -351,7 +351,7 @@ export default function HeroSection() {
 
         {/* Pink Box Container */}
         <div 
-          className="w-[calc(100%-2rem)] max-w-[380px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[10px] shadow-lg"
+          className="w-[calc(100%-2rem)] max-w-[380px] h-[221px] bg-[#7A1F3A] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[10px] shadow-lg"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}

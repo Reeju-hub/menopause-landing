@@ -101,7 +101,7 @@ export default function CarePlanSection() {
 
         {/* Cream Card Container */}
         <div 
-          className="bg-white/20 backdrop-blur-md border border-white/30 rounded-[32px] max-w-[480px] w-full relative z-30 mt-4 md:mt-0 -mb-[100px] md:mb-0 overflow-hidden shadow-lg"
+          className="bg-[#FCF3E7] backdrop-blur-md border border-white/30 h-[370px] rounded-[32px] max-w-[480px] w-full relative z-30 mt-4 md:mt-0 -mb-[100px] md:mb-0 overflow-hidden shadow-lg"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
@@ -127,17 +127,17 @@ export default function CarePlanSection() {
               <div key={idx} className="w-full shrink-0 min-w-0 flex flex-col p-6 md:p-8">
                 
                 {/* Quote (pr-20 isliye taaki text arrows se overlap na ho) */}
-                <h3 className="text-[22px] md:text-[26px] pr-20 font-serif font-extrabold text-[#ffffff] leading-snug mb-6" style={{ fontFamily: "'Playfair Display', sans-serif" }}>
+                <h3 className="text-[22px] md:text-[26px] pr-20 font-serif font-extrabold text-[#323232] leading-snug mb-6" style={{ fontFamily: "'Playfair Display', sans-serif" }}>
                   {plan.quote}
                 </h3>
 
                 {/* Subtitle */}
-                <p className="text-[12px] md:text-sm uppercase tracking-[0.16em] font-bold text-[#ffffff] mb-4" style={{ fontFamily: "'Quicksand', sans-serif" }}>
+                <p className="text-[12px] md:text-sm uppercase tracking-[0.16em] font-bold text-[#323232] mb-4" style={{ fontFamily: "'Quicksand', sans-serif" }}>
                   YOUR CARE PLAN MAY INCLUDE
                 </p>
 
                 {/* 3 Cards Grid */}
-                <div className="grid grid-cols-3 gap-2 md:gap-3 w-full pb-2">
+                <div className="grid grid-cols-3 gap-2 md:gap-3 w-full pb-1">
                   {plan.items.map((item, itemIdx) => (
                     
                     <div key={itemIdx} className="bg-white rounded-[16px] md:rounded-[24px] overflow-hidden flex flex-col text-center shadow-sm w-full h-full min-w-0">

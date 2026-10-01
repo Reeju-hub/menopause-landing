@@ -79,53 +79,44 @@ export default function StepsSection() {
         
         {/* Header Frame */}
         <div className="flex flex-col items-center gap-[12px] w-full px-4 md:px-0">
-          <p className="force-quicksand text-[12px] font-bold tracking-[0.16em] text-[#FDF6EC] uppercase text-center w-full leading-[20px]">
+          <p className="force-MontierFlare font-medium text-[12px] font-bold tracking-[0.16em] text-[#FFFFFF] uppercase text-center w-full leading-[20px]">
             — HOW WE HELP —
           </p>
-          <h2 className="force-playfair text-[36px] md:text-[52px] font-bold text-[#FDF6EC] text-center md:leading-[69px] w-full max-w-4xl">
-            We provide you the integrated care you deserve in your midlife. <span className="text-[#FFB627] italic">As easy as 1, 2, 3....Go</span>
+          <h2 className="force-MontierFlare font-medium text-[36px] md:text-[52px] font-bold text-[#FFFFFF] text-center md:leading-[69px] w-full max-w-4xl">
+            We provide you the integrated care you deserve in your midlife. <span className="text-[#FFFFFF] italic">As easy as 1, 2, 3....Go</span>
           </h2>
         </div>
 
         {/* 2x2 Grid for Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[36px] w-full mt-4 px-0">
-          {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-start w-full gap-[12px] h-full">
-              
-              <span className="force-playfair text-[#FFB627] text-[36px] font-bold leading-[48px]">
-                {step.num}
-              </span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[36px] w-full mt-4 px-0">
+          {steps.map((step, index) => {
+            const isLastCard = index === 3;
 
-              <div 
-                className="w-full flex-1 rounded-[12px] p-[20px] flex flex-col items-start gap-[12px] backdrop-blur-md relative overflow-hidden"
-                style={{
-                  background: "linear-gradient(135deg, rgba(253, 246, 236, 0.25) 0%, rgba(253, 246, 236, 0.15) 100%)",
-                  boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(253, 246, 236, 0.4), inset 0 0 16px rgba(253, 246, 236, 0.1)"
-                }}
+            return (
+              <div
+                key={index}
+                className={`flex flex-col items-start w-full gap-[12px] h-full ${
+                  isLastCard ? 'md:col-span-3' : ''
+                }`}
               >
-                
-                {step.title && (
-                  <h4 className="force-quicksand text-[#FDF6EC] font-bold text-[18px] leading-[22px]">
-                    {step.title}
-                  </h4>
-                )}
+                <span className="force-playfair text-[#FFFFFF] text-[36px] font-bold leading-[48px]">
+                  {step.num}
+                </span>
 
-                <p className="force-quicksand text-[#FDF6EC] font-bold text-[16px] md:text-[20px] leading-[24px] md:leading-[28px]">
-                  {step.desc}
-                </p>
+                <div className="w-full flex-1 bg-[#FCF3E7] rounded-[12px] p-[20px] flex flex-col items-start gap-[12px] relative overflow-hidden shadow-lg">
+                  {step.title && (
+                    <h4 className="force-quicksand text-[#3D2C2C] font-bold text-[20px] leading-[22px]">
+                      {step.title}
+                    </h4>
+                  )}
 
-                {step.hasFlowers && (
-                  <div className="flex gap-[16px] items-center pt-3 mt-auto">
-                    <span className="text-[#FFB627] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
-                    <span className="text-[#AC0066] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
-                    <span className="text-[#FFB627] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
-                    <span className="text-[#AC0066] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
-                    <span className="text-[#FFB627] text-[32px] md:text-[40px] animate-spin-slow leading-none">✿</span>
-                  </div>
-                )}
+                  <p className="force-quicksand text-[#3D2C2C] font-bold text-[20px] md:text-[20px] leading-[24px] md:leading-[28px]">
+                    {step.desc}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

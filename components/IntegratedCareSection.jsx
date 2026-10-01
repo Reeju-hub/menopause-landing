@@ -105,15 +105,15 @@ export default function IntegratedCareSection() {
       <div className="relative z-10 w-full max-w-[1560px] px-0 md:px-[100px] flex flex-col mx-auto">
         
         <div className="flex flex-col items-start md:items-center text-left md:text-center gap-3 w-full mb-6 px-6 md:px-0">
-          <p className="text-[12px] md:text-[20px] font-bold tracking-[0.16em] uppercase text-[#FDF6EC]" style={{ fontFamily: "'Quicksand', sans-serif" }}>
+          <p className="text-[12px] md:text-[20px] font-bold tracking-[0.16em] uppercase text-[#3D2C2C]" style={{ fontFamily: "'Quicksand', sans-serif" }}>
             — HOW DO WE HELP —
           </p>
-          <h2 className="text-[36px] md:text-[52px] font-serif font-bold leading-tight md:leading-[69px] max-w-4xl text-white">
-            The integrated care you deserve in <span className="text-[#F5A623] italic font-bold">midlife.</span>
+          <h2 className="text-[36px] md:text-[52px] font-serif font-bold leading-tight md:leading-[69px] max-w-4xl text-[#3D2C2C]">
+            The integrated care you deserve in <span className="text-[#3D2C2C] italic font-bold">midlife.</span>
           </h2>
         </div>
 
-        <p className="text-white text-base md:text-[20px] leading-relaxed md:leading-[32px] font-medium max-w-5xl mb-14 text-left md:text-center mx-6 md:mx-auto">
+        <p className="text-[#3D2C2C] text-base md:text-[20px] leading-relaxed md:leading-[32px] font-medium max-w-5xl mb-14 text-left md:text-center mx-6 md:mx-auto">
           A space where women can access evidence-based guidance, meaningful conversations, and a supportive community while navigating perimenopause, menopause and healthy ageing. We help you understand what is changing, why it matters, and what you can do about it.
         </p>
 
@@ -138,10 +138,10 @@ export default function IntegratedCareSection() {
                   flippedCards[card.id] ? 'opacity-100 translate-y-0 z-20' : 'opacity-0 translate-y-4 -z-10 pointer-events-none'
                 }`}
               >
-                <h3 className="text-[#004D40] text-[22px] font-bold mb-3 font-serif leading-tight">
+                <h3 className="text-[#7A1F3A] text-[22px] font-bold mb-3 font-serif leading-tight">
                   {card.title}
                 </h3>
-                <p className="text-slate-700 text-[16px] leading-relaxed font-medium" style={{ fontFamily: "'Quicksand', sans-serif" }}>
+                <p className="text-[#7A1F3A] text-[16px] leading-relaxed font-medium" style={{ fontFamily: "'Quicksand', sans-serif" }}>
                   {card.desc}
                 </p>
               </div>
@@ -150,8 +150,8 @@ export default function IntegratedCareSection() {
                 onClick={() => toggleCard(card.id)}
                 className={`absolute bottom-5 right-5 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 z-30 shadow-md ${
                   flippedCards[card.id] 
-                    ? 'bg-[#004D40] text-white hover:bg-[#00332a]' 
-                    : 'bg-white/90 backdrop-blur-sm text-[#004D40] hover:bg-white'
+                    ? 'bg-[#7A1F3A] text-white hover:bg-[#7A1F3A]' 
+                    : 'bg-white/90 backdrop-blur-sm text-[#7A1F3A] hover:bg-white'
                 }`}
                 aria-label="Toggle details"
               >

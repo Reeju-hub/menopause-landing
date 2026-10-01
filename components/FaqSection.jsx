@@ -55,7 +55,7 @@ export default function FaqSection() {
 
   return (
     // YAHAN FIX KIYA HAI: md:px-12 ko hata kar md:px-[100px] apply kiya taaki baki page ke padding se match kare
-    <section className="w-full py-20 px-6 md:px-[100px] bg-[#9E0059] flex justify-center text-white">
+    <section className="w-full py-20 px-6 md:px-[100px] bg-[#7A1F3A] flex justify-center text-white">
       
       {/* YAHAN FIX KIYA HAI: max-w-[1000px] ko max-w-[1560px] kar diya taaki width consistency maintain rahe */}
       <div className="w-full max-w-[1560px] flex flex-col mx-auto">

@@ -5,7 +5,7 @@ export default function ImageDivider() {
     <div className="w-full">
       {/* Mobile wali lambi image */}
       <Image 
-        src="/banner-transition-mweb.jpg" 
+        src="/banner-transition-mweb1.jpg" 
         alt="Transition Banner" 
         width={768}
         height={1024}
@@ -17,7 +17,7 @@ export default function ImageDivider() {
       
       {/* Desktop wali chaudi image */}
       <Image 
-        src="/banner-transition-web.jpg" 
+        src="/banner-transition-web 1.jpg" 
         alt="Transition Banner" 
         width={1920}
         height={600}
