@@ -183,9 +183,7 @@ export default function HeroSection() {
 
       {/* --- DESKTOP Top Text & Button --- */}
       <div className="hidden md:flex relative z-30 flex-col items-center px-4 md:px-6">
-         <p className="force-quicksand text-[15px] font-bold tracking-[0.2em] text-[#1D3557] uppercase mb-2">
-           — WOMEN'S MIDLIFE HEALTH —
-         </p>
+         
 
          <h1 className="force-MontierFlare text-[52px] font-medium text-slate-900 leading-[1.15]">
             <span className="font-bold">Your midlife health: </span>
@@ -273,9 +271,7 @@ export default function HeroSection() {
         
         {/* Mobile Header Text */}
         <div className="flex flex-col items-center text-center px-4 mb-1 relative z-30">
-          <p className="force-quicksand text-[12px] font-bold tracking-[0.2em] text-[#1D3557] uppercase mb-2">
-            — WOMEN'S MIDLIFE HEALTH —
-          </p>
+         
           
           <h1 className="force-playfair text-[36px] font-bold text-slate-900 leading-[1.15]">
             <span className="font-bold">Your midlife health:</span><br />
