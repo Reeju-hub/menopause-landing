@@ -264,10 +264,10 @@ export default function HeroSection() {
       </div>
 
       {/* --- EXACT MOBILE VIEW --- */}
-      <div className="flex flex-col md:hidden w-full max-w-[600px] mx-auto relative z-20 mt-9 px-0">
+      <div className="flex flex-col md:hidden w-full max-w-[600px] mx-auto relative z-20 mt-7 px-0">
         
         {/* Mobile Header Text */}
-        <div className="flex flex-col items-center text-center px-4 mb-5 relative z-30">
+        <div className="flex flex-col items-center text-center px-4 mb-1 relative z-30">
           
           <h1 className="force-MontierFlare text-[36px] font-medium text-slate-900 leading-[1.15]">
             <span className="font-medium">Your midlife health:</span><br />
