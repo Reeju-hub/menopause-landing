@@ -103,9 +103,7 @@ export default function HeroSection() {
       <style dangerouslySetInnerHTML={{__html: `
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
         
-        .force-caveat { font-family: 'Caveat', cursive !important; }
-        .force-playfair { font-family: 'Playfair Display', serif !important; }
-        .force-quicksand { font-family: 'Quicksand', sans-serif !important; }
+        .force-MontierFlare { font-family: 'Montier Flare', serif !important; }
         
         @keyframes spin-slow {
           from { transform: rotate(0deg); }
@@ -186,7 +184,7 @@ export default function HeroSection() {
          
 
          <h1 className="force-MontierFlare text-[52px] font-medium text-slate-900 leading-[1.15]">
-            <span className="font-bold">Your midlife health: </span>
+            <span className="font-medium">Your midlife health: </span>
             <span className="force-MontierFlare text-[#FF4500] italic font-medium">
               Reimagined.
             </span>
@@ -196,8 +194,7 @@ export default function HeroSection() {
           href="https://wa.me/919008934945?text=Hi%20MenoEssence,%20I%20would%20like%20to%20book%20a%20discovery%20call!"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-block bg-[#004D40] text-white px-8 py-2.5 rounded-full font-bold text-[15px] hover:bg-[#00332A] transition shadow-sm text-center"
-          style={{ fontFamily: "'Quicksand', sans-serif" }}
+          className="hidden md:inline-block bg-[#004D40] text-white px-8 py-2.5 rounded-full font-medium text-[15px] hover:bg-[#00332A] transition shadow-sm text-center force-MontierFlare"
         >
           Book a discovery call
         </a>
@@ -273,16 +270,16 @@ export default function HeroSection() {
         <div className="flex flex-col items-center text-center px-4 mb-1 relative z-30">
           
           
-          <h1 className="force-playfair text-[36px] font-bold text-slate-900 leading-[1.15]">
-            <span className="font-bold">Your midlife health:</span><br />
-            <span className="force-playfair text-[#FF4500] italic font-bold">
+          <h1 className="force-MontierFlare text-[36px] font-medium text-slate-900 leading-[1.15]">
+            <span className="font-medium">Your midlife health:</span><br />
+            <span className="force-MontierFlare text-[#FF4500] italic font-medium">
               Reimagined.
             </span>
           </h1>
         </div>
 
-        {/* MOBILE HERO WRAPPER - Maintained relative z-10 */}
-        <div className="w-full relative z-10 translate-y-[75px] mb-[54px] -mt-[75px] [transform:translateZ(0)]">
+        {/* MOBILE HERO WRAPPER */}
+        <div className="w-full relative z-10 translate-y-[75px] mb-[6px] -mt-[75px] [transform:translateZ(0)]">
           
           {/* Inner Animated Container */}
           <div className="w-full flex justify-center relative animate-mobile-dynamic">
@@ -338,69 +335,119 @@ export default function HeroSection() {
             />
           </div>
         </div>
-        
         {/* BACKGROUND IMAGE CONTAINER - (Fix: Maintained z-20, Added Glass Effect classes for Figma look, and optimized image rendering quality) */}
-        <div ref={bgRef} className="w-full relative z-20 -mt-[50%] aspect-[6/5] pointer-events-none [transform:translateZ(0)]">
+        <div ref={bgRef} className="w-full relative z-20 -mt-[25%] aspect-[6/5] pointer-events-none [transform:translateZ(0)]">
           <div 
             key={`bounce-${bounceKey}`} 
-            className={`absolute inset-0 bg-no-repeat right-[0px] mt-[12%] aspect-[4/5] left-[0px] bg-center  rounded-t-[40px] rounded-b-[50px] ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
+            className={`absolute inset-0 bg-no-repeat bg-center bg-white/20 backdrop-blur-md rounded-t-[40px] ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
             style={{ 
               backgroundImage: `url('/gradient-bg.png')`, 
-              backgroundSize: '131% 157%',
-              backdropFilter: 'blur(35px)',
-              ImageRendering: 'quality(100%)',
+              backgroundSize: '100% 100%',
+              imageRendering: '-webkit-optimize-contrast'
             }}
           ></div>
         </div>
 
+
         {/* Pink Box Container */}
-        <div 
+
+        <div
+
           className="w-[calc(100%-2rem)] max-w-[380px] h-[221px] bg-[#AC0066] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[10px] shadow-lg"
+
           onTouchStart={onTouchStart}
+
           onTouchMove={onTouchMove}
+
           onTouchEnd={onTouchEnd}
+
         >
-          
+
+         
+
           {/* Top Text & Flower Block */}
+
           <div className="flex flex-col items-center gap-[12px] w-full max-w-[310px] h-[101px] pointer-events-none">
-            
+
+           
+
             {/* Title with Flowers */}
+
             <h3 className="flex flex-row justify-center items-center gap-[12px] w-full h-[45px]">
+
               <img src="/flower.png" alt="flower" className="w-[20px] h-[20px] object-contain animate-spin-slow" />
+
               <span className="force-caveat font-bold text-[#FFFFFF] text-[34px] sm:text-[36px] leading-[45px] text-center whitespace-nowrap">
+
                 You're not alone
+
               </span>
+
               <img src="/flower.png" alt="flower" className="w-[20px] h-[20px] object-contain animate-spin-slow" />
+
             </h3>
 
+
+
             {/* Slider Description Text */}
-            <p 
+
+            <p
+
               key={activeIndex}
+
               className="force-quicksand font-bold text-[#FFFFFF] text-[15.5px] sm:text-[16px] leading-[22px] text-center w-full animate-fadeIn"
+
             >
+
               {slides[activeIndex].text}
+
             </p>
 
+
+
           </div>
 
+
+
           {/* Indicator Dots */}
+
           <div className="flex flex-row justify-center items-center gap-[12px] h-[8px]">
+
             {slides.map((_, index) => (
+
               <div
+
                 key={index}
+
                 onClick={() => setActiveIndex(index)}
+
                 className={`transition-all duration-300 rounded-[4px] cursor-pointer ${
+
                   activeIndex === index
+
                     ? "w-[64px] h-[8px] bg-[#FF7A21]"
+
                     : "w-[16px] h-[8px] bg-[rgba(255,122,33,0.6)]"
+
                 }`}
+
               ></div>
+
             ))}
+
           </div>
+
+
 
         </div>
 
+
+
       </div>
+
     </section>
+
   );
-}
+
+} 
+
