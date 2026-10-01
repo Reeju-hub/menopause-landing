@@ -242,7 +242,7 @@ export default function HeroSection() {
           </div>
 
           <Image
-            src="/image_1a03b4.jpg"
+            src="/full-hero-section.png"
             alt="Hero Section"
             width={1920}
             height={1080}
@@ -285,8 +285,8 @@ export default function HeroSection() {
           </h1>
         </div>
 
-        {/* MOBILE HERO WRAPPER - (Fix: Changed to z-10 so it stays BEHIND the gradient background) */}
-        <div className="w-full relative z-10 translate-y-[75px] mb-[12px] -mt-[75px] [transform:translateZ(0)]">
+        {/* MOBILE HERO WRAPPER - Maintained relative z-10 */}
+        <div className="w-full relative z-10 translate-y-[75px] mb-[54px] -mt-[75px] [transform:translateZ(0)]">
           
           {/* Inner Animated Container */}
           <div className="w-full flex justify-center relative animate-mobile-dynamic">
@@ -343,14 +343,15 @@ export default function HeroSection() {
           </div>
         </div>
         
-        {/* BACKGROUND IMAGE CONTAINER - (Fix: Changed to z-20 so it renders ON TOP of the sharp cut of the hero image) */}
+        {/* BACKGROUND IMAGE CONTAINER - (Fix: Maintained z-20, Added Glass Effect classes for Figma look, and optimized image rendering quality) */}
         <div ref={bgRef} className="w-full relative z-20 -mt-[25%] aspect-[6/5] pointer-events-none [transform:translateZ(0)]">
           <div 
             key={`bounce-${bounceKey}`} 
-            className={`absolute inset-0 bg-no-repeat bg-center ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
+            className={`absolute inset-0 bg-no-repeat bg-center bg-white/20 backdrop-blur-md rounded-t-[40px] ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
             style={{ 
               backgroundImage: `url('/gradient-bg.png')`, 
-              backgroundSize: '100% 100%'
+              backgroundSize: '100% 100%',
+              imageRendering: '-webkit-optimize-contrast'
             }}
           ></div>
         </div>
