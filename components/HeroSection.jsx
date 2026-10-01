@@ -344,7 +344,7 @@ export default function HeroSection() {
         </div>
         
         {/* BACKGROUND IMAGE CONTAINER - (Fix: Maintained z-20, Added Glass Effect classes for Figma look, and optimized image rendering quality) */}
-        <div ref={bgRef} className="w-full relative z-20 -mt-[25%] aspect-[6/5] pointer-events-none [transform:translateZ(0)]">
+        <div ref={bgRef} className="w-full relative z-20 -mt-[45%] aspect-[6/5] pointer-events-none [transform:translateZ(0)]">
           <div 
             key={`bounce-${bounceKey}`} 
             className={`absolute inset-0 bg-no-repeat bg-center bg-white/20 backdrop-blur-md rounded-t-[40px] ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
