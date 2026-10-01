@@ -264,10 +264,10 @@ export default function HeroSection() {
       </div>
 
       {/* --- EXACT MOBILE VIEW --- */}
-      <div className="flex flex-col md:hidden w-full max-w-[600px] mx-auto relative z-20 mt-1 px-0">
+      <div className="flex flex-col md:hidden w-full max-w-[600px] mx-auto relative z-20 mt-9 px-0">
         
         {/* Mobile Header Text */}
-        <div className="flex flex-col items-center text-center px-4 mb-1 relative z-30">
+        <div className="flex flex-col items-center text-center px-4 mb-9 relative z-30">
           
           
           <h1 className="force-MontierFlare text-[36px] font-medium text-slate-900 leading-[1.15]">
@@ -279,7 +279,7 @@ export default function HeroSection() {
         </div>
 
         {/* MOBILE HERO WRAPPER */}
-        <div className="w-full relative z-10 translate-y-[75px] mb-[6px] -mt-[75px] [transform:translateZ(0)]">
+        <div className="w-full relative z-10 translate-y-[190px] mb-[6px] -mt-[75px] [transform:translateZ(0)]">
           
           {/* Inner Animated Container */}
           <div className="w-full flex justify-center relative animate-mobile-dynamic">
