@@ -337,28 +337,29 @@ export default function HeroSection() {
         </div>
         
         {/* BACKGROUND IMAGE CONTAINER */}
-        {/* YAHAN FIX KIYA HAI: Safari bug handle karne ke liye Blur aur Image ko 2 alag layers mein daal diya hai */}
-        <div ref={bgRef} className="w-full relative z-20 -mt-[75%] aspect-[5/5] pointer-events-none [transform:translateZ(0)]">
+        <div ref={bgRef} className="w-full relative z-20 -mt-[75%] aspect-[5/5] pointer-events-none">
           <div 
             key={`bounce-${bounceKey}`} 
-            className={`absolute inset-0 right-[0px] mt-[12%] left-[0px] rounded-t-[40px] ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
+            className={`absolute inset-0 mt-[12%] rounded-t-[40px] overflow-hidden ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
+            style={{ 
+              // YAHAN FIX KIYA HAI: Safari anti-aliasing fixes taaki scale animation mein image blur na ho
+              WebkitBackfaceVisibility: 'hidden',
+              WebkitTransform: 'translate3d(0,0,0)',
+              willChange: 'transform'
+            }}
           >
-            {/* 1. Alag se Backdrop Blur Layer Safari ke liye */}
-            <div 
-              className="absolute inset-0 z-0 rounded-t-[40px]" 
-              style={{
-                backdropFilter: 'blur(35px)',
-                WebkitBackdropFilter: 'blur(35px)'
-              }}
-            ></div>
+            {/* Layer 1: Backdrop Blur */}
+            <div className="absolute inset-0 backdrop-blur-[35px] [-webkit-backdrop-filter:blur(35px)] z-0"></div>
             
-            {/* 2. Image Layer (Bina blur filter lagaye) */}
+            {/* Layer 2: Image background */}
+            {/* YAHAN FIX KIYA HAI: 100% 100% lagaya taaki container width aur height completely edge-to-edge fit kare */}
             <div 
-              className="absolute inset-0 z-10 bg-no-repeat rounded-t-[40px]"
-              style={{ 
-                backgroundImage: `url('/gradient-bg.png')`, 
-                backgroundSize: 'cover',
-                backgroundPosition: 'top center'
+              className="absolute inset-0 z-10"
+              style={{
+                backgroundImage: `url('/gradient-bg.png')`,
+                backgroundSize: '100% 100%', 
+                backgroundPosition: 'top center',
+                backgroundRepeat: 'no-repeat'
               }}
             ></div>
           </div>
