@@ -183,8 +183,8 @@ export default function HeroSection() {
       {/* --- DESKTOP Top Text & Button --- */}
       <div className="hidden md:flex relative z-30 flex-col items-center px-4 md:px-6">
          <h1 className="text-slate-900 leading-[1.15]">
-            <span className="font-cormorant font-bold text-[52px]">Your midlife health: </span>
-            <span className="font-cormorant font-bold italic text-[52px] text-[#FF4500]">
+            <span className="font-cormorant font-bold text-[36px]">Your midlife health: </span>
+            <span className="font-cormorant font-bold italic text-[36px] text-[#FF4500]">
               Reimagined.
             </span>
           </h1>
