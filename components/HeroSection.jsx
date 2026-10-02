@@ -326,18 +326,25 @@ export default function HeroSection() {
               willChange: 'transform'
             }}
           >
-            {/* Yahan translateY(30px) se aap image aur blur effect ko apne mutabiq aur upar ya niche khiska sakte hain */}
+            {/* Layer 1: Background Color aur Backdrop Filter (Ab yeh pehle hai taaki peeche rahe) */}
             <div 
-              className="absolute inset-0 w-full h-full rounded-t-[40px] overflow-hidden"
+              className="absolute inset-0 w-full h-full rounded-t-[40px]"
+              style={{
+                backgroundColor: 'rgba(245, 175, 149, 0.45)', // Android Chrome fallback color
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                transform: 'translateY(33px)' // Yeh color aur blur ko alag se neeche khiska dega
+              }}
+            ></div>
+
+            {/* Layer 2: Background Image (Ab yeh baad mein hai taaki image bilkul upar/saaf dikhe) */}
+            <div 
+              className="absolute inset-0 w-full h-full rounded-t-[40px]"
               style={{
                 backgroundImage: "url('/gradient-bg.svg')",
                 backgroundSize: '100% 100%',
                 backgroundPosition: 'top center',
-                backgroundRepeat: 'no-repeat',
-                backgroundColor: 'rgba(245, 175, 149, 0.45)',
-                backdropFilter: 'blur(20px)',
-                WebkitBackdropFilter: 'blur(20px)',
-                transform: 'translateY(30px)' // Is value ko aap apne hisab se adjust kar sakte hain (jaise 20px, 40px)
+                backgroundRepeat: 'no-repeat'
               }}
             ></div>
           </div>
