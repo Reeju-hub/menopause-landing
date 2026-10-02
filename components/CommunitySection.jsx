@@ -149,7 +149,7 @@ export default function CommunitySection() {
           href="https://wa.me/919008934945?text=Hi%20MenoEssence,%20I%20would%20like%20to%20book%20a%20discovery%20call!"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#FFB627] text-[#323232] w-full max-w-[380px] py-3.5 rounded-full font-bold text-[15px] hover:bg-[#ffa200] transition shadow-md text-center inline-block"
+          className="bg-[#FFB627] text-[#323232] w-full max-w-[380px] py-3.5 rounded-full font-bold text-[20px] hover:bg-[#ffa200] transition shadow-md text-center inline-block"
           style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
           Book a discovery call
