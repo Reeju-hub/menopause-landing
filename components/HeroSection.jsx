@@ -326,15 +326,12 @@ export default function HeroSection() {
               willChange: 'transform'
             }}
           >
-            {/* YAHAN FIX KIYA HAI: Backdrop filter ko hata kar sirf SVG background rakha hai taaki koi double blur ya extra line upar na dikhe, aur ye pink container ke sath bilkul flush rahega */}
+            {/* Pure CSS Glass/Gradient Effect - Safari Friendly & Smooth */}
             <div 
               className="absolute inset-0 w-full h-full rounded-t-[40px]"
               style={{
-                
-                backgroundImage: "url('/gradient-bgg.svg')",
-                backgroundSize: '100% 100%',
-                backgroundPosition: 'top center',
-                backgroundRepeat: 'no-repeat'
+                background: "linear-gradient(180deg, rgba(245, 143, 106, 0.9) 0%, rgba(253, 230, 211, 0.7) 45%, rgba(255, 255, 255, 0.95) 100%)",
+                boxShadow: "inset 0 1px 0 rgba(255, 255, 255, 0.5)"
               }}
             ></div>
           </div>
