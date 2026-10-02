@@ -337,17 +337,31 @@ export default function HeroSection() {
         </div>
         
         {/* BACKGROUND IMAGE CONTAINER */}
-        {/* YAHAN FIX KIYA HAI: inline style mein 'backgroundSize' ko 'cover' aur 'backgroundPosition' ko 'top center' set kiya hai */}
+        {/* YAHAN FIX KIYA HAI: Safari bug handle karne ke liye Blur aur Image ko 2 alag layers mein daal diya hai */}
         <div ref={bgRef} className="w-full relative z-20 -mt-[75%] aspect-[5/5] pointer-events-none [transform:translateZ(0)]">
           <div 
             key={`bounce-${bounceKey}`} 
-            className={`absolute inset-0 bg-no-repeat right-[0px] mt-[12%]  left-[0px] rounded-t-[40px]  ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
-            style={{ 
-              backgroundImage: `url('/gradient-bg.png')`, 
-              backgroundSize: 'cover',
-              backgroundPosition: 'top center'
-            }}
-          ></div>
+            className={`absolute inset-0 right-[0px] mt-[12%] left-[0px] rounded-t-[40px] ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
+          >
+            {/* 1. Alag se Backdrop Blur Layer Safari ke liye */}
+            <div 
+              className="absolute inset-0 z-0 rounded-t-[40px]" 
+              style={{
+                backdropFilter: 'blur(35px)',
+                WebkitBackdropFilter: 'blur(35px)'
+              }}
+            ></div>
+            
+            {/* 2. Image Layer (Bina blur filter lagaye) */}
+            <div 
+              className="absolute inset-0 z-10 bg-no-repeat rounded-t-[40px]"
+              style={{ 
+                backgroundImage: `url('/gradient-bg.png')`, 
+                backgroundSize: 'cover',
+                backgroundPosition: 'top center'
+              }}
+            ></div>
+          </div>
         </div>
 
         {/* Pink Box Container */}
