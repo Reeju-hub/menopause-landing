@@ -321,24 +321,35 @@ export default function HeroSection() {
           <div 
             key={`bounce-${bounceKey}`} 
             className={`absolute inset-0 mt-[12%] rounded-t-[40px] overflow-hidden ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
+            style={{ 
+              WebkitTransform: 'translateZ(0)',
+              willChange: 'transform'
+            }}
           >
-            {/* Layer 1: Backdrop Blur (Safari Safari Hardware Accelerated Fix) */}
-            {/* YAHAN FIX KIYA HAI: bg-white/[0.01] aur translate3d jisse peeche ka area 100% force blur hoga iPhone par */}
+            {/* Layer 1: Backdrop Blur (Top section ke glass effect ke liye) */}
             <div 
-              className="absolute inset-0 z-0 bg-white/[0.01]" 
+              className="absolute inset-0 z-0 bg-white/5" 
               style={{ 
-                backdropFilter: 'blur(35px)', 
-                WebkitBackdropFilter: 'blur(35px)',
-                transform: 'translate3d(0,0,0)'
+                backdropFilter: 'blur(30px)', 
+                WebkitBackdropFilter: 'blur(30px)'
               }}
             ></div>
             
-            {/* Layer 2: SVG Background (Never blurs, never stretches) */}
+            {/* Layer 2: White Blocker (Neeche ke overflow blobs ko completely chupane ke liye) */}
+            {/* Ye fader top se 15% transparent rahega aur uske baad solid white ho jayega */}
+            <div 
+              className="absolute inset-0 z-0"
+              style={{ 
+                background: 'linear-gradient(to bottom, rgba(255,255,255,0) 15%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 100%)' 
+              }}
+            ></div>
+
+            {/* Layer 3: SVG Background (Gradient Overlay) */}
             <div 
               className="absolute inset-0 z-10" 
               style={{ 
                 backgroundImage: "url('/gradient-bg.svg')",
-                backgroundSize: 'cover',
+                backgroundSize: '100% 100%', // Isse rounded box cover hoga bina kate
                 backgroundPosition: 'top center',
                 backgroundRepeat: 'no-repeat'
               }} 
