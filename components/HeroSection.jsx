@@ -326,11 +326,21 @@ export default function HeroSection() {
               willChange: 'transform'
             }}
           >
-            {/* YAHAN FIX KIYA HAI: Safari ke blur bug ko door karne ke liye pure CSS gradient overlay aur SVG background ko perfectly combine kiya hai taaki bilkul reference image jaisa smooth glass gradient aaye */}
+            {/* Layer 1: True Backdrop Blur for Safari / Browsers */}
             <div 
-              className="absolute inset-0 w-full h-full rounded-t-[40px]"
+              className="absolute inset-0 z-0"
               style={{
-                backgroundImage: "url('/gradient-bg.svg'), linear-gradient(180deg, rgba(232, 122, 93, 0.4) 0%, rgba(252, 243, 231, 0.95) 70%, rgba(255, 255, 255, 1) 100%)",
+                backdropFilter: 'blur(30px)',
+                WebkitBackdropFilter: 'blur(30px)',
+                backgroundColor: 'rgba(255, 255, 255, 0.25)'
+              }}
+            ></div>
+
+            {/* Layer 2: SVG Background Image perfectly aligned */}
+            <div 
+              className="absolute inset-0 z-10 w-full h-full rounded-t-[40px]"
+              style={{
+                backgroundImage: "url('/gradient-bg.svg')",
                 backgroundSize: '100% 100%',
                 backgroundPosition: 'top center',
                 backgroundRepeat: 'no-repeat'
