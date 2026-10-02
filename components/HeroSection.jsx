@@ -334,6 +334,7 @@ export default function HeroSection() {
                 backgroundSize: '100% 100%',
                 backgroundPosition: 'top center',
                 backgroundRepeat: 'no-repeat',
+                backgroundColor: 'rgba(245, 175, 149, 0.45)',
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
                 transform: 'translateY(30px)' // Is value ko aap apne hisab se adjust kar sakte hain (jaise 20px, 40px)
