@@ -114,7 +114,7 @@ export default function HeroSection() {
           animation: spin-slow 6s linear infinite;
         }
 
-        /* Slide-Up animation lagaya taaki Safari blur bug na aaye */
+        /* Slide-Up animation */
         @keyframes popup-bg {
           0% { transform: translateY(40px); opacity: 0; }
           100% { transform: translateY(0); opacity: 1; }
@@ -326,16 +326,9 @@ export default function HeroSection() {
               willChange: 'transform'
             }}
           >
-            {/* Layer 1: Backdrop Blur */}
-            <div 
-              className="absolute inset-0 z-0 bg-white/5" 
-              style={{ 
-                backdropFilter: 'blur(30px)', 
-                WebkitBackdropFilter: 'blur(30px)'
-              }}
-            ></div>
+            {/* YAHAN FIX KIYA HAI: Faltu blur layer (Layer 1) ko poori tarah hata diya hai taaki koi double box ya extra border na dikhe */}
             
-            {/* Layer 2: Clean SVG Background (Ab isme extra blobs nahi hain, toh ye bilkul clear aur crisp dikhegi) */}
+            {/* Clean SVG Background (Ab extra blobs hatne ke baad ye bilkul clear aur perfect dikhegi) */}
             <div 
               className="absolute inset-0 z-10" 
               style={{ 
