@@ -330,7 +330,7 @@ export default function HeroSection() {
             <div 
               className="absolute inset-0 w-full h-full rounded-t-[40px]"
               style={{
-                backgroundImage: "url('/gradient-bg.svg')",
+                backgroundImage: "url('/gradient-bgg.svg')",
                 backgroundSize: '100% 100%',
                 backgroundPosition: 'top center',
                 backgroundRepeat: 'no-repeat'
