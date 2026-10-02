@@ -23,11 +23,11 @@ export default function Home() {
       <ImageDivider />
       
       {/* Text Section (Exact Figma Match for Safari & Desktop) */}
-      {/* YAHAN FIX KIYA HAI: Grid hata kar Flex lagaya, items-start kiya, max-width badhayi aur exact Figma gaps (100px padding, 60px gap) set kiye */}
-      <section className="py-16 md:py-24 px-6 md:px-[100px] max-w-[1560px] mx-auto flex flex-col md:flex-row items-center md:items-start justify-center gap-8 md:gap-[60px] min-w-0">
+      {/* YAHAN FIX KIYA HAI: flex-col ke sath items-start aur left div me w-full lagaya taaki mobile (iPhone Safari) margin barabar rahe */}
+      <section className="py-16 md:py-24 px-6 md:px-[100px] max-w-[1560px] mx-auto flex flex-col md:flex-row items-start justify-center gap-8 md:gap-[60px] min-w-0">
         
         {/* Left Column (Exact 580px for Desktop) */}
-        <div className="min-w-0 md:w-[580px] shrink-0">
+        <div className="w-full min-w-0 md:w-[580px] shrink-0">
           
           <p
             className="text-[#0B306F] uppercase font-bold tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.16em] text-[12px] sm:text-[12px] md:text-[16px] mb-4 whitespace-nowrap block"

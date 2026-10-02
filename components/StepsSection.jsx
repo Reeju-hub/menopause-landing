@@ -76,15 +76,17 @@ export default function StepsSection() {
 
       {/* Content Container */}
       {/* YAHAN FIX KIYA HAI: max-w-[1560px] kiya taaki Home.js ke alignment se properly sync ho */}
-      <div className="relative z-10 w-full max-w-[1560px] mx-auto flex flex-col items-center gap-[24px]">
+      <div className="relative z-10 w-full max-w-[1560px] mx-auto flex flex-col items-center md:items-start gap-[24px]">
         
         {/* Header Frame */}
-        <div className="flex flex-col items-center gap-[12px] w-full px-4 md:px-0">
-          <p className="force-cormorant font-medium text-[12px] font-bold tracking-[0.16em] text-[#FFFFFF] uppercase text-center w-full leading-[20px]">
+        {/* YAHAN FIX KIYA HAI: md:items-center aur md:text-center lagaya desktop view ke liye */}
+        <div className="flex flex-col items-start md:items-center gap-[12px] w-full px-4 md:px-0">
+          <p className="force-cormorant font-medium text-[12px] font-bold tracking-[0.16em] text-[#FFFFFF] uppercase text-left md:text-center w-full leading-[20px]">
             — HOW WE HELP —
           </p>
-          <h2 className="force-cormorant font-medium text-[36px] md:text-[52px] font-bold text-[#FFFFFF] text-center md:leading-[69px] w-full max-w-4xl">
-            We provide you the integrated care you deserve in your midlife. <span className="text-[#FFFFFF] italic">As easy as 1, 2, 3....Go</span>
+          <h2 className="force-cormorant font-medium text-[36px] md:text-[52px] font-bold text-[#FFFFFF] text-left md:text-center md:leading-[69px] w-full max-w-4xl">
+            We provide you the integrated care you deserve in your midlife.<br />
+            <span className="text-[#FFFFFF] italic">As easy as 1, 2, 3....Go</span>
           </h2>
         </div>
 

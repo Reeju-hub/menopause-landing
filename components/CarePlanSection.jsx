@@ -104,8 +104,9 @@ export default function CarePlanSection() {
         </h2>
 
         {/* Cream Card Container */}
+        {/* YAHAN FIX KIYA HAI: h-[370px] ko hata kar h-auto md:h-[370px] kiya gaya hai Safari padding issue solve karne ke liye */}
         <div 
-          className="bg-[#FCF3E7] backdrop-blur-md border border-white/30 h-[370px] rounded-[32px] max-w-[480px] w-full relative z-30 mt-4 md:mt-0 -mb-[100px] md:mb-0 overflow-hidden shadow-lg"
+          className="bg-[#FCF3E7] backdrop-blur-md border border-white/30 h-auto md:h-[370px] rounded-[32px] max-w-[480px] w-full relative z-30 mt-4 md:mt-0 -mb-[100px] md:mb-0 overflow-hidden shadow-lg"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}

@@ -40,7 +40,7 @@ export default function IntegratedCareSection() {
       id: 2,
       image: "/video-thumb-2.jpg",
       imgClass: "object-left object-cover scale-[1.02]",
-      title: "Mood & Emotional Wellbeing",
+      title: "Emotional Wellbeing",
       desc: "Mood changes, irritability, overwhelm, anxiety, or a quiet sense of not feeling like yourself can all be part of the menopausal transition. We help you understand these changes and support your emotional wellbeing with evidence-based approaches."
     },
     {
@@ -61,7 +61,7 @@ export default function IntegratedCareSection() {
       id: 5,
       image: "/video-thumb-5.jpg",
       imgClass: "object-left object-cover scale-[1.02]",
-      title: "Brain Fog & Memory",
+      title: "Physiological changes",
       desc: "Forgetting names, losing your train of thought, difficulty concentrating, or feeling mentally slower than usual can be unsettling. These experiences are common during perimenopause and deserve understanding, not dismissal."
     },
     {
@@ -82,7 +82,7 @@ export default function IntegratedCareSection() {
       id: 8,
       image: "/video-thumb-8.jpg",
       imgClass: "object-left object-cover scale-[1.02]",
-      title: "Healthy Ageing",
+      title: "Skin & Hair",
       desc: "Midlife is an opportunity to invest in your future health. From bone health and cardiovascular wellbeing to cognitive resilience and vitality, we focus on helping women age with strength, confidence, and purpose."
     }
   ];

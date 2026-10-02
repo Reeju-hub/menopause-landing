@@ -337,15 +337,17 @@ export default function HeroSection() {
         </div>
         
         {/* BACKGROUND IMAGE CONTAINER */}
+        {/* YAHAN FIX KIYA HAI: inline style mein 'backgroundSize' ko 'cover' aur 'backgroundPosition' ko 'top center' set kiya hai */}
         <div ref={bgRef} className="w-full relative z-20 -mt-[75%] aspect-[5/5] pointer-events-none [transform:translateZ(0)]">
           <div 
             key={`bounce-${bounceKey}`} 
-            className={`absolute inset-0 bg-no-repeat right-[0px] mt-[12%]  left-[0px] bg-center  rounded-t-[40px]  ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
+            className={`absolute inset-0 bg-no-repeat right-[0px] mt-[12%]  left-[0px] rounded-t-[40px]  ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
             style={{ 
               backgroundImage: `url('/gradient-bg.png')`, 
-              backgroundSize: '100% 100%',
-              backdropFilter: 'blur(35px)',
-              ImageRendering: 'quality(100%)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'top center',
+              WebkitBackdropFilter: 'blur(35px)',
+              backdropFilter: 'blur(35px)'
             }}
           ></div>
         </div>
