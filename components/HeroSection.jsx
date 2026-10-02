@@ -333,7 +333,7 @@ export default function HeroSection() {
                 backgroundColor: 'rgba(245, 175, 149, 0.45)', // Android Chrome fallback color
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
-                transform: 'translateY(33px)' // Yeh color aur blur ko alag se neeche khiska dega
+                transform: 'translateY(28px)' // Yeh color aur blur ko alag se neeche khiska dega
               }}
             ></div>
 
