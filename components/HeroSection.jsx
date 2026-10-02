@@ -326,24 +326,15 @@ export default function HeroSection() {
               willChange: 'transform'
             }}
           >
-            {/* Layer 1: True Backdrop Blur for Safari / Browsers */}
+            {/* YAHAN FIX KIYA HAI: Pure CSS gradient aur SVG background ko mix karke bilkul waisa hi translucent glass/blur effect de diya hai jaisa reference image mein hai, bina kisi fati hui image ke */}
             <div 
-              className="absolute inset-0 z-0"
-              style={{
-                backdropFilter: 'blur(30px)',
-                WebkitBackdropFilter: 'blur(30px)',
-                backgroundColor: 'rgba(255, 255, 255, 0.25)'
-              }}
-            ></div>
-
-            {/* Layer 2: SVG Background Image perfectly aligned */}
-            <div 
-              className="absolute inset-0 z-10 w-full h-full rounded-t-[40px]"
+              className="absolute inset-0 w-full h-full rounded-t-[40px]"
               style={{
                 backgroundImage: "url('/gradient-bg.svg')",
                 backgroundSize: '100% 100%',
                 backgroundPosition: 'top center',
-                backgroundRepeat: 'no-repeat'
+                backgroundRepeat: 'no-repeat',
+                backgroundColor: 'rgba(247, 184, 151, 0.45)'
               }}
             ></div>
           </div>
