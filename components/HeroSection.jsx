@@ -296,7 +296,7 @@ export default function HeroSection() {
               <div className="absolute top-[12%] left-[40%] w-[20px] h-[20px] bg-[#FF4500] rounded-[50%_50%_70%_30%/30%_70%_50%_50%] animate-[blob-float-2_14s_ease-in-out_infinite] z-0 pointer-events-none"></div>
               <div className="absolute top-[5%] left-[75%] w-[12px] h-[12px] bg-[#FF4500] rounded-[70%_30%_50%_50%/70%_30%_70%_30%] animate-[blob-float-3_12s_ease-in-out_infinite] z-0 pointer-events-none"></div>
               <div className="absolute top-[28%] left-[70%] w-[26px] h-[26px] bg-[#FF4500] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] animate-[blob-float-4_17s_ease-in-out_infinite] z-0 pointer-events-none"></div>
-              <div className="absolute top-[18%] left-[90%] w-[14px] h-[14px] bg-[#FF4500] rounded-[60%_40%_30%_70%/50%_60%_40%_50%] animate-[blob-float-5_13s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+D              <div className="absolute top-[18%] left-[90%] w-[14px] h-[14px] bg-[#FF4500] rounded-[60%_40%_30%_70%/50%_60%_40%_50%] animate-[blob-float-5_13s_ease-in-out_infinite] z-0 pointer-events-none"></div>
               <div className="absolute top-[35%] left-[30%] w-[18px] h-[18px] bg-[#FF4500] rounded-[50%_50%_70%_30%/30%_70%_50%_50%] animate-[blob-float-6_16s_ease-in-out_infinite] z-0 pointer-events-none"></div>
               <div className="absolute top-[32%] left-[65%] w-[22px] h-[22px] bg-[#FF4500] rounded-[70%_30%_50%_50%/70%_30%_70%_30%] animate-[blob-float-1_12s_ease-in-out_infinite] z-0 pointer-events-none"></div>
               <div className="absolute top-[20%] left-[5%] w-[10px] h-[10px] bg-[#FF4500] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] animate-[blob-float-2_9s_ease-in-out_infinite] z-0 pointer-events-none"></div>
@@ -326,17 +326,17 @@ export default function HeroSection() {
               willChange: 'transform'
             }}
           >
-            {/* YAHAN FIX KIYA HAI: Backdrop blur ko seedha SVG container ke andar integrate kar diya hai taaki koi alag se extra box ya border na bane */}
+            {/* YAHAN FIX KIYA HAI: Backdrop blur ko SVG ke andar dene ke bajaye ek single clean wrapper mein rakha hai jisme overflow hidden aur border radius perfectly locked hain */}
             <div 
-              className="absolute inset-0 z-10" 
-              style={{ 
+              className="absolute inset-0 w-full h-full rounded-t-[40px] overflow-hidden"
+              style={{
                 backgroundImage: "url('/gradient-bg.svg')",
                 backgroundSize: '100% 100%',
                 backgroundPosition: 'top center',
                 backgroundRepeat: 'no-repeat',
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)'
-              }} 
+              }}
             ></div>
           </div>
         </div>
