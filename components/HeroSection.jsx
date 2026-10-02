@@ -326,16 +326,14 @@ export default function HeroSection() {
               willChange: 'transform'
             }}
           >
-            {/* YAHAN FIX KIYA HAI: SVG background ko aur blur ko ek hi single layer mein merge kar diya hai taaki koi extra line ya double border upar na dikhe, aur ye pink/maroon container box ke sath bilkul chipka rahega */}
+            {/* YAHAN FIX KIYA HAI: Backdrop filter ko hata kar sirf SVG background rakha hai taaki koi double blur ya extra line upar na dikhe, aur ye pink container ke sath bilkul flush rahega */}
             <div 
               className="absolute inset-0 w-full h-full rounded-t-[40px]"
               style={{
                 backgroundImage: "url('/gradient-bg.svg')",
                 backgroundSize: '100% 100%',
                 backgroundPosition: 'top center',
-                backgroundRepeat: 'no-repeat',
-                backdropFilter: 'blur(25px)',
-                WebkitBackdropFilter: 'blur(25px)'
+                backgroundRepeat: 'no-repeat'
               }}
             ></div>
           </div>
