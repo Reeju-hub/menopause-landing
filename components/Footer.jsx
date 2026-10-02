@@ -48,12 +48,10 @@ export default function Footer() {
         
         {/* Top Section: Logo & Brand Text */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left mb-10 md:mb-16">
-          <Image
+          <img
             src="/logo.svg" 
             alt="MenoEssence Logo" 
-            width={180}
-            height={45}
-            className="h-8 md:h-10 w-auto mb-4"
+            className="w-[180px] md:w-[220px] h-auto mb-4 object-contain"
           />
           <p 
             className="text-slate-600 text-[14px] md:text-[15px] font-medium leading-relaxed max-w-[320px]" 

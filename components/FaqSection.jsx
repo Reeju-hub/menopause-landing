@@ -108,7 +108,7 @@ export default function FaqSection() {
 
                 {/* Answer (Only visible if isOpen is true) */}
                 {isOpen && (
-                  <div className="pb-6 text-white/80 text-base md:text-lg pr-12 font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                  <div className="pb-6 text-white/80 text-[18px] md:text-lg pr-12 font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                     {faq.answer}
                   </div>
                 )}
