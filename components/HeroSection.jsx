@@ -277,7 +277,7 @@ export default function HeroSection() {
               <div className="absolute top-[12%] left-[70%] w-[35px] h-[35px] bg-[#FF4500] rounded-[70%_30%_50%_50%/70%_30%_70%_30%] animate-[blob-float-5_16s_ease-in-out_infinite] z-0 pointer-events-none"></div>
               <div className="absolute top-[20%] left-[85%] w-[28px] h-[28px] bg-[#FF4500] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] animate-[blob-float-1_15s_ease-in-out_infinite] z-0 pointer-events-none"></div>
               <div className="absolute top-[15%] left-[5%] w-[12px] h-[12px] bg-[#FF4500] rounded-[60%_40%_30%_70%/50%_60%_40%_50%] animate-[blob-float-4_11s_ease-in-out_infinite] z-0 pointer-events-none"></div>
-              <div className="absolute top-[28%] left-[15%] w-[15px] h-[15px] bg-[#FF4500] rounded-[50%_50%_70%_30%/30%_70%_50%_50%] animate-[blob-float-6_14s_ease-in-out_infinite] z-0 pointer-events-none"></div>
+              <div className="absolute top-[28%] left-[15%] w-[15px] h-[15px] bg-[#FF4500] rounded-[50%_50%_70%_30%/30%_70%_40%_50%] animate-[blob-float-6_14s_ease-in-out_infinite] z-0 pointer-events-none"></div>
               <div className="absolute top-[5%] left-[30%] w-[10px] h-[10px] bg-[#FF4500] rounded-[70%_30%_50%_50%/70%_30%_70%_30%] animate-[blob-float-2_10s_ease-in-out_infinite] z-0 pointer-events-none"></div>
               <div className="absolute top-[22%] left-[40%] w-[18px] h-[18px] bg-[#FF4500] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] animate-[blob-float-4_14s_ease-in-out_infinite] z-0 pointer-events-none"></div>
               <div className="absolute top-[12%] left-[55%] w-[14px] h-[14px] bg-[#FF4500] rounded-[60%_40%_30%_70%/50%_60%_40%_50%] animate-[blob-float-6_11s_ease-in-out_infinite] z-0 pointer-events-none"></div>
@@ -323,18 +323,27 @@ export default function HeroSection() {
             className={`absolute inset-0 mt-[12%] rounded-t-[40px] overflow-hidden ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
             style={{ 
               WebkitTransform: 'translateZ(0)',
-              willChange: 'transform',
-              // YAHAN FIX KIYA HAI: Ek solid CSS gradient background diya hai jo upar se orange aur neeche cream/white hai, taaki koi bhi unwanted blob ya transparent piche ki image na dikhe
-              background: 'linear-gradient(180deg, #E87A5D 0%, #F5C6A5 30%, #FCF3E7 65%, #FAF8F5 100%)'
+              willChange: 'transform'
             }}
           >
-            {/* Safe Blur Layer taaki glass effect bhi bana rahe */}
+            {/* Layer 1: Backdrop Blur */}
+            <div 
+              className="absolute inset-0 z-0 bg-white/5" 
+              style={{ 
+                backdropFilter: 'blur(30px)', 
+                WebkitBackdropFilter: 'blur(30px)'
+              }}
+            ></div>
+            
+            {/* Layer 2: Clean SVG Background (Ab isme extra blobs nahi hain, toh ye bilkul clear aur crisp dikhegi) */}
             <div 
               className="absolute inset-0 z-10" 
               style={{ 
-                backdropFilter: 'blur(20px)', 
-                WebkitBackdropFilter: 'blur(20px)' 
-              }}
+                backgroundImage: "url('/gradient-bg.svg')",
+                backgroundSize: '100% 100%',
+                backgroundPosition: 'top center',
+                backgroundRepeat: 'no-repeat'
+              }} 
             ></div>
           </div>
         </div>
