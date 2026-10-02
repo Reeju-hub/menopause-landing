@@ -326,29 +326,21 @@ export default function HeroSection() {
               willChange: 'transform'
             }}
           >
-            {/* Layer 1: Original SVG Background */}
+            {/* Yahan translateY(30px) se aap image aur blur effect ko apne mutabiq aur upar ya niche khiska sakte hain */}
             <div 
-              className="absolute inset-0 w-full h-full rounded-t-[40px]"
+              className="absolute inset-0 w-full h-full rounded-t-[40px] overflow-hidden"
               style={{
-                backgroundImage: "url('/gradient-bgg.svg')",
+                backgroundImage: "url('/gradient-bg.svg')",
                 backgroundSize: '100% 100%',
                 backgroundPosition: 'top center',
-                backgroundRepeat: 'no-repeat'
-              }}
-            ></div>
-
-            {/* Layer 2: Soft Glass Overlay to fix transparency and add rich depth */}
-            <div 
-              className="absolute inset-0 w-full h-full rounded-t-[40px]"
-              style={{
-                background: "linear-gradient(180deg, rgba(232, 93, 53, 0.25) 0%, rgba(122, 31, 58, 0.15) 40%, rgba(255, 255, 255, 0.4) 100%)",
-                backdropFilter: "blur(10px)",
-                WebkitBackdropFilter: "blur(10px)"
+                backgroundRepeat: 'no-repeat',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                transform: 'translateY(30px)' // Is value ko aap apne hisab se adjust kar sakte hain (jaise 20px, 40px)
               }}
             ></div>
           </div>
         </div>
-
         {/* Pink Box Container */}
         <div 
           className="w-[calc(100%-2rem)] max-w-[380px] h-[221px] bg-[#7A1F3A] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[10px] shadow-lg"
