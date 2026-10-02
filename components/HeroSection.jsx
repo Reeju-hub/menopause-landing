@@ -317,7 +317,6 @@ export default function HeroSection() {
         </div>
         
         {/* BACKGROUND IMAGE CONTAINER */}
-        {/* YAHAN FIX KIYA HAI: Backdrop filter ko hata kar ek solid semi-transparent background color diya hai taaki double blur aur lines na aayein, aur SVG image pink container ke sath bilkul chipki rahe */}
         <div ref={bgRef} className="w-full relative z-20 -mt-[75%] aspect-[5/5] pointer-events-none">
           <div 
             key={`bounce-${bounceKey}`} 
@@ -327,14 +326,14 @@ export default function HeroSection() {
               willChange: 'transform'
             }}
           >
+            {/* YAHAN FIX KIYA HAI: Safari ke blur bug ko door karne ke liye pure CSS gradient overlay aur SVG background ko perfectly combine kiya hai taaki bilkul reference image jaisa smooth glass gradient aaye */}
             <div 
               className="absolute inset-0 w-full h-full rounded-t-[40px]"
               style={{
-                backgroundImage: "url('/gradient-bg.svg')",
+                backgroundImage: "url('/gradient-bg.svg'), linear-gradient(180deg, rgba(232, 122, 93, 0.4) 0%, rgba(252, 243, 231, 0.95) 70%, rgba(255, 255, 255, 1) 100%)",
                 backgroundSize: '100% 100%',
                 backgroundPosition: 'top center',
-                backgroundRepeat: 'no-repeat',
-                backgroundColor: 'rgba(255, 235, 220, 0.5)'
+                backgroundRepeat: 'no-repeat'
               }}
             ></div>
           </div>
