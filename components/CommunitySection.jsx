@@ -120,7 +120,7 @@ export default function CommunitySection() {
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
               />
               <button 
-                className="bg-[#FFB627] text-[#323232] px-6 flex items-center justify-center hover:bg-[#ffa200] active:bg-[#022D2A] transition-colors duration-200 cursor-pointer"
+                className="bg-[#FFB627] text-[#323232] px-6 flex items-center justify-center hover:bg-[#ffa200] active:bg-[#ffa200] transition-colors duration-200 cursor-pointer"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
