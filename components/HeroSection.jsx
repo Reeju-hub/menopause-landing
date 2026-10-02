@@ -321,25 +321,28 @@ export default function HeroSection() {
           <div 
             key={`bounce-${bounceKey}`} 
             className={`absolute inset-0 mt-[12%] rounded-t-[40px] overflow-hidden ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
-            style={{ 
-              WebkitBackfaceVisibility: 'hidden',
-              WebkitTransform: 'translateZ(0)',
-              willChange: 'transform'
-            }}
           >
-            {/* Layer 1: Backdrop Blur (Safari ke liye alag se) */}
-            <div className="absolute inset-0 backdrop-blur-[35px] [-webkit-backdrop-filter:blur(35px)] z-0"></div>
-            
-            {/* Layer 2: SVG Background (Never blurs, never loses aspect ratio) */}
-            <img 
-              src="/gradient-bg.svg" 
-              alt="Background Gradient" 
-              className="absolute inset-0 w-full h-full z-10 block" 
+            {/* Layer 1: Backdrop Blur (Safari Safari Hardware Accelerated Fix) */}
+            {/* YAHAN FIX KIYA HAI: bg-white/[0.01] aur translate3d jisse peeche ka area 100% force blur hoga iPhone par */}
+            <div 
+              className="absolute inset-0 z-0 bg-white/[0.01]" 
               style={{ 
-                objectFit: 'cover', 
-                objectPosition: 'top center' 
+                backdropFilter: 'blur(35px)', 
+                WebkitBackdropFilter: 'blur(35px)',
+                transform: 'translate3d(0,0,0)'
+              }}
+            ></div>
+            
+            {/* Layer 2: SVG Background (Never blurs, never stretches) */}
+            <div 
+              className="absolute inset-0 z-10" 
+              style={{ 
+                backgroundImage: "url('/gradient-bg.svg')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'top center',
+                backgroundRepeat: 'no-repeat'
               }} 
-            />
+            ></div>
           </div>
         </div>
 
