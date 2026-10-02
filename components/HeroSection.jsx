@@ -342,26 +342,25 @@ export default function HeroSection() {
             key={`bounce-${bounceKey}`} 
             className={`absolute inset-0 mt-[12%] rounded-t-[40px] overflow-hidden ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
             style={{ 
-              // YAHAN FIX KIYA HAI: Safari anti-aliasing fixes taaki scale animation mein image blur na ho
               WebkitBackfaceVisibility: 'hidden',
               WebkitTransform: 'translate3d(0,0,0)',
               willChange: 'transform'
             }}
           >
-            {/* Layer 1: Backdrop Blur */}
+            {/* Layer 1: Backdrop Blur (Safari ke liye alag se) */}
             <div className="absolute inset-0 backdrop-blur-[35px] [-webkit-backdrop-filter:blur(35px)] z-0"></div>
             
-            {/* Layer 2: Image background */}
-            {/* YAHAN FIX KIYA HAI: 100% 100% lagaya taaki container width aur height completely edge-to-edge fit kare */}
-            <div 
-              className="absolute inset-0 z-10"
-              style={{
-                backgroundImage: `url('/gradient-bg.png')`,
-                backgroundSize: '100% 100%', 
-                backgroundPosition: 'top center',
-                backgroundRepeat: 'no-repeat'
-              }}
-            ></div>
+            {/* Layer 2: Next.js Native Image Component (Safari Blur fix aur HD Quality) */}
+            <div className="absolute inset-0 z-10">
+              <Image 
+                src="/gradient-bg.png"
+                alt="Background Gradient"
+                fill
+                quality={100}
+                unoptimized
+                className="object-cover object-top"
+              />
+            </div>
           </div>
         </div>
 
