@@ -317,6 +317,7 @@ export default function HeroSection() {
         </div>
         
         {/* BACKGROUND IMAGE CONTAINER */}
+        {/* YAHAN FIX KIYA HAI: Backdrop filter ko hata kar ek solid semi-transparent background color diya hai taaki double blur aur lines na aayein, aur SVG image pink container ke sath bilkul chipki rahe */}
         <div ref={bgRef} className="w-full relative z-20 -mt-[75%] aspect-[5/5] pointer-events-none">
           <div 
             key={`bounce-${bounceKey}`} 
@@ -326,14 +327,14 @@ export default function HeroSection() {
               willChange: 'transform'
             }}
           >
-            {/* YAHAN FIX KIYA HAI: Backdrop filter ko hata kar sirf SVG background rakha hai taaki koi double blur ya extra line upar na dikhe, aur ye pink container ke sath bilkul flush rahega */}
             <div 
               className="absolute inset-0 w-full h-full rounded-t-[40px]"
               style={{
                 backgroundImage: "url('/gradient-bg.svg')",
                 backgroundSize: '100% 100%',
                 backgroundPosition: 'top center',
-                backgroundRepeat: 'no-repeat'
+                backgroundRepeat: 'no-repeat',
+                backgroundColor: 'rgba(255, 235, 220, 0.5)'
               }}
             ></div>
           </div>
