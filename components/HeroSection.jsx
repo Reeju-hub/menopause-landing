@@ -101,9 +101,10 @@ export default function HeroSection() {
       </svg>
 
       <style dangerouslySetInnerHTML={{__html: `
-        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Cormorant+Garamond:ital,wght@0,700;1,700&display=swap');
         
         .force-MontierFlare { font-family: 'Montier Flare', serif !important; }
+        .font-cormorant { font-family: 'Cormorant Garamond', serif !important; }
         
         @keyframes spin-slow {
           from { transform: rotate(0deg); }
@@ -183,9 +184,9 @@ export default function HeroSection() {
       <div className="hidden md:flex relative z-30 flex-col items-center px-4 md:px-6">
          
 
-         <h1 className="force-MontierFlare text-[52px] font-medium text-slate-900 leading-[1.15]">
-            <span className="font-medium">Your midlife health: </span>
-            <span className="force-MontierFlare text-[#FF4500] italic font-medium">
+         <h1 className="text-slate-900 leading-[1.15]">
+            <span className="font-cormorant font-bold text-[52px]">Your midlife health: </span>
+            <span className="font-cormorant font-bold italic text-[52px] text-[#FF4500]">
               Reimagined.
             </span>
           </h1>
@@ -194,7 +195,7 @@ export default function HeroSection() {
           href="https://wa.me/919008934945?text=Hi%20MenoEssence,%20I%20would%20like%20to%20book%20a%20discovery%20call!"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center justify-center bg-[#FFB627] text-[#231F20] px-10 py-[10px] rounded-[16px] font-bold text-[18px] hover:bg-[#ffaa00] transition duration-300 shadow-sm text-center force-MontierFlare"
+          className="hidden md:inline-flex items-center justify-center bg-[#FFB627] text-[#231F20] px-10 py-[10px] rounded-[16px] font-bold text-[20px] hover:bg-[#ffaa00] transition duration-300 shadow-sm text-center font-cormorant"
         >
           Book a Discovery Call
         </a>
@@ -252,13 +253,13 @@ export default function HeroSection() {
             src="/flower.png" 
             alt="flower" 
             className="absolute w-[20px] h-[20px] object-contain animate-spin-slow pointer-events-none z-30"
-            style={{ top: '77.1%', left: '38.46%' }} 
+            style={{ top: '77.1%', left: '36.8%' }} 
           />
           <img 
             src="/flower.png" 
             alt="flower" 
             className="absolute w-[20px] h-[20px] min-w-[25px] object-contain animate-spin-slow pointer-events-none z-30"
-            style={{ top: '77.3%', right: '38.37%' }} 
+            style={{ top: '77.08%', right: '36.6%' }} 
           />
         </div>
       </div>
@@ -269,9 +270,9 @@ export default function HeroSection() {
         {/* Mobile Header Text */}
         <div className="flex flex-col items-center text-center px-4 mb-1 relative z-30">
           
-          <h1 className="force-MontierFlare text-[36px] font-medium text-slate-900 leading-[1.15]">
-            <span className="font-medium">Your midlife health:</span><br />
-            <span className="force-MontierFlare text-[#FF4500] italic font-medium">
+          <h1 className="text-slate-900 leading-[1.15]">
+            <span className="font-cormorant font-bold text-[52px]">Your midlife health:</span><br />
+            <span className="font-cormorant font-bold italic text-[52px] text-[#FF4500]">
               Reimagined.
             </span>
           </h1>

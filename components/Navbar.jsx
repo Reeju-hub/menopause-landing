@@ -38,15 +38,15 @@ export default function Navbar() {
 
       {/* Middle: Desktop Links (Hidden on Mobile) */}
       <div 
-        className="hidden md:flex items-center gap-8 text-slate-800 font-semibold text-base"
-        style={{ fontFamily: "'Montierflare', sans-serif" }}
+        className="hidden md:flex items-center gap-8 text-slate-800 font-bold text-[14px]"
+        style={{ fontFamily: "'Cormorant Garamond', serif" }}
       >
-        <a href="#" className="hover:text-[#D9185F] transition">Why MenoEssence</a>
-        <a href="#" className="hover:text-[#D9185F] transition">When we can help</a>
-        <a href="#" className="hover:text-[#D9185F] transition">How we help</a>
-        <a href="#" className="hover:text-[#D9185F] transition">Integrated care</a>
-        <a href="#" className="hover:text-[#D9185F] transition">Team</a>
-        <a href="#" className="hover:text-[#D9185F] transition">Journey</a>
+        <a href="#" className="hover:text-[#D9185F] transition">WHY MENOESSENCE</a>
+        <a href="#" className="hover:text-[#D9185F] transition">WHEN WE CAN HELP</a>
+        <a href="#" className="hover:text-[#D9185F] transition">HOW WE HELP</a>
+        <a href="#" className="hover:text-[#D9185F] transition">INTEGRATED CARE</a>
+        <a href="#" className="hover:text-[#D9185F] transition">TEAM</a>
+        <a href="#" className="hover:text-[#D9185F] transition">JOURNEY</a>
         <a href="#" className="hover:text-[#D9185F] transition">FAQs</a>
       </div>
 
@@ -58,8 +58,8 @@ export default function Navbar() {
           href="https://wa.me/919008934945?text=Hi%20MenoEssence,%20I%20would%20like%20to%20book%20a%20discovery%20call!"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-block bg-[#ffb627] text-[#323232] px-6 py-2.5 rounded-[16px] font-bold text-base hover:bg-[#ffaa00] transition shadow-sm text-center"
-          style={{ fontFamily: "'Montierflare', sans-serif" }}
+          className="hidden md:inline-block bg-[#ffb627] text-[#323232] px-6 py-2.5 rounded-[16px] font-bold text-[18px] hover:bg-[#ffaa00] transition shadow-sm text-center"
+          style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
           Book a discovery call
         </a>
@@ -91,21 +91,21 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         // YAHAN FIX KIYA: Mobile menu ko bhi bg-white diya aur border halka gray kiya (border-gray-100)
         <div className="absolute top-full left-0 w-full bg-white shadow-lg flex flex-col items-center py-6 gap-6 md:hidden border-t border-gray-100">
-          <a href="#" className="text-slate-800 font-semibold text-base hover:text-[#D9185F] transition" style={{ fontFamily: "'Montierflare', sans-serif" }}>Why MenoEssence</a>
-          <a href="#" className="text-slate-800 font-semibold text-base hover:text-[#D9185F] transition" style={{ fontFamily: "'Montierflare', sans-serif" }}>When we can help</a>
-          <a href="#" className="text-slate-800 font-semibold text-base hover:text-[#D9185F] transition" style={{ fontFamily: "'Montierflare', sans-serif" }}>How we help</a>
-          <a href="#" className="text-slate-800 font-semibold text-base hover:text-[#D9185F] transition" style={{ fontFamily: "'Montierflare', sans-serif" }}>Integrated care</a>
-          <a href="#" className="text-slate-800 font-semibold text-base hover:text-[#D9185F] transition" style={{ fontFamily: "'Montierflare', sans-serif" }}>Team</a>
-          <a href="#" className="text-slate-800 font-semibold text-base hover:text-[#D9185F] transition" style={{ fontFamily: "'Montierflare', sans-serif" }}>Journey</a>
-          <a href="#" className="text-slate-800 font-semibold text-base hover:text-[#D9185F] transition" style={{ fontFamily: "'Montierflare', sans-serif" }}>FAQs</a>
+          <a href="#" className="text-slate-800 font-bold text-[14px] hover:text-[#D9185F] transition" style={{ fontFamily: "'Cormorant Garamond', serif" }}>WHY MENOESSENCE</a>
+          <a href="#" className="text-slate-800 font-bold text-[14px] hover:text-[#D9185F] transition" style={{ fontFamily: "'Cormorant Garamond', serif" }}>WHEN WE CAN HELP</a>
+          <a href="#" className="text-slate-800 font-bold text-[14px] hover:text-[#D9185F] transition" style={{ fontFamily: "'Cormorant Garamond', serif" }}>HOW WE HELP</a>
+          <a href="#" className="text-slate-800 font-bold text-[14px] hover:text-[#D9185F] transition" style={{ fontFamily: "'Cormorant Garamond', serif" }}>INTEGRATED CARE</a>
+          <a href="#" className="text-slate-800 font-bold text-[14px] hover:text-[#D9185F] transition" style={{ fontFamily: "'Cormorant Garamond', serif" }}>TEAM</a>
+          <a href="#" className="text-slate-800 font-bold text-[14px] hover:text-[#D9185F] transition" style={{ fontFamily: "'Cormorant Garamond', serif" }}>JOURNEY</a>
+          <a href="#" className="text-slate-800 font-bold text-[14px] hover:text-[#D9185F] transition" style={{ fontFamily: "'Cormorant Garamond', serif" }}>FAQs</a>
           
           {/* CTA Button in Mobile Menu (WhatsApp Link) */}
           <a 
             href="https://wa.me/919008934945?text=Hi%20MenoEssence,%20I%20would%20like%20to%20book%20a%20discovery%20call!"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#FFB627] text-[#323232] px-8 py-2.5 rounded-[16px] font-bold text-base hover:bg-[#ffaa00] transition shadow-sm mt-2 text-center"
-            style={{ fontFamily: "'Montierflare', sans-serif" }}
+            className="bg-[#FFB627] text-[#323232] px-8 py-2.5 rounded-[16px] font-bold text-[18px] hover:bg-[#ffaa00] transition shadow-sm mt-2 text-center"
+            style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
             Book a discovery call
           </a>

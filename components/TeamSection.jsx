@@ -45,12 +45,16 @@ export default function TeamSection() {
     // YAHAN FIX KIYA HAI: md:px-12 ko md:px-[100px] kar diya taaki page margins sync hon
     <section className="w-full py-16 md:py-20 px-6 md:px-[100px] flex justify-center bg-[#7A1F3A] overflow-hidden">
       
+      <style dangerouslySetInnerHTML={{__html: `
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400..700;1,400..700&display=swap');
+      `}} />
+
       {/* Content Container */}
       {/* YAHAN FIX KIYA HAI: max-w-[1200px] ko max-w-[1560px] kar diya */}
       <div className="w-full max-w-[1560px] flex flex-col mx-auto">
         
         {/* Section Heading */}
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#FFFFFF] mb-8 md:mb-10 text-left">
+        <h2 className="text-4xl md:text-5xl font-bold text-[#FFFFFF] mb-8 md:mb-10 text-left" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
           Meet your team
         </h2>
 
@@ -73,14 +77,14 @@ export default function TeamSection() {
                 
                 {/* Text Details */}
                 <div className="flex flex-col ml-4 flex-grow">
-                  <h4 className="text-[18px] md:text-[18px] font-bold text-slate-900 leading-tight">
+                  <h4 className="text-[18px] md:text-[18px] font-bold text-slate-900 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                     {member.name}
                   </h4>
-                  <p className="text-[#D9185F] font-bold mt-1 text-[14px] md:text-[15px] leading-tight">
+                  <p className="text-[#D9185F] font-bold mt-1 text-[14px] md:text-[15px] leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                     {member.title}
                   </p>
                   {member.subtitle && (
-                    <p className="text-slate-700 text-[12px] md:text-[13px] mt-1 font-semibold">
+                    <p className="text-slate-700 text-[12px] md:text-[13px] mt-1 font-semibold" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                       {member.subtitle}
                     </p>
                   )}
@@ -113,7 +117,7 @@ export default function TeamSection() {
               <div className={`mt-5 pt-4 border-t border-[#F2E5D3] animate-fadeIn ${expandedCards[member.id] ? 'block' : 'hidden md:block'}`}>
                 <p 
                   className="text-[#221f1f] text-[16px] leading-relaxed font-medium" 
-                  style={{ fontFamily: "'Quicksand', sans-serif" }}
+                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   {member.bio}
                 </p>

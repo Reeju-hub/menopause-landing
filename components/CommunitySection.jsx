@@ -41,6 +41,10 @@ export default function CommunitySection() {
     // NAYA FIX: Poore component ko ek <div className="relative w-full"> mein wrap kiya hai
     <div className="relative w-full" ref={sectionRef}>
       
+      <style dangerouslySetInnerHTML={{__html: `
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400..700;1,400..700&display=swap');
+      `}} />
+
       {/* Community Section with Background Image */}
       <section className="relative w-full h-[700px] md:h-[500px] flex px-6 md:px-12 overflow-hidden bg-[#0A0A0A]">
         
@@ -74,15 +78,15 @@ export default function CommunitySection() {
         <div className="relative z-10 w-full max-w-[1200px] mx-auto flex justify-start md:justify-end items-start md:items-center pt-[60px] md:pt-0">
           <div className="w-full max-w-[420px] flex flex-col items-start md:items-end text-left md:text-right">
             
-            <p className="text-[12px] md:text-[20px] font-bold tracking-[0.2em] uppercase text-white/80 mb-2 md:mb-3">
+            <p className="text-[12px] md:text-[20px] font-bold tracking-[0.2em] uppercase text-white/80 mb-2 md:mb-3" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               — STAY CONNECTED —
             </p>
             
-            <h2 className="text-4xl md:text-[46px] font-serif font-bold text-white mb-4 md:mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', sans-serif" }}>
+            <h2 className="text-4xl md:text-[46px] font-serif font-bold text-white mb-4 md:mb-6 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               Join our community
             </h2>
             
-            <ul className="text-white/90 text-[14px] md:text-[15px] mb-6 md:mb-8 flex flex-col gap-2 font-medium items-start md:items-end w-full">
+            <ul className="text-white/90 text-[14px] md:text-[15px] mb-6 md:mb-8 flex flex-col gap-2 font-medium items-start md:items-end w-full" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               <li>• Subscriber-only invites to events</li>
               <li>• The newest science on midlife health</li>
               <li>• Real stories from real women</li>
@@ -113,6 +117,7 @@ export default function CommunitySection() {
                 type="text" 
                 placeholder="Your Whatsapp Number" 
                 className="bg-white flex-grow outline-none text-[#323232] placeholder-slate-500 py-3.5 px-1 text-[14px] font-medium"
+                style={{ fontFamily: "'Cormorant Garamond', serif" }}
               />
               <button 
                 className="bg-[#FFB627] text-[#323232] px-6 flex items-center justify-center hover:bg-[#ffa200] active:bg-[#022D2A] transition-colors duration-200 cursor-pointer"
@@ -145,7 +150,7 @@ export default function CommunitySection() {
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#FFB627] text-[#323232] w-full max-w-[380px] py-3.5 rounded-full font-bold text-[15px] hover:bg-[#ffa200] transition shadow-md text-center inline-block"
-          style={{ fontFamily: "'Quicksand', sans-serif" }}
+          style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
           Book a discovery call
         </a>

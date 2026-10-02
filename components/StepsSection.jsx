@@ -5,7 +5,7 @@ export default function StepsSection() {
     {
       num: "01",
       title: "Book a discovery call:",
-      desc: "A 45 min call with Dr. Roshni, to assess your needs across multiple body systems. No pressure to sign up to anything."
+      desc: "A 45 min call with our experts, to assess your needs across multiple body systems. No pressure to sign up to anything."
     },
     {
       num: "02",
@@ -15,7 +15,7 @@ export default function StepsSection() {
     {
       num: "03",
       title: "Join the community:",
-      desc: "You join a group of 3 - 4 women like you. A safe space for you to have meaningful conversations and be seen. Because you should not have to do it alone."
+      desc: "You join a group of 3 – 4 women like you. A safe space for you to have meaningful conversations and be seen. Because you should not have to do it alone."
     },
     {
       num: "Go!",
@@ -31,7 +31,8 @@ export default function StepsSection() {
       
       {/* DIRECT GOOGLE FONT & CUSTOM ANIMATION INJECTION */}
       <style dangerouslySetInnerHTML={{__html: `
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
+        .force-cormorant { font-family: 'Cormorant Garamond', serif !important; }
         .force-playfair { font-family: 'Playfair Display', serif !important; }
         .force-quicksand { font-family: 'Quicksand', sans-serif !important; }
         
@@ -79,10 +80,10 @@ export default function StepsSection() {
         
         {/* Header Frame */}
         <div className="flex flex-col items-center gap-[12px] w-full px-4 md:px-0">
-          <p className="force-MontierFlare font-medium text-[12px] font-bold tracking-[0.16em] text-[#FFFFFF] uppercase text-center w-full leading-[20px]">
+          <p className="force-cormorant font-medium text-[12px] font-bold tracking-[0.16em] text-[#FFFFFF] uppercase text-center w-full leading-[20px]">
             — HOW WE HELP —
           </p>
-          <h2 className="force-MontierFlare font-medium text-[36px] md:text-[52px] font-bold text-[#FFFFFF] text-center md:leading-[69px] w-full max-w-4xl">
+          <h2 className="force-cormorant font-medium text-[36px] md:text-[52px] font-bold text-[#FFFFFF] text-center md:leading-[69px] w-full max-w-4xl">
             We provide you the integrated care you deserve in your midlife. <span className="text-[#FFFFFF] italic">As easy as 1, 2, 3....Go</span>
           </h2>
         </div>
@@ -99,18 +100,18 @@ export default function StepsSection() {
                   isLastCard ? 'md:col-span-3' : ''
                 }`}
               >
-                <span className="force-playfair text-[#FFFFFF] text-[36px] font-bold leading-[48px]">
+                <span className="force-cormorant text-[#FFFFFF] text-[36px] font-bold leading-[48px]">
                   {step.num}
                 </span>
 
                 <div className="w-full flex-1 bg-[#FCF3E7] rounded-[12px] p-[20px] flex flex-col items-start gap-[12px] relative overflow-hidden shadow-lg">
                   {step.title && (
-                    <h4 className="force-quicksand text-[#3D2C2C] font-bold text-[20px] leading-[22px]">
+                    <h4 className="force-cormorant text-[#3D2C2C] font-bold text-[20px] md:text-[27px] leading-[24px] md:leading-[32px]">
                       {step.title}
                     </h4>
                   )}
 
-                  <p className="force-quicksand text-[#3D2C2C] font-bold text-[20px] md:text-[20px] leading-[24px] md:leading-[28px]">
+                  <p className="force-cormorant text-[#3D2C2C] font-bold text-[20px] md:text-[27px] leading-[24px] md:leading-[32px]">
                     {step.desc}
                   </p>
                 </div>

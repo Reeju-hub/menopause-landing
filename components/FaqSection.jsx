@@ -57,16 +57,20 @@ export default function FaqSection() {
     // YAHAN FIX KIYA HAI: md:px-12 ko hata kar md:px-[100px] apply kiya taaki baki page ke padding se match kare
     <section className="w-full py-20 px-6 md:px-[100px] bg-[#7A1F3A] flex justify-center text-white">
       
+      <style dangerouslySetInnerHTML={{__html: `
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400..700;1,400..700&display=swap');
+      `}} />
+
       {/* YAHAN FIX KIYA HAI: max-w-[1000px] ko max-w-[1560px] kar diya taaki width consistency maintain rahe */}
       <div className="w-full max-w-[1560px] flex flex-col mx-auto">
         
         {/* Subtitle */}
-        <p className="text-12px md:text-2xl font-bold tracking-[0.16em] uppercase mb-4 text-white/90" style={{ fontFamily: "'Quicksand', sans-serif" }}>
+        <p className="text-12px md:text-2xl font-bold tracking-[0.16em] uppercase mb-4 text-white/90" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
           — FAQS —
         </p>
 
         {/* Heading */}
-        <h2 className="text-4xl md:text-6xl font-serif font-bold mb-10">
+        <h2 className="text-4xl md:text-6xl font-bold mb-10" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
           Questions we hear often
         </h2>
 
@@ -82,7 +86,7 @@ export default function FaqSection() {
                   onClick={() => toggleFaq(index)}
                   className="w-full py-5 md:py-6 flex items-center justify-between text-left focus:outline-none group"
                 >
-                  <span className="text-lg md:text-xl font-medium pr-8">
+                  <span className="text-lg md:text-xl font-medium pr-8" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                     {faq.question}
                   </span>
                   
@@ -104,7 +108,7 @@ export default function FaqSection() {
 
                 {/* Answer (Only visible if isOpen is true) */}
                 {isOpen && (
-                  <div className="pb-6 text-white/80 text-base md:text-lg pr-12 font-medium" style={{ fontFamily: "'Quicksand', sans-serif" }}>
+                  <div className="pb-6 text-white/80 text-base md:text-lg pr-12 font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                     {faq.answer}
                   </div>
                 )}

@@ -31,14 +31,14 @@ export default function Home() {
           
           <p
             className="text-[#0B306F] uppercase font-bold tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.16em] text-[12px] sm:text-[12px] md:text-[16px] mb-4 whitespace-nowrap block"
-            style={{ fontFamily: 'Quicksand, sans-serif' }}
+            style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
             —&nbsp;SHAPE&nbsp;YOUR&nbsp;MIDLIFE&nbsp;JOURNEY&nbsp;—
           </p>
           
           <h2
-            className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.2] mt-2"
-            style={{ fontFamily: 'Playfair Display, serif' }}
+            className="text-[36px] md:text-[52px] font-bold text-slate-900 leading-[1.2] mt-2"
+            style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
             Your transition from <br />
             <span className="text-[#b31217] font-bold">perimenopause</span> to <br />
@@ -49,7 +49,7 @@ export default function Home() {
         </div>
         
         {/* Right Column (Exact 720px for Desktop) */}
-        <div className="text-slate-700 text-[16px] md:text-base leading-relaxed space-y-4 font-medium md:max-w-[720px] w-full" style={{ fontFamily: 'Quicksand, serif' }}>
+        <div className="text-slate-700 text-[16px] md:text-[24px] leading-relaxed space-y-4 font-semibold md:max-w-[720px] w-full" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
           <p>
            Midlife can affect your sleep, energy, mood, metabolism, relationships, identity, and how you experience everyday life.
           </p>

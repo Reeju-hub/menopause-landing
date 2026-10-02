@@ -91,11 +91,15 @@ export default function CarePlanSection() {
         <div className="absolute inset-0 bg-black/30 z-10"></div>
       </div>
 
+      <style dangerouslySetInnerHTML={{__html: `
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400..700;1,400..700&display=swap');
+      `}} />
+
       {/* Content Container */}
       {/* YAHAN FIX KIYA HAI: max-w-[1200px] ko max-w-[1560px] kar diya taaki exact left alignment match ho */}
       <div className="relative z-20 w-full max-w-[1560px] mx-auto flex flex-col justify-center items-start">
         
-        <h2 className="text-white text-[60px] md:text-[64px] font-bold mb-8 drop-shadow-md" style={{ fontFamily: 'Caveat, serif' }}>
+        <h2 className="text-white text-[60px] md:text-[64px] font-bold mb-8 drop-shadow-md" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
           Your Care Plan
         </h2>
 
@@ -127,12 +131,12 @@ export default function CarePlanSection() {
               <div key={idx} className="w-full shrink-0 min-w-0 flex flex-col p-6 md:p-8">
                 
                 {/* Quote (pr-20 isliye taaki text arrows se overlap na ho) */}
-                <h3 className="text-[22px] md:text-[26px] pr-20 font-serif font-extrabold text-[#323232] leading-snug mb-6" style={{ fontFamily: "'Playfair Display', sans-serif" }}>
+                <h3 className="text-[22px] md:text-[26px] pr-20 font-extrabold text-[#323232] leading-snug mb-6" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   {plan.quote}
                 </h3>
 
                 {/* Subtitle */}
-                <p className="text-[12px] md:text-sm uppercase tracking-[0.16em] font-bold text-[#323232] mb-4" style={{ fontFamily: "'Quicksand', sans-serif" }}>
+                <p className="text-[12px] md:text-sm uppercase tracking-[0.16em] font-bold text-[#323232] mb-4" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   YOUR CARE PLAN MAY INCLUDE
                 </p>
 
@@ -147,7 +151,7 @@ export default function CarePlanSection() {
                       
                       {/* Text box with overflow protection */}
                       <div className="w-full flex-1 flex items-center justify-center p-1 md:p-2 overflow-hidden">
-                        <span className="text-[9px] md:text-[11px] font-bold uppercase tracking-[0.05em] text-[#323232] leading-tight whitespace-pre-line break-words w-full" style={{ fontFamily: "'Quicksand', sans-serif" }}>
+                        <span className="text-[9px] md:text-[11px] font-bold uppercase tracking-[0.05em] text-[#323232] leading-tight whitespace-pre-line break-words w-full" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                           {item.title}
                         </span>
                       </div>
