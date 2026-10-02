@@ -326,15 +326,14 @@ export default function HeroSection() {
               willChange: 'transform'
             }}
           >
-            {/* YAHAN FIX KIYA HAI: Pure CSS gradient aur SVG background ko mix karke bilkul waisa hi translucent glass/blur effect de diya hai jaisa reference image mein hai, bina kisi fati hui image ke */}
+            {/* YAHAN FIX KIYA HAI: Backdrop filter ko hata kar sirf SVG background rakha hai taaki koi double blur ya extra line upar na dikhe, aur ye pink container ke sath bilkul flush rahega */}
             <div 
               className="absolute inset-0 w-full h-full rounded-t-[40px]"
               style={{
                 backgroundImage: "url('/gradient-bg.svg')",
                 backgroundSize: '100% 100%',
                 backgroundPosition: 'top center',
-                backgroundRepeat: 'no-repeat',
-                backgroundColor: 'rgba(247, 184, 151, 0.45)'
+                backgroundRepeat: 'no-repeat'
               }}
             ></div>
           </div>
