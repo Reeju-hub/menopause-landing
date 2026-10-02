@@ -114,7 +114,7 @@ export default function HeroSection() {
           animation: spin-slow 6s linear infinite;
         }
 
-        /* YAHAN FIX KIYA HAI: Scale ki jagah Slide-Up animation lagaya taaki Safari blur bug na aaye */
+        /* Slide-Up animation lagaya taaki Safari blur bug na aaye */
         @keyframes popup-bg {
           0% { transform: translateY(40px); opacity: 0; }
           100% { transform: translateY(0); opacity: 1; }
@@ -330,12 +330,15 @@ export default function HeroSection() {
             {/* Layer 1: Backdrop Blur (Safari ke liye alag se) */}
             <div className="absolute inset-0 backdrop-blur-[35px] [-webkit-backdrop-filter:blur(35px)] z-0"></div>
             
-            {/* YAHAN FIX KIYA HAI: Pure HTML img tag use kiya object-fill ke sath taaki na edges katein na blur ho */}
+            {/* Layer 2: SVG Background (Never blurs, never loses aspect ratio) */}
             <img 
-              src="/gradient-bg.png" 
+              src="/gradient-bg.svg" 
               alt="Background Gradient" 
               className="absolute inset-0 w-full h-full z-10 block" 
-              style={{ objectFit: 'fill' }} 
+              style={{ 
+                objectFit: 'cover', 
+                objectPosition: 'top center' 
+              }} 
             />
           </div>
         </div>
