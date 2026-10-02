@@ -44,7 +44,7 @@ export default function StagesSection() {
         </p>
 
         {/* Section Heading */}
-        <h2 className="text-[36px] md:text-5xl font-bold text-slate-900 mb-12 text-center md:text-left" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+        <h2 className="text-[52px] md:text-5xl font-bold text-slate-900 mb-12 text-center md:text-left" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
           Life Stages
         </h2>
 
