@@ -330,8 +330,8 @@ export default function HeroSection() {
             <div 
               className="absolute inset-0 w-full h-full rounded-t-[40px]"
               style={{
-                background: "linear-gradient(180deg, rgba(122, 31, 58, 0.35) 0%, rgba(29, 131, 126, 0.25) 20%, rgba(235, 131, 98, 0.85) 50%, rgba(254, 243, 235, 0.9) 80%, rgba(255, 255, 255, 1) 100%)",
-                boxShadow: "inset 0 1px 0 rgba(255, 255, 255, 0.6)"
+                background: "linear-gradient(180deg, rgba(122, 31, 58, 0.65) 0%, rgba(29, 131, 126, 0.45) 25%, rgba(225, 105, 65, 0.95) 50%, rgba(245, 210, 190, 0.95) 80%, rgba(255, 255, 255, 1) 100%)",
+                boxShadow: "inset 0 1px 0 rgba(255, 255, 255, 0.8)"
               }}
             ></div>
           </div>
