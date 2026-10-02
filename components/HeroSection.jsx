@@ -326,16 +326,16 @@ export default function HeroSection() {
               willChange: 'transform'
             }}
           >
-            {/* YAHAN FIX KIYA HAI: Faltu blur layer (Layer 1) ko poori tarah hata diya hai taaki koi double box ya extra border na dikhe */}
-            
-            {/* Clean SVG Background (Ab extra blobs hatne ke baad ye bilkul clear aur perfect dikhegi) */}
+            {/* YAHAN FIX KIYA HAI: Backdrop blur ko seedha SVG container ke andar integrate kar diya hai taaki koi alag se extra box ya border na bane */}
             <div 
               className="absolute inset-0 z-10" 
               style={{ 
                 backgroundImage: "url('/gradient-bg.svg')",
                 backgroundSize: '100% 100%',
                 backgroundPosition: 'top center',
-                backgroundRepeat: 'no-repeat'
+                backgroundRepeat: 'no-repeat',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)'
               }} 
             ></div>
           </div>
