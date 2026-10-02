@@ -86,7 +86,7 @@ export default function StepsSection() {
           </p>
           <h2 className="force-cormorant font-medium text-[36px] md:text-[52px] font-bold text-[#FFFFFF] text-left md:text-center md:leading-[69px] w-full max-w-4xl">
             We provide you the integrated care you deserve in your midlife.<br />
-            <span className="text-[#FFFFFF] italic">As easy as 1, 2, 3....Go</span>
+            <span className="text-[#FFFFFF] italic force-cormorant">As easy as 01, 2, 3....Go</span>
           </h2>
         </div>
 
@@ -102,7 +102,7 @@ export default function StepsSection() {
                   isLastCard ? 'md:col-span-3' : ''
                 }`}
               >
-                <span className="force-cormorant text-[#FFFFFF] text-[36px] font-bold leading-[48px]">
+                <span className=" italic force-cormorant text-[#FFFFFF] text-[36px] font-bold leading-[48px]">
                   {step.num}
                 </span>
 
