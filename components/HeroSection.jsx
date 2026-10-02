@@ -326,12 +326,24 @@ export default function HeroSection() {
               willChange: 'transform'
             }}
           >
-            {/* Pure CSS Glass/Gradient Effect - Safari Friendly & Smooth */}
+            {/* Layer 1: Original SVG Background */}
             <div 
               className="absolute inset-0 w-full h-full rounded-t-[40px]"
               style={{
-                background: "linear-gradient(180deg, #E85D35 0%, #F5C2A5 30%, #7A1F3A 55%, #1D837E 75%, #FFFFFF 100%)",
-                boxShadow: "inset 0 1px 0 rgba(255, 255, 255, 0.9)"
+                backgroundImage: "url('/gradient-bgg.svg')",
+                backgroundSize: '100% 100%',
+                backgroundPosition: 'top center',
+                backgroundRepeat: 'no-repeat'
+              }}
+            ></div>
+
+            {/* Layer 2: Soft Glass Overlay to fix transparency and add rich depth */}
+            <div 
+              className="absolute inset-0 w-full h-full rounded-t-[40px]"
+              style={{
+                background: "linear-gradient(180deg, rgba(232, 93, 53, 0.25) 0%, rgba(122, 31, 58, 0.15) 40%, rgba(255, 255, 255, 0.4) 100%)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)"
               }}
             ></div>
           </div>
