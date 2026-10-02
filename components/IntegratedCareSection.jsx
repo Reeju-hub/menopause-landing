@@ -117,7 +117,7 @@ export default function IntegratedCareSection() {
           </h2>
         </div>
 
-        <p className="text-[#3D2C2C] text-base md:text-[28px] leading-relaxed md:leading-[32px] font-bold max-w-5xl mb-14 text-left md:text-center mx-6 md:mx-auto" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+        <p className="text-[#3D2C2C] text-[18px] md:text-[28px] leading-relaxed md:leading-[32px] font-bold max-w-5xl mb-14 text-left md:text-center mx-6 md:mx-auto" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
           A space where women can access evidence-based guidance, meaningful conversations, and a supportive community while navigating perimenopause, menopause and healthy ageing. We help you understand what is changing, why it matters, and what you can do about it.
         </p>
 

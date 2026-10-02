@@ -84,7 +84,7 @@ export default function TeamSection() {
                     {member.title}
                   </p>
                   {member.subtitle && (
-                    <p className="text-slate-700 text-[12px] md:text-[13px] mt-1 font-semibold" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                    <p className="text-slate-700 text-[18px] md:text-[13px] mt-1 font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                       {member.subtitle}
                     </p>
                   )}

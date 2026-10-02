@@ -8,7 +8,7 @@ export default function CarePlanSection() {
   // --- SWIPE LOGIC ---
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-  const minSwipeDistance = 40; // Thoda aur sensitive kar diya hai
+  const minSwipeDistance = 40; 
 
   const plans = [
     {
@@ -63,7 +63,6 @@ export default function CarePlanSection() {
   };
 
   return (
-    // YAHAN FIX KIYA HAI: md:px-12 ko md:px-[100px] kar diya taaki outer padding baaki page jaisi ho
     <section className="relative z-40 w-full pt-20 pb-0 md:py-28 px-6 md:px-[100px] flex items-center">
       
       {/* Background Images */}
@@ -96,7 +95,6 @@ export default function CarePlanSection() {
       `}} />
 
       {/* Content Container */}
-      {/* YAHAN FIX KIYA HAI: max-w-[1200px] ko max-w-[1560px] kar diya taaki exact left alignment match ho */}
       <div className="relative z-20 w-full max-w-[1560px] mx-auto flex flex-col justify-center items-start">
         
         <h2 className="text-white text-[60px] md:text-[64px] font-bold mb-8 drop-shadow-md" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
@@ -104,7 +102,6 @@ export default function CarePlanSection() {
         </h2>
 
         {/* Cream Card Container */}
-        {/* YAHAN FIX KIYA HAI: h-[370px] ko hata kar h-auto md:h-[370px] kiya gaya hai Safari padding issue solve karne ke liye */}
         <div 
           className="bg-[#FCF3E7] backdrop-blur-md border border-white/30 h-auto md:h-[370px] rounded-[32px] max-w-[480px] w-full relative z-30 mt-4 md:mt-0 -mb-[100px] md:mb-0 overflow-hidden shadow-lg"
           onTouchStart={onTouchStart}
@@ -112,8 +109,11 @@ export default function CarePlanSection() {
           onTouchEnd={onTouchEnd}
         >
           
-          {/* Static Navigation Arrows (Top Right) */}
-          <div className="absolute top-6 right-6 md:top-8 md:right-8 flex gap-2 shrink-0 z-20">
+          {/* YAHAN FIX KIYA HAI: Arrows container ko solid bg aur gradient fade mask diya hai */}
+          <div className="absolute top-0 right-0 pt-6 pr-6 pb-6 pl-10 md:pt-8 md:pr-8 md:pb-8 flex gap-2 shrink-0 z-20 bg-[#FCF3E7] rounded-bl-[32px]">
+            {/* Soft gradient fade masking */}
+            <div className="absolute top-0 left-[-40px] w-[40px] h-full bg-gradient-to-r from-transparent to-[#FCF3E7] pointer-events-none"></div>
+            
             <button onClick={handlePrev} className="w-8 h-8 flex items-center justify-center hover:opacity-70 transition-opacity cursor-pointer shrink-0 bg-transparent border-none p-0 relative">
               <img src="/leftcare.png"  alt="Previous" className="w-full h-full object-contain" />
             </button>
@@ -131,8 +131,8 @@ export default function CarePlanSection() {
               
               <div key={idx} className="w-full shrink-0 min-w-0 flex flex-col p-6 md:p-8">
                 
-                {/* Quote (pr-20 isliye taaki text arrows se overlap na ho) */}
-                <h3 className="text-[22px] md:text-[26px] pr-20 font-extrabold text-[#323232] leading-snug mb-6" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                {/* YAHAN FIX KIYA HAI: Quote ki padding right (pr) badha di taaki arrows ke aage overlap na kare */}
+                <h3 className="text-[22px] md:text-[26px] pr-[90px] md:pr-[100px] font-extrabold text-[#323232] leading-snug mb-6" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   {plan.quote}
                 </h3>
 

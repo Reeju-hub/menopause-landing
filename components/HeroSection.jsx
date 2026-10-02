@@ -345,9 +345,7 @@ export default function HeroSection() {
             style={{ 
               backgroundImage: `url('/gradient-bg.png')`, 
               backgroundSize: 'cover',
-              backgroundPosition: 'top center',
-              WebkitBackdropFilter: 'blur(35px)',
-              backdropFilter: 'blur(35px)'
+              backgroundPosition: 'top center'
             }}
           ></div>
         </div>
