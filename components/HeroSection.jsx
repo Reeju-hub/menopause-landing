@@ -238,13 +238,13 @@ export default function HeroSection() {
             src="/flower.png" 
             alt="flower" 
             className="absolute w-[20px] h-[20px] object-contain animate-spin-slow pointer-events-none z-30"
-            style={{ top: '77.1%', left: '36.8%' }} 
+            style={{ top: '77.7%', left: '36.8%' }} 
           />
           <img 
             src="/flower.png" 
             alt="flower" 
             className="absolute w-[20px] h-[20px] min-w-[25px] object-contain animate-spin-slow pointer-events-none z-30"
-            style={{ top: '77.08%', right: '36.6%' }} 
+            style={{ top: '77.9%', right: '36.6%' }} 
           />
         </div>
       </div>
