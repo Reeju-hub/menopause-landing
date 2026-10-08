@@ -69,7 +69,7 @@ export default function Navbar() {
             className="hidden md:inline-block bg-[#ffb627] text-[#323232] px-7 py-3 rounded-[16px] font-bold text-[18px] hover:bg-[#ffaa00] transition shadow-sm text-center lowercase cursor-pointer"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
-            book a discovery call
+            Book a Discovery Call
           </a>
 
           <button 
@@ -108,7 +108,7 @@ export default function Navbar() {
             className="bg-[#FFB627] text-[#323232] px-8 py-2.5 rounded-[16px] font-bold text-[18px] hover:bg-[#ffaa00] transition shadow-sm mt-2 text-center lowercase cursor-pointer"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
-            book a discovery call
+            Book a Discovery Call
           </a>
         </div>
       )}
