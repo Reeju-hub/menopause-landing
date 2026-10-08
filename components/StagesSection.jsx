@@ -25,8 +25,8 @@ export default function StagesSection() {
   };
 
   return (
-    // YAHAN FIX KIYA HAI: md:px-12 ko md:px-[100px] kar diya taaki page ke edges sync ho jayein
-    <section className="bg-white md:bg-[#FAF8F5] pt-[140px] md:pt-20 pb-20 px-6 md:px-[100px] flex flex-col items-center relative z-10">
+    // YAHAN FIX KIYA HAI: id="when-we-help" add kiya gaya hai
+    <section id="when-we-help" className="bg-white md:bg-[#FAF8F5] pt-[140px] md:pt-20 pb-20 px-6 md:px-[100px] flex flex-col items-center relative z-10">
       
       <style dangerouslySetInnerHTML={{__html: `
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400..700;1,400..700&display=swap');

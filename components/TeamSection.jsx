@@ -42,8 +42,8 @@ export default function TeamSection() {
   ];
 
   return (
-    // YAHAN FIX KIYA HAI: md:px-12 ko md:px-[100px] kar diya taaki page margins sync hon
-    <section className="w-full py-16 md:py-20 px-6 md:px-[100px] flex justify-center bg-[#7A1F3A] overflow-hidden">
+    // YAHAN FIX KIYA HAI: id="team" add kar diya hai
+    <section id="team" className="w-full py-16 md:py-20 px-6 md:px-[100px] flex justify-center bg-[#7A1F3A] overflow-hidden">
       
       <style dangerouslySetInnerHTML={{__html: `
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400..700;1,400..700&display=swap');

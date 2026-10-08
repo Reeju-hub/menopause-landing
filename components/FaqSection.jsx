@@ -19,15 +19,15 @@ export default function FaqSection() {
     },
     {
       question: "I have all the symptoms. But is this the right time for me?",
-      answer: "There is rarely a perfect time. What we can tell you is that the women who join MenoEssence consistently say they wish they had started sooner. A discovery call is a good first step, no commitment required."
+      answer: "There is rarely a perfect time. What we can tell you is that the women who join Menoessence consistently say they wish they had started sooner. A discovery call is a good first step, no commitment required."
     },
     {
       question: "I'm already seeing my gynaecologist. Will this complicate things?",
-      answer: "No. MenoEssence is designed to complement your existing care, not replace it. Many women find that what they learn here helps them have better, more productive conversations with their own doctors."
+      answer: "No. Menoessence is designed to complement your existing care, not replace it. Many women find that what they learn here helps them have better, more productive conversations with their own doctors."
     },
     {
       question: "I already have a nutritionist, a gynaecologist, and a therapist. What's different here?",
-      answer: "MenoEssence brings those three conversations into one space, with a team that talks to each other and looks at the whole picture. The value is in the integration - not in replacing what you already have."
+      answer: "Menoessence brings those three conversations into one space, with a team that talks to each other and looks at the whole picture. The value is in the integration - not in replacing what you already have."
     },
     {
       question: "I'd prefer a 1:1 session rather than a group. Is that possible?",
@@ -54,8 +54,8 @@ export default function FaqSection() {
   };
 
   return (
-    // YAHAN FIX KIYA HAI: md:px-12 ko hata kar md:px-[100px] apply kiya taaki baki page ke padding se match kare
-    <section className="w-full py-20 px-6 md:px-[100px] bg-[#7A1F3A] flex justify-center text-white">
+    // YAHAN FIX KIYA HAI: id="faqs" add kiya gaya hai
+    <section id="faqs" className="w-full py-20 px-6 md:px-[100px] bg-[#7A1F3A] flex justify-center text-white">
       
       <style dangerouslySetInnerHTML={{__html: `
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400..700;1,400..700&display=swap');

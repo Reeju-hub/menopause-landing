@@ -3,22 +3,22 @@ import Image from "next/image";
 export default function StepsSection() {
   const steps = [
     {
-      num: "01",
+      num: "1",
       title: "Book a discovery call:",
       desc: "A 45 min call with our experts, to assess your needs across multiple body systems. No pressure to sign up to anything."
     },
     {
-      num: "02",
+      num: "2",
       title: "Set your goals:",
       desc: "This is where we build your midlife health roadmap - health history, priorities, goals, interventions and success metrics in 6-7 areas of health."
     },
     {
-      num: "03",
+      num: "3",
       title: "Join the community:",
       desc: "You join a group of 3 – 4 women like you. A safe space for you to have meaningful conversations and be seen. Because you should not have to do it alone."
     },
     {
-      num: "Go!",
+      num: "4",
       title: "", 
       desc: "For the duration of your care plan, a multi-disciplinary team combines clinical insight, nutrition science, and emotional wellbeing to help you achieve your goals.",
       hasFlowers: true
@@ -26,8 +26,7 @@ export default function StepsSection() {
   ];
 
   return (
-    // YAHAN FIX KIYA HAI: md:px-[100px] apply kiya taaki Home.js jaisi same padding mile
-    <section className="relative w-full flex justify-center bg-[#093566] overflow-hidden py-16 md:pt-[60px] md:pb-[80px] px-6 md:px-[100px]">
+    <section id="how-we-help" className="relative w-full flex justify-center bg-[#093566] overflow-hidden py-16 md:pt-[60px] md:pb-[80px] px-6 md:px-[100px]">
       
       {/* DIRECT GOOGLE FONT & CUSTOM ANIMATION INJECTION */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -75,18 +74,17 @@ export default function StepsSection() {
       </div>
 
       {/* Content Container */}
-      {/* YAHAN FIX KIYA HAI: max-w-[1560px] kiya taaki Home.js ke alignment se properly sync ho */}
       <div className="relative z-10 w-full max-w-[1560px] mx-auto flex flex-col items-center md:items-start gap-[24px]">
         
         {/* Header Frame */}
-        {/* YAHAN FIX KIYA HAI: md:items-center aur md:text-center lagaya desktop view ke liye */}
         <div className="flex flex-col items-start md:items-center gap-[12px] w-full px-4 md:px-0">
           <p className="force-cormorant font-medium text-[12px] font-bold tracking-[0.16em] text-[#FFFFFF] uppercase text-left md:text-center w-full leading-[20px]">
             — HOW WE HELP —
           </p>
-          <h2 className="force-cormorant font-medium text-[36px] md:text-[52px] font-bold text-[#FFFFFF] text-left md:text-center md:leading-[69px] w-full max-w-4xl">
+          {/* YAHAN FIX KIYA HAI: max-w-4xl ko hata kar max-w-full aur xl:whitespace-nowrap add kiya taaki desktop pe single line rahe */}
+          <h2 className="force-cormorant font-medium text-[36px] md:text-[52px] font-bold text-[#FFFFFF] text-left md:text-center md:leading-[69px] w-full max-w-full xl:whitespace-nowrap">
             We provide you the integrated care you deserve in your midlife.<br />
-            <span className="text-[#FFFFFF] italic force-cormorant">As easy as 01, 2, 3....Go</span>
+            <span className="text-[#FFFFFF] italic force-cormorant">As easy as 1, 2, 3!</span>
           </h2>
         </div>
 

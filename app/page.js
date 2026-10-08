@@ -23,8 +23,8 @@ export default function Home() {
       <ImageDivider />
       
       {/* Text Section (Exact Figma Match for Safari & Desktop) */}
-      {/* YAHAN FIX KIYA HAI: flex-col ke sath items-start aur left div me w-full lagaya taaki mobile (iPhone Safari) margin barabar rahe */}
-      <section className="py-16 md:py-24 px-6 md:px-[100px] max-w-[1560px] mx-auto flex flex-col md:flex-row items-start justify-center gap-8 md:gap-[60px] min-w-0">
+      {/* YAHAN FIX KIYA HAI: id="journey" add kar diya taaki Navbar ka link yahan aaye */}
+      <section id="journey" className="py-16 md:py-24 px-6 md:px-[100px] max-w-[1560px] mx-auto flex flex-col md:flex-row items-start justify-center gap-8 md:gap-[60px] min-w-0">
         
         {/* Left Column (Exact 580px for Desktop) */}
         <div className="w-full min-w-0 md:w-[580px] shrink-0">
@@ -49,12 +49,13 @@ export default function Home() {
         </div>
         
         {/* Right Column (Exact 720px for Desktop) */}
-        <div className="text-slate-700 text-[18px] md:text-[24px] leading-relaxed space-y-4 font-medium md:max-w-[720px] w-full" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+        <div className="text-slate-700 text-[20px] md:text-[24px] leading-relaxed space-y-4 font-bold md:max-w-[720px] w-full" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
           <p>
            Midlife can affect your sleep, energy, mood, metabolism, relationships, identity, and how you experience everyday life.
           </p>
           <p>
-           We combine evidence-based care with a compassionate, multidisciplinary team to help you access the best midlife science.
+          We provide evidence-based care brought to you by a compassionate,  multi-disciplinary team to help you access the the best midlife science.
+
           </p>
            <p>
            Together, we create your personalised midlife care roadmap shaped around your symptoms, priorities, and goals.

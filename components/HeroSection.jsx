@@ -88,7 +88,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="bg-[#FFFFFF] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-4 z-0">
+    <section id="why-menoessence" className="bg-[#FFFFFF] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-4 z-0">
       
       {/* 🧪 SVG Filter for the Liquid/Gooey Effect 🧪 */}
       <svg width="0" height="0" className="absolute hidden">
