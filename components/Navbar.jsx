@@ -32,7 +32,6 @@ export default function Navbar() {
           className="hidden md:flex items-center gap-10 text-slate-800 font-bold text-[16px]"
           style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
-          {/* YAHAN FIX KIYA: Hrefs mein sahi ID daal di hai */}
           <a href="#why-menoessence" onClick={handleLinkClick} className="hover:text-[#D9185F] transition lowercase cursor-pointer">why menoessence</a>
           <a href="#how-we-help" onClick={handleLinkClick} className="hover:text-[#D9185F] transition lowercase cursor-pointer">how we help</a>
           <a href="#integrated-care" onClick={handleLinkClick} className="hover:text-[#D9185F] transition lowercase cursor-pointer">integrated care</a>
@@ -61,12 +60,13 @@ export default function Navbar() {
 
         {/* Right Side: Button (Desktop) & Hamburger (Mobile) */}
         <div className="flex items-center">
+          {/* YAHAN FIX KIYA: 'lowercase' class hata di taaki original case dikhe */}
           <a 
             href="https://wa.me/919008934945?text=Hi%20MenoEssence,%20I%20would%20like%20to%20book%20a%20discovery%20call!"
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleLinkClick}
-            className="hidden md:inline-block bg-[#ffb627] text-[#323232] px-7 py-3 rounded-[16px] font-bold text-[18px] hover:bg-[#ffaa00] transition shadow-sm text-center lowercase cursor-pointer"
+            className="hidden md:inline-block bg-[#ffb627] text-[#323232] px-7 py-3 rounded-[16px] font-bold text-[18px] hover:bg-[#ffaa00] transition shadow-sm text-center cursor-pointer"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
             Book a Discovery Call
@@ -100,12 +100,13 @@ export default function Navbar() {
           <a href="#journey" onClick={handleLinkClick} className="text-slate-800 font-bold text-[16px] hover:text-[#D9185F] transition lowercase cursor-pointer" style={{ fontFamily: "'Cormorant Garamond', serif" }}>journey</a>
           <a href="#faqs" onClick={handleLinkClick} className="text-slate-800 font-bold text-[16px] hover:text-[#D9185F] transition lowercase cursor-pointer" style={{ fontFamily: "'Cormorant Garamond', serif" }}>faqs</a>
           
+          {/* YAHAN FIX KIYA: 'lowercase' class hata di taaki original case dikhe */}
           <a 
             href="https://wa.me/919008934945?text=Hi%20MenoEssence,%20I%20would%20like%20to%20book%20a%20discovery%20call!"
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleLinkClick}
-            className="bg-[#FFB627] text-[#323232] px-8 py-2.5 rounded-[16px] font-bold text-[18px] hover:bg-[#ffaa00] transition shadow-sm mt-2 text-center lowercase cursor-pointer"
+            className="bg-[#FFB627] text-[#323232] px-8 py-2.5 rounded-[16px] font-bold text-[18px] hover:bg-[#ffaa00] transition shadow-sm mt-2 text-center cursor-pointer"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
             Book a Discovery Call
