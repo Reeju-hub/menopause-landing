@@ -13,14 +13,17 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-white py-4 md:py-5 px-6 md:px-[100px] sticky top-0 z-[999] shadow-sm relative">
+    // YAHAN FIX KIYA: md:py-5 ko md:py-3 kar diya taaki upar-neeche ka extra gap kam ho
+    <nav className="w-full bg-white py-4 md:py-3 px-6 md:px-[100px] sticky top-0 z-[999] shadow-sm relative">
       
       <div className="max-w-[1560px] mx-auto w-full flex justify-between items-center">
         
         {/* Left Side: Logo (Click karne par page ke top par jayega) */}
         <a href="#" className="flex-shrink-0 cursor-pointer">
           <div className="hidden md:block">
-            <img src="/logo.svg" alt="MenoEssence Logo Desktop" className="h-[85px] w-auto object-contain" />
+            {/* YAHAN FIX KIYA: -my-5 (negative margin) lagaya hai. 
+                Isse logo bahar ki taraf fail jayega par Navbar ki total height nahi badhayega! */}
+            <img src="/logo.svg" alt="MenoEssence Logo Desktop" className="h-[85px] w-auto object-contain -my-5" />
           </div>
           <div className="block md:hidden">
             <img src="/logo-mobile.svg" alt="MenoEssence Logo Mobile" className="w-[220px] h-auto object-contain" />
@@ -60,7 +63,6 @@ export default function Navbar() {
 
         {/* Right Side: Button (Desktop) & Hamburger (Mobile) */}
         <div className="flex items-center">
-          {/* YAHAN FIX KIYA: 'lowercase' class hata di taaki original case dikhe */}
           <a 
             href="https://wa.me/919008934945?text=Hi%20MenoEssence,%20I%20would%20like%20to%20book%20a%20discovery%20call!"
             target="_blank"
@@ -100,7 +102,6 @@ export default function Navbar() {
           <a href="#journey" onClick={handleLinkClick} className="text-slate-800 font-bold text-[16px] hover:text-[#D9185F] transition lowercase cursor-pointer" style={{ fontFamily: "'Cormorant Garamond', serif" }}>journey</a>
           <a href="#faqs" onClick={handleLinkClick} className="text-slate-800 font-bold text-[16px] hover:text-[#D9185F] transition lowercase cursor-pointer" style={{ fontFamily: "'Cormorant Garamond', serif" }}>faqs</a>
           
-          {/* YAHAN FIX KIYA: 'lowercase' class hata di taaki original case dikhe */}
           <a 
             href="https://wa.me/919008934945?text=Hi%20MenoEssence,%20I%20would%20like%20to%20book%20a%20discovery%20call!"
             target="_blank"

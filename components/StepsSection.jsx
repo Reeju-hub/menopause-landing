@@ -18,7 +18,7 @@ export default function StepsSection() {
       desc: "You join a group of 3 – 4 women like you. A safe space for you to have meaningful conversations and be seen. Because you should not have to do it alone."
     },
     {
-      num: "4",
+      num: "Go!",
       title: "", 
       desc: "For the duration of your care plan, a multi-disciplinary team combines clinical insight, nutrition science, and emotional wellbeing to help you achieve your goals.",
       hasFlowers: true
@@ -78,7 +78,7 @@ export default function StepsSection() {
         
         {/* Header Frame */}
         <div className="flex flex-col items-start md:items-center gap-[12px] w-full px-4 md:px-0">
-          <p className="force-cormorant font-medium text-[12px] font-bold tracking-[0.16em] text-[#FFFFFF] uppercase text-left md:text-center w-full leading-[20px]">
+          <p className="force-cormorant font-medium text-[12px] md:text-[22px] font-bold tracking-[0.16em] text-[#FFFFFF] uppercase text-left md:text-center w-full leading-[20px]">
             — HOW WE HELP —
           </p>
           {/* YAHAN FIX KIYA HAI: max-w-4xl ko hata kar max-w-full aur xl:whitespace-nowrap add kiya taaki desktop pe single line rahe */}
@@ -106,12 +106,12 @@ export default function StepsSection() {
 
                 <div className="w-full flex-1 bg-[#FCF3E7] rounded-[12px] p-[20px] flex flex-col items-start gap-[12px] relative overflow-hidden shadow-lg">
                   {step.title && (
-                    <h4 className="force-cormorant text-[#3D2C2C] font-bold text-[20px] md:text-[27px] leading-[24px] md:leading-[32px]">
+                    <h4 className="force-cormorant text-[#3D2C2C] font-bold text-[20px] md:text-[22px] leading-[24px] md:leading-[32px]">
                       {step.title}
                     </h4>
                   )}
 
-                  <p className="force-cormorant text-[#3D2C2C] font-bold text-[20px] md:text-[27px] leading-[24px] md:leading-[32px]">
+                  <p className="force-cormorant text-[#3D2C2C] font-bold text-[20px] md:text-[22px] leading-[24px] md:leading-[32px]">
                     {step.desc}
                   </p>
                 </div>

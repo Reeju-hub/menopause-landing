@@ -78,15 +78,15 @@ export default function CommunitySection() {
         <div className="relative z-10 w-full max-w-[1200px] mx-auto flex justify-start md:justify-end items-start md:items-center pt-[60px] md:pt-0">
           <div className="w-full max-w-[420px] flex flex-col items-start md:items-end text-left md:text-right">
             
-            <p className="text-[12px] md:text-[20px] font-bold tracking-[0.2em] uppercase text-white/80 mb-2 md:mb-3" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            <p className="text-[12px] md:text-[22px] font-bold tracking-[0.2em] uppercase text-white/80 mb-2 md:mb-3" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               — STAY CONNECTED —
             </p>
             
-            <h2 className="text-4xl md:text-[46px] font-serif font-bold text-white mb-4 md:mb-6 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            <h2 className="text-4xl md:text-[52px] font-serif font-bold text-white mb-4 md:mb-6 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               Join our community
             </h2>
             
-            <ul className="text-white/90 text-[14px] md:text-[15px] mb-6 md:mb-8 flex flex-col gap-2 font-medium items-start md:items-end w-full" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            <ul className="text-white/90 text-[14px] md:text-[22px] mb-6 md:mb-8 flex flex-col gap-2 font-medium items-start md:items-end w-full" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               <li>• Subscriber-only invites to events</li>
               <li>• The newest science on midlife health</li>
               <li>• Real stories from real women</li>

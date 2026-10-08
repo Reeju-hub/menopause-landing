@@ -37,14 +37,14 @@ export default function StagesSection() {
         
         {/* Section Subtitle */}
         <p
-          className="text-[12px] md:text-[20px] font-bold tracking-[0.2em] text-[#0B306F] uppercase mb-3 text-center md:text-left"
+          className="text-[12px] md:text-[22px] font-bold tracking-[0.2em] text-[#0B306F] uppercase mb-3 text-center md:text-left"
           style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
           — WHEN WE CAN HELP —
         </p>
 
         {/* Section Heading */}
-        <h2 className="text-[36px] md:text-5xl font-bold text-slate-900 mb-12 text-center md:text-left" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+        <h2 className="text-[36px] md:text-[52px] font-bold text-slate-900 mb-12 text-center md:text-left" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
           Life Stages
         </h2>
 
@@ -157,7 +157,7 @@ export default function StagesSection() {
             </div>
             
             {desktopState.perimenopause && (
-              <p className="text-slate-950 text-[20px] leading-relaxed font-bold mt-6 transition-all border-t border-[#E8D9C5] pt-4" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              <p className="text-slate-950 text-[22px] leading-relaxed font-bold mt-6 transition-all border-t border-[#E8D9C5] pt-4" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                 Perimenopause can begin years before periods stop, and its symptoms are often subtle, confusing, and overlooked. We help you identify your stage, whats coming up and how to navigate with confidence.
               </p>
             )}
@@ -188,7 +188,7 @@ export default function StagesSection() {
             </div>
 
             {desktopState.menopause && (
-              <p className="text-slate-950 text-[20px] leading-relaxed font-bold mt-6 transition-all border-t border-[#E8D9C5] pt-4" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+              <p className="text-slate-950 text-[22px] leading-relaxed font-bold mt-6 transition-all border-t border-[#E8D9C5] pt-4" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                 Menopause marks a significant life transition, not simply the end of periods. We help you with symptom management, long-term health considerations, and practical strategies to help you feel well and informed at every stage.
               </p>
             )}

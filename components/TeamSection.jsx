@@ -77,14 +77,14 @@ export default function TeamSection() {
                 
                 {/* Text Details */}
                 <div className="flex flex-col ml-4 flex-grow">
-                  <h4 className="text-[18px] md:text-[18px] font-bold text-slate-900 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                  <h4 className="text-[18px] md:text-[22px] font-bold text-slate-900 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                     {member.name}
                   </h4>
-                  <p className="text-[#D9185F] font-bold mt-1 text-[14px] md:text-[15px] leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                  <p className="text-[#D9185F] font-bold mt-1 text-[14px] md:text-[22px] leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                     {member.title}
                   </p>
                   {member.subtitle && (
-                    <p className="text-slate-700 text-[18px] md:text-[13px] mt-1 font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                    <p className="text-slate-700 text-[18px] md:text-[22px] mt-1 font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                       {member.subtitle}
                     </p>
                   )}
@@ -116,7 +116,7 @@ export default function TeamSection() {
               {/* YAHAN FIX KIYA HAI: Mobile pe expanded state check karega, par desktop (md) pe hamesha 'md:block' ki wajah se dikhega */}
               <div className={`mt-5 pt-4 border-t border-[#F2E5D3] animate-fadeIn ${expandedCards[member.id] ? 'block' : 'hidden md:block'}`}>
                 <p 
-                  className="text-[#221f1f] text-[16px] leading-relaxed font-medium" 
+                  className="text-[#221f1f] text-[16px] md:text-[22px] leading-relaxed font-medium" 
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   {member.bio}

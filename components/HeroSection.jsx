@@ -183,8 +183,8 @@ export default function HeroSection() {
       {/* --- DESKTOP Top Text & Button --- */}
       <div className="hidden md:flex relative z-30 flex-col items-center px-4 md:px-6">
          <h1 className="text-slate-900 leading-[1.15]">
-            <span className="font-cormorant font-bold text-[36px]">Your midlife health: </span>
-            <span className="font-cormorant font-bold italic text-[36px] text-[#FF4500]">
+            <span className="font-cormorant font-bold text-[52px]">Your midlife health: </span>
+            <span className="font-cormorant font-bold italic text-[52px] text-[#FF4500]">
               Reimagined.
             </span>
           </h1>
@@ -222,16 +222,15 @@ export default function HeroSection() {
             <div className="absolute top-[10%] left-[70%] w-[20px] h-[20px] bg-[#FF4500] rounded-[50%_50%_70%_30%/30%_70%_50%_50%] animate-[blob-float-3_10s_ease-in-out_infinite] z-0 pointer-events-none"></div>
           </div>
 
-          <Image
-            src="/full-hero-section.png"
-            alt="Hero Section"
-            width={1920}
-            height={1080}
-            quality={100}
-            unoptimized
-            priority
-            className="w-full max-w-none h-auto object-cover pointer-events-none translate-y-30 relative z-10"
-          />
+         <Image
+  src="/full-hero-section.svg" // SVG file ka path
+  alt="Hero Section"
+  width={1920}
+  height={1080}
+  priority
+  className="w-full max-w-none h-auto object-cover pointer-events-none translate-y-30 relative z-10"
+/>
+
 
           {/* 🌸 DESKTOP FLOWERS OVERLAY 🌸 */}
           <img 
