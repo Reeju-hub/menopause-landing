@@ -65,7 +65,7 @@ export default function FaqSection() {
       <div className="w-full max-w-[1560px] flex flex-col mx-auto">
         
         {/* Subtitle */}
-        <p className="text-12px md:text-[22px] font-bold tracking-[0.16em] uppercase mb-4 text-white/90" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+        <p className="text-[20px] md:text-[22px] font-bold tracking-[0.16em] uppercase mb-4 text-white/90" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
           — FAQS —
         </p>
 
@@ -86,7 +86,7 @@ export default function FaqSection() {
                   onClick={() => toggleFaq(index)}
                   className="w-full py-5 md:py-6 flex items-center justify-between text-left focus:outline-none group"
                 >
-                  <span className="text-lg md:text-[22px] font-medium pr-8" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                  <span className="text-[20px] md:text-[22px] font-medium pr-8" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                     {faq.question}
                   </span>
                   
@@ -108,7 +108,7 @@ export default function FaqSection() {
 
                 {/* Answer (Only visible if isOpen is true) */}
                 {isOpen && (
-                  <div className="pb-6 text-white/80 text-[18px] md:text-[22px] pr-12 font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                  <div className="pb-6 text-white/80 text-[20px] md:text-[22px] pr-12 font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                     {faq.answer}
                   </div>
                 )}

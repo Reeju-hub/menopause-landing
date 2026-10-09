@@ -254,8 +254,8 @@ export default function HeroSection() {
         {/* Mobile Header Text */}
         <div className="flex flex-col items-center text-center px-4 mb-1 relative z-30">
           <h1 className="text-slate-900 leading-[1.15]">
-            <span className="font-cormorant font-bold text-[52px]">Your midlife health:</span><br />
-            <span className="font-cormorant font-bold italic text-[52px] text-[#FF4500]">
+            <span className="font-cormorant font-bold text-[36px]">Your midlife health:</span><br />
+            <span className="font-cormorant font-bold italic text-[36px] text-[#FF4500]">
               Reimagined.
             </span>
           </h1>

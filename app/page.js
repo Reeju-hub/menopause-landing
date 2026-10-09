@@ -30,7 +30,7 @@ export default function Home() {
         <div className="w-full min-w-0 md:w-[580px] shrink-0">
           
           <p
-            className="text-[#0B306F] uppercase font-bold tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.16em] text-[12px] sm:text-[12px] md:text-[22px] mb-4 whitespace-nowrap block"
+            className="text-[#0B306F] uppercase font-bold tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.16em] text-[20px] sm:text-[12px] md:text-[22px] mb-4 whitespace-nowrap block"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
             —&nbsp;SHAPE&nbsp;YOUR&nbsp;MIDLIFE&nbsp;JOURNEY&nbsp;—

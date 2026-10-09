@@ -118,7 +118,7 @@ export default function CarePlanSection() {
               >
                 {plans.map((plan, idx) => (
                   <div key={idx} className="w-full shrink-0 min-w-0 pr-2">
-                    <h3 className="text-[24px] md:text-[22px] font-extrabold text-[#323232] leading-snug" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                    <h3 className="text-[20px] md:text-[22px] font-extrabold text-[#323232] leading-snug" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                       {plan.quote}
                     </h3>
                   </div>
@@ -138,7 +138,7 @@ export default function CarePlanSection() {
           </div>
 
           {/* Subtitle */}
-          <p className="text-[12px] md:text-[11px] uppercase tracking-[0.16em] font-bold text-[#323232] mb-4" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+          <p className="text-[20px] md:text-[11px] uppercase tracking-[0.16em] font-bold text-[#323232] mb-4" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
             YOUR CARE PLAN MAY INCLUDE
           </p>
 

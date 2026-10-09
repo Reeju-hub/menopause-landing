@@ -37,7 +37,7 @@ export default function StagesSection() {
         
         {/* Section Subtitle */}
         <p
-          className="text-[12px] md:text-[22px] font-bold tracking-[0.2em] text-[#0B306F] uppercase mb-3 text-center md:text-left"
+          className="text-[20px] md:text-[22px] font-bold tracking-[0.2em] text-[#0B306F] uppercase mb-3 text-center md:text-left"
           style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
           — WHEN WE CAN HELP —
@@ -62,7 +62,7 @@ export default function StagesSection() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <img src="/icon-perimenopause.svg" alt="Perimenopause Icon" className="w-12 h-12 object-contain" />
-                <h3 className="text-slate-900 font-bold text-[18px]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Perimenopause</h3>
+                <h3 className="text-slate-900 font-bold text-[20px]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Perimenopause</h3>
               </div>
               
               {/* Thin plus/minus icon matching the image */}
@@ -81,7 +81,7 @@ export default function StagesSection() {
             
             {mobileState.perimenopause && (
               <div className="px-3 pb-3" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                <p className="text-slate-950 text-[18px] leading-relaxed font-medium border-t border-[#E8D9C5] pt-3">
+                <p className="text-slate-950 text-[20px] leading-relaxed font-medium border-t border-[#E8D9C5] pt-3">
                   Perimenopause can begin years before periods stop, and its symptoms are often subtle, confusing, and overlooked. We help you identify your stage, whats coming up and how to navigate with confidence.
                 </p>
               </div>
@@ -97,7 +97,7 @@ export default function StagesSection() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <img src="/icon-menopause.svg" alt="Menopause Icon" className="w-12 h-12 object-contain" />
-                <h3 className="text-slate-900 font-bold text-[18px]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Menopause</h3>
+                <h3 className="text-slate-900 font-bold text-[20px]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Menopause</h3>
               </div>
               
               {/* Thin plus/minus icon matching the image */}
@@ -116,7 +116,7 @@ export default function StagesSection() {
             
             {mobileState.menopause && (
               <div className="px-3 pb-3" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                <p className="text-slate-950 text-[18px] leading-relaxed font-medium border-t border-[#E8D9C5] pt-3">
+                <p className="text-slate-950 text-[20px] leading-relaxed font-medium border-t border-[#E8D9C5] pt-3">
                   Menopause marks a significant life transition, not simply the end of periods. We help you with symptom management, long-term health considerations, and practical strategies to help you feel well and informed at every stage.
                 </p>
               </div>

@@ -78,7 +78,7 @@ export default function StepsSection() {
         
         {/* Header Frame */}
         <div className="flex flex-col items-start md:items-center gap-[12px] w-full px-4 md:px-0">
-          <p className="force-cormorant font-medium text-[12px] md:text-[22px] font-bold tracking-[0.16em] text-[#FFFFFF] uppercase text-left md:text-center w-full leading-[20px]">
+          <p className="force-cormorant font-medium text-[20px] md:text-[22px] font-bold tracking-[0.16em] text-[#FFFFFF] uppercase text-left md:text-center w-full leading-[20px]">
             — HOW WE HELP —
           </p>
           {/* YAHAN FIX KIYA HAI: max-w-4xl ko hata kar max-w-full aur xl:whitespace-nowrap add kiya taaki desktop pe single line rahe */}

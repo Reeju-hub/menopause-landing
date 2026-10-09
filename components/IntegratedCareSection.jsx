@@ -108,7 +108,7 @@ export default function IntegratedCareSection() {
       <div className="relative z-10 w-full max-w-[1560px] px-0 md:px-[100px] flex flex-col mx-auto">
         
         <div className="flex flex-col items-start md:items-center text-left md:text-center gap-3 w-full mb-6 px-6 md:px-0">
-          <p className="text-[12px] md:text-[22px] font-bold tracking-[0.16em] uppercase text-[#3D2C2C]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+          <p className="text-[20px] md:text-[22px] font-bold tracking-[0.16em] uppercase text-[#3D2C2C]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
             — HOW DO WE HELP —
           </p>
           <h2 className="text-[36px] md:text-[52px] font-bold leading-tight md:leading-[69px] max-w-4xl text-[#3D2C2C]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
@@ -116,7 +116,7 @@ export default function IntegratedCareSection() {
           </h2>
         </div>
 
-        <p className="text-[#3D2C2C] text-[18px] md:text-[22px] leading-relaxed md:leading-[32px] font-bold max-w-5xl mb-14 text-left md:text-center mx-6 md:mx-auto" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+        <p className="text-[#3D2C2C] text-[20px] md:text-[22px] leading-relaxed md:leading-[32px] font-bold max-w-5xl mb-14 text-left md:text-center mx-6 md:mx-auto" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
           A space where women can access evidence-based guidance, meaningful conversations, and a supportive community while navigating perimenopause, menopause and healthy ageing. We help you understand what is changing, why it matters, and what you can do about it.
         </p>
 
@@ -139,10 +139,10 @@ export default function IntegratedCareSection() {
                   flippedCards[card.id] ? 'opacity-100 translate-y-0 z-20' : 'opacity-0 translate-y-4 -z-10 pointer-events-none'
                 }`}
               >
-                <h3 className="text-[#7A1F3A] text-[22px] font-bold mb-3 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                <h3 className="text-[#7A1F3A] text-[20px] md:text-[22px] font-bold mb-3 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   {card.title}
                 </h3>
-                <p className="text-[#7A1F3A] text-[22px] leading-relaxed font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                <p className="text-[#7A1F3A] text-[20px] md:text-[22px] leading-relaxed font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   {card.desc}
                 </p>
               </div>
