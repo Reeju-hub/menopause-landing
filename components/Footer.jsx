@@ -54,7 +54,7 @@ export default function Footer() {
             className="w-[180px] md:w-[220px] h-auto mb-4 object-contain"
           />
           <p 
-            className="text-slate-600 text-[14px] md:text-[15px] font-medium leading-relaxed max-w-[320px]" 
+            className="text-slate-600 text-[20px] md:text-[22px] font-medium leading-relaxed max-w-[320px]" 
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
             Empowering women through evidence-based guidance and integrated care in midlife.
@@ -65,7 +65,7 @@ export default function Footer() {
         <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-6 pt-6 border-t border-gray-200/80">
           
           {/* Copyright Area */}
-          <p className="text-slate-500 text-[13px] md:text-sm font-medium text-center md:text-left" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+          <p className="text-slate-500 text-[20px] md:text-[22px] font-medium text-center md:text-left" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
             © {new Date().getFullYear()} MenoEssence. All rights reserved.
           </p>
 
@@ -75,7 +75,7 @@ export default function Footer() {
             <a 
               href="/api/download" 
               download="Menoessence-Client-Onboarding-Form.pdf"
-              className="text-slate-600 hover:text-[#D9185F] transition text-[13px] md:text-[14px] font-bold flex items-center gap-1.5"
+              className="text-slate-600 hover:text-[#D9185F] transition text-[20px] md:text-[22px] font-bold flex items-center gap-1.5"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,7 +87,7 @@ export default function Footer() {
             {/* Privacy Policy Link */}
             <Link 
               href="/privacy-policy" 
-              className="text-slate-600 hover:text-[#D9185F] transition text-[13px] md:text-[14px] font-semibold"
+              className="text-slate-600 hover:text-[#D9185F] transition text-[20px] md:text-[22px] font-semibold"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Privacy Policy
@@ -96,7 +96,7 @@ export default function Footer() {
             {/* Terms & Conditions Link */}
             <Link 
               href="/terms-and-conditions" 
-              className="text-slate-600 hover:text-[#D9185F] transition text-[13px] md:text-[14px] font-semibold"
+              className="text-slate-600 hover:text-[#D9185F] transition text-[20px] md:text-[22px] font-semibold"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Terms & Conditions
