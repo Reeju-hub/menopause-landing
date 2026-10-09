@@ -362,7 +362,7 @@ export default function HeroSection() {
             {/* Title with Flowers */}
             <h3 className="flex flex-row justify-center items-center gap-[12px] w-full h-[45px]">
               <img src="/flower.png" alt="flower" className="w-[20px] h-[20px] object-contain animate-spin-slow" />
-              <span className="force-MontierFlare font-medium text-[#FFFFFF] text-[34px] sm:text-[36px] leading-[45px] text-center whitespace-nowrap">
+              <span className="force-MontierFlare font-medium text-[#FFFFFF] text-[36px] sm:text-[36px] leading-[45px] text-center whitespace-nowrap">
                 You're not alone
               </span>
               <img src="/flower.png" alt="flower" className="w-[20px] h-[20px] object-contain animate-spin-slow" />
@@ -371,7 +371,7 @@ export default function HeroSection() {
             {/* Slider Description Text */}
             <p 
               key={activeIndex}
-              className="force-MontierFlare font-medium text-[#FFFFFF] text-[15.5px] sm:text-[16px] leading-[22px] text-center w-full animate-fadeIn"
+              className="force-MontierFlare font-medium text-[#FFFFFF] text-[20px] sm:text-[16px] leading-[22px] text-center w-full animate-fadeIn"
             >
               {slides[activeIndex].text}
             </p>
