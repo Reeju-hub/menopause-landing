@@ -66,7 +66,7 @@ export default function Footer() {
           
           {/* Copyright Area */}
           <p className="text-slate-500 text-[20px] md:text-[22px] font-medium text-center md:text-left" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-            © {new Date().getFullYear()} MenoEssence. All rights reserved.
+            © {new Date().getFullYear()} Menoessence. All rights reserved.
           </p>
 
           {/* Links Area */}
