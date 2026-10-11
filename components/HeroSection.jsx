@@ -140,9 +140,9 @@ export default function HeroSection() {
           <div 
             className="absolute z-20 flex justify-center items-center pointer-events-none left-1/2 -translate-x-1/2 translate-y-30 overflow-hidden"
             style={{
-              width: '121.6%',               // ~1400px of 1920px (Responsive relative to max 1560px container)
+              width: '123%',               // ~1400px of 1920px (Responsive relative to max 1560px container)
               aspectRatio: '1400 / 199',  
-              bottom: '38.4%',              // Yahan se adjust karein upar-neeche
+              bottom: '36.4%',              // Yahan se adjust karein upar-neeche
               background: 'rgba(255, 232, 199, 0.2)', 
               borderRadius: '40px 40px 0px 0px',      
               backdropFilter: 'blur(24px)',           
@@ -153,7 +153,7 @@ export default function HeroSection() {
             <img 
               src="/glass-box.svg" 
               alt="Glass Content" 
-              className="w-full h-full object-fill scale-y-[1.07]"
+              className="w-full h-full object-fill scale-y-[1.03]"
             />
           </div>
 
