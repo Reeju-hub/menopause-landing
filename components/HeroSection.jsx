@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 export default function HeroSection() {
   const slides = [
     {
-      text: "MenoEssence is founded by women, for women."
+      text: "Menoessence is founded by women, for women."
     },
     {
       text: "We help you understand your changing body and plan for the next decade. So you can navigate midlife with clarity, confidence, and support."
@@ -189,14 +189,7 @@ export default function HeroSection() {
             </span>
           </h1>
           <br />
-        <a 
-          href="https://wa.me/919008934945?text=Hi%20MenoEssence,%20I%20would%20like%20to%20book%20a%20discovery%20call!"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center justify-center bg-[#FFB627] text-[#231F20] px-10 py-[10px] rounded-[16px] font-bold text-[20px] hover:bg-[#ffaa00] transition duration-300 shadow-sm text-center font-cormorant"
-        >
-          Book a Discovery Call
-        </a>
+        
       </div>
 
       {/* --- DESKTOP VIEW IMAGE --- */}
@@ -230,21 +223,6 @@ export default function HeroSection() {
   priority
   className="w-full max-w-none h-auto object-cover pointer-events-none translate-y-30 relative z-10"
 />
-
-
-          {/* 🌸 DESKTOP FLOWERS OVERLAY 🌸 */}
-          <img 
-            src="/flower.png" 
-            alt="flower" 
-            className="absolute w-[20px] h-[20px] object-contain animate-spin-slow pointer-events-none z-30"
-            style={{ top: '77.7%', left: '36.8%' }} 
-          />
-          <img 
-            src="/flower.png" 
-            alt="flower" 
-            className="absolute w-[20px] h-[20px] min-w-[25px] object-contain animate-spin-slow pointer-events-none z-30"
-            style={{ top: '77.9%', right: '36.6%' }} 
-          />
         </div>
       </div>
 
@@ -361,11 +339,11 @@ export default function HeroSection() {
             
             {/* Title with Flowers */}
             <h3 className="flex flex-row justify-center items-center gap-[12px] w-full h-[45px]">
-              <img src="/flower.png" alt="flower" className="w-[20px] h-[20px] object-contain animate-spin-slow" />
+             
               <span className="font-cormorant font-medium text-[#FFFFFF] text-[36px] sm:text-[36px] leading-[45px] text-center whitespace-nowrap">
                 You're not alone
               </span>
-              <img src="/flower.png" alt="flower" className="w-[20px] h-[20px] object-contain animate-spin-slow" />
+              
             </h3>
 
             {/* Slider Description Text */}
