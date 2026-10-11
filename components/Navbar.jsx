@@ -75,7 +75,7 @@ export default function Navbar() {
 
         {/* Middle: Desktop Links & Desktop Hamburger */}
         <div 
-          className="hidden md:flex items-center gap-10 text-slate-800 font-bold text-[16px]"
+          className="hidden md:flex items-center gap-10 text-slate-800 font-bold text-[20px]"
           style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
           {/* YAHAN FIX KIYA: Custom scroll handle add kiya */}
