@@ -4,12 +4,3 @@
 .font-caveat {
   font-family: 'Caveat', cursive !important;
 }
-
-/* --- YAHAN FIX KIYA HAI: Smooth Scrolling Add Kiya --- */
-html {
-  scroll-behavior: smooth;
-  
-  /* Navbar sticky hai, isliye scroll hone par title chup na jaye uske liye padding */
-  /* Agar aapko lagta hai ki section navbar ke thoda zyada neeche/upar ruk raha hai, toh is value (110px) ko kam ya zyada karke adjust kar lijiye */
-  scroll-padding-top: 110px; 
-}

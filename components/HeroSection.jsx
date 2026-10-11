@@ -4,37 +4,24 @@ import { useState, useEffect, useRef } from "react";
 
 export default function HeroSection() {
   const slides = [
-    {
-      text: "Menoessence is founded by women, for women."
-    },
-    {
-      text: "We help you understand your changing body and plan for the next decade. So you can navigate midlife with clarity, confidence, and support."
-    },
-    {
-      text: "Because this phase deserves more than reassurance. It deserves understanding and expert care tailored to you."
-    },
-    {
-      text: "Empower yourself with knowledge and proactive health strategies so you can thrive during and beyond midlife."
-    }
+    { text: "Menoessence is founded by women, for women." },
+    { text: "We help you understand your changing body and plan for the next decade. So you can navigate midlife with clarity, confidence, and support." },
+    { text: "Because this phase deserves more than reassurance. It deserves understanding and expert care tailored to you." },
+    { text: "Empower yourself with knowledge and proactive health strategies so you can thrive during and beyond midlife." }
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
-
-  // --- SWIPE LOGIC STATES ---
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
   const minSwipeDistance = 40; 
 
-  // --- AUTO-SCROLL LOGIC ---
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % slides.length);
     }, 4000); 
-
     return () => clearInterval(slideInterval);
   }, [activeIndex, slides.length]); 
 
-  // --- SCROLL ANIMATION LOGIC ---
   const [isBgVisible, setIsBgVisible] = useState(false);
   const [bounceKey, setBounceKey] = useState(0); 
   const bgRef = useRef(null);
@@ -50,47 +37,31 @@ export default function HeroSection() {
           setIsBgVisible(false); 
         }
       },
-      { 
-        threshold: 0.4, 
-        rootMargin: "0px 0px 0px 0px" 
-      } 
+      { threshold: 0.4, rootMargin: "0px 0px 0px 0px" } 
     );
-
-    if (bgRef.current) {
-      observer.observe(bgRef.current);
-    }
-
+    if (bgRef.current) observer.observe(bgRef.current);
     return () => {
       if (bgRef.current) observer.unobserve(bgRef.current);
     };
   }, []);
 
-  // --- TOUCH HANDLERS ---
   const onTouchStart = (e) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
   };
-
   const onTouchMove = (e) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
-
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
     const distance = touchStart - touchEnd;
-    
-    if (distance > minSwipeDistance) {
-      setActiveIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }
-    if (distance < -minSwipeDistance) {
-      setActiveIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-    }
+    if (distance > minSwipeDistance) setActiveIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    if (distance < -minSwipeDistance) setActiveIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
   return (
     <section id="why-menoessence" className="bg-[#FFFFFF] flex flex-col items-center pt-4 md:pt-16 px-0 text-center relative overflow-hidden pb-4 z-0">
       
-      {/* 🧪 SVG Filter for the Liquid/Gooey Effect 🧪 */}
       <svg width="0" height="0" className="absolute hidden">
         <defs>
           <filter id="goo">
@@ -102,99 +73,38 @@ export default function HeroSection() {
 
       <style dangerouslySetInnerHTML={{__html: `
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Cormorant+Garamond:ital,wght@0,700;1,700&display=swap');
-        
         .force-MontierFlare { font-family: 'Montier Flare', serif !important; }
         .font-cormorant { font-family: 'Cormorant Garamond', serif !important; }
-        
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 6s linear infinite;
-        }
-
-        /* Slide-Up animation */
-        @keyframes popup-bg {
-          0% { transform: translateY(40px); opacity: 0; }
-          100% { transform: translateY(0); opacity: 1; }
-        }
-        .animate-popup-bg {
-          animation: popup-bg 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        }
-
-        @keyframes fadeIn {
-          from { opacity: 0.3; }
-          to { opacity: 1; }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.4s ease-in forwards;
-        }
-
-        @keyframes desktop-blob-dynamic {
-          0%, 100% { transform: scale(1) translateY(0); }
-          50% { transform: scale(1.025) translateY(-12px); }
-        }
-        .animate-desktop-dynamic {
-          animation: desktop-blob-dynamic 6s ease-in-out infinite;
-        }
-        
-        @keyframes mobile-blob-dynamic {
-            0%, 100% { transform: scale(1) translateY(0); }
-            50% { transform: scale(1.02) translateY(-6px); }
-        }
-        .animate-mobile-dynamic {
-            animation: mobile-blob-dynamic 5s ease-in-out infinite;
-        }
-
-        /* 💦 Wide Trajectories for perfect page flow 💦 */
-        @keyframes blob-float-1 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(150px, -50px) scale(1.1); }
-          66% { transform: translate(-80px, 80px) scale(0.9); }
-        }
-        @keyframes blob-float-2 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(-130px, 60px) scale(0.85); }
-          66% { transform: translate(120px, -70px) scale(1.15); }
-        }
-        @keyframes blob-float-3 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(100px, 120px) scale(1.2); }
-          66% { transform: translate(-140px, -40px) scale(0.8); }
-        }
-        @keyframes blob-float-4 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(-110px, -90px) scale(0.9); }
-          66% { transform: translate(150px, 50px) scale(1.2); }
-        }
-        @keyframes blob-float-5 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(180px, 20px) scale(1.3); }
-          66% { transform: translate(-90px, -110px) scale(0.7); }
-        }
-        @keyframes blob-float-6 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(-100px, 150px) scale(0.8); }
-          66% { transform: translate(130px, -60px) scale(1.2); }
-        }
+        @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .animate-spin-slow { animation: spin-slow 6s linear infinite; }
+        @keyframes popup-bg { 0% { transform: translateY(40px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+        .animate-popup-bg { animation: popup-bg 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        @keyframes fadeIn { from { opacity: 0.3; } to { opacity: 1; } }
+        .animate-fadeIn { animation: fadeIn 0.4s ease-in forwards; }
+        @keyframes desktop-blob-dynamic { 0%, 100% { transform: scale(1) translateY(0); } 50% { transform: scale(1.025) translateY(-12px); } }
+        .animate-desktop-dynamic { animation: desktop-blob-dynamic 6s ease-in-out infinite; }
+        @keyframes mobile-blob-dynamic { 0%, 100% { transform: scale(1) translateY(0); } 50% { transform: scale(1.02) translateY(-6px); } }
+        .animate-mobile-dynamic { animation: mobile-blob-dynamic 5s ease-in-out infinite; }
+        @keyframes blob-float-1 { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(150px, -50px) scale(1.1); } 66% { transform: translate(-80px, 80px) scale(0.9); } }
+        @keyframes blob-float-2 { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(-130px, 60px) scale(0.85); } 66% { transform: translate(120px, -70px) scale(1.15); } }
+        @keyframes blob-float-3 { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(100px, 120px) scale(1.2); } 66% { transform: translate(-140px, -40px) scale(0.8); } }
+        @keyframes blob-float-4 { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(-110px, -90px) scale(0.9); } 66% { transform: translate(150px, 50px) scale(1.2); } }
+        @keyframes blob-float-5 { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(180px, 20px) scale(1.3); } 66% { transform: translate(-90px, -110px) scale(0.7); } }
+        @keyframes blob-float-6 { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(-100px, 150px) scale(0.8); } 66% { transform: translate(130px, -60px) scale(1.2); } }
       `}} />
 
-      {/* --- DESKTOP Top Text & Button --- */}
       <div className="hidden md:flex relative z-30 flex-col items-center px-4 md:px-6">
          <h1 className="text-slate-900 leading-[1.15]">
             <span className="font-cormorant font-bold text-[52px]">Your midlife health: </span>
-            <span className="font-cormorant font-bold italic text-[52px] text-[#FF4500]">
-              Reimagined.
-            </span>
+            <span className="font-cormorant font-bold italic text-[52px] text-[#FF4500]">Reimagined.</span>
           </h1>
           <br />
-        
       </div>
 
       {/* --- DESKTOP VIEW IMAGE --- */}
-      <div className="hidden md:flex flex-col items-center w-full relative -mt-17 z-10">
-        <div className="relative flex justify-center items-center w-full animate-desktop-dynamic">
+      <div className="hidden md:flex flex-col items-center w-full relative -mt-17 z-10 px-6 md:px-[100px]">
+        {/* YAHAN FIX KIYA HAI: max-w-[1560px] aur mx-auto lagaya taaki image ek limit se badi na ho */}
+        <div className="relative flex justify-center items-center w-full max-w-[1560px] mx-auto animate-desktop-dynamic">
           
           {/* 🎈 GOOEY METABALLS CONTAINER (DESKTOP) 🎈 */}
           <div className="absolute top-0 left-0 w-full h-[65%] z-0 pointer-events-none" style={{ filter: 'url(#goo)' }}>
@@ -215,39 +125,55 @@ export default function HeroSection() {
             <div className="absolute top-[10%] left-[70%] w-[20px] h-[20px] bg-[#FF4500] rounded-[50%_50%_70%_30%/30%_70%_50%_50%] animate-[blob-float-3_10s_ease-in-out_infinite] z-0 pointer-events-none"></div>
           </div>
 
-         <Image
-  src="/full-hero-section.svg" // SVG file ka path
-  alt="Hero Section"
-  width={1920}
-  height={1080}
-  priority
-  className="w-full max-w-none h-auto object-cover pointer-events-none translate-y-30 relative z-10"
-/>
+          {/* MAIN BACKGROUND IMAGE (Jisme glass box nahi hai) */}
+          <Image
+            src="/full-hero-section.svg" 
+            alt="Hero Section"
+            width={1920}
+            height={1080}
+            priority
+            // YAHAN FIX KIYA HAI: object-contain lagaya aur max-w-none hata diya hai
+            className="w-full h-auto object-contain pointer-events-none translate-y-30 relative z-10"
+          />
+
+          {/* 🪄 NEW RESPONSIVE GLASS BOX OVERLAY 🪄 */}
+          <div 
+            className="absolute z-20 flex justify-center items-center pointer-events-none left-1/2 -translate-x-1/2 translate-y-30 overflow-hidden"
+            style={{
+              width: '121.6%',               // ~1400px of 1920px (Responsive relative to max 1560px container)
+              aspectRatio: '1400 / 199',  
+              bottom: '38.4%',              // Yahan se adjust karein upar-neeche
+              background: 'rgba(255, 232, 199, 0.2)', 
+              borderRadius: '40px 40px 0px 0px',      
+              backdropFilter: 'blur(24px)',           
+              WebkitBackdropFilter: 'blur(24px)',
+            }}
+          >
+            {/* Aapka alag se nikala hua Glass Box ka SVG */}
+            <img 
+              src="/glass-box.svg" 
+              alt="Glass Content" 
+              className="w-full h-full object-fill scale-y-[1.07]"
+            />
+          </div>
+
         </div>
       </div>
 
       {/* --- EXACT MOBILE VIEW --- */}
       <div className="flex flex-col md:hidden w-full max-w-[600px] mx-auto relative z-20 mt-7 px-0">
         
-        {/* Mobile Header Text */}
         <div className="flex flex-col items-center text-center px-4 mb-1 relative z-30">
           <h1 className="text-slate-900 leading-[1.15]">
             <span className="font-cormorant font-bold text-[36px]">Your midlife health:</span><br />
-            <span className="font-cormorant font-bold italic text-[36px] text-[#FF4500]">
-              Reimagined.
-            </span>
+            <span className="font-cormorant font-bold italic text-[36px] text-[#FF4500]">Reimagined.</span>
           </h1>
         </div>
 
-        {/* MOBILE HERO WRAPPER */}
         <div className="w-full relative z-10 translate-y-[75px] mb-[54px] -mt-[0px] [transform:translateZ(0)]">
-          
-          {/* Inner Animated Container */}
           <div className="w-full flex justify-center relative animate-mobile-dynamic">
             
-            {/* 🎈 GOOEY METABALLS CONTAINER (MOBILE) 🎈 */}
             <div className="absolute top-[8%] left-0 w-full h-[60%] z-0 pointer-events-none" style={{ filter: 'url(#goo)' }}>
-              
               <div className="absolute top-[8%] left-[10%] w-[35px] h-[35px] bg-[#FF4500] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] animate-[blob-float-1_13s_ease-in-out_infinite] z-0 pointer-events-none"></div>
               <div className="absolute top-[22%] left-[25%] w-[25px] h-[25px] bg-[#FF4500] rounded-[60%_40%_30%_70%/50%_60%_40%_50%] animate-[blob-float-2_15s_ease-in-out_infinite] z-0 pointer-events-none"></div>
               <div className="absolute top-[10%] left-[45%] w-[30px] h-[30px] bg-[#FF4500] rounded-[50%_50%_70%_30%/30%_70%_50%_50%] animate-[blob-float-3_12s_ease-in-out_infinite] z-0 pointer-events-none"></div>
@@ -293,84 +219,45 @@ export default function HeroSection() {
           </div>
         </div>
         
-        {/* BACKGROUND IMAGE CONTAINER */}
         <div ref={bgRef} className="w-full relative z-20 -mt-[75%] aspect-[5/5] pointer-events-none">
           <div 
             key={`bounce-${bounceKey}`} 
             className={`absolute inset-0 mt-[12%] rounded-t-[40px] overflow-hidden ${isBgVisible ? 'animate-popup-bg' : 'opacity-0'}`}
-            style={{ 
-              WebkitTransform: 'translateZ(0)',
-              willChange: 'transform'
-            }}
+            style={{ WebkitTransform: 'translateZ(0)', willChange: 'transform' }}
           >
-            {/* Layer 1: Background Color aur Backdrop Filter (Ab yeh pehle hai taaki peeche rahe) */}
             <div 
               className="absolute inset-0 w-full h-full rounded-t-[40px]"
               style={{
-                backgroundColor: 'rgba(245, 175, 149, 0.45)', // Android Chrome fallback color
+                backgroundColor: 'rgba(245, 175, 149, 0.45)',
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
-                transform: 'translateY(18px)' // Yeh color aur blur ko alag se neeche khiska dega
+                transform: 'translateY(18px)'
               }}
             ></div>
-
-            {/* Layer 2: Background Image (Ab yeh baad mein hai taaki image bilkul upar/saaf dikhe) */}
             <div 
               className="absolute inset-0 w-full h-full rounded-t-[40px]"
-              style={{
-                backgroundImage: "url('/gradient-bg.svg')",
-                backgroundSize: '100% 100%',
-                backgroundPosition: 'top center',
-                backgroundRepeat: 'no-repeat'
-              }}
+              style={{ backgroundImage: "url('/gradient-bg.svg')", backgroundSize: '100% 100%', backgroundPosition: 'top center', backgroundRepeat: 'no-repeat' }}
             ></div>
           </div>
         </div>
-        {/* Pink Box Container */}
+
         <div 
           className="w-[calc(100%-2rem)] max-w-[380px] h-[221px] bg-[#7A1F3A] rounded-[0px_0px_40px_40px] px-[20px] py-[24px] flex flex-col justify-between items-center mx-auto relative z-40 mt-0 mb-[10px] shadow-lg"
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={onTouchEnd}
+          onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}
         >
-          
-          {/* Top Text & Flower Block */}
           <div className="flex flex-col items-center gap-[12px] w-full max-w-[310px] h-[101px] pointer-events-none">
-            
-            {/* Title with Flowers */}
             <h3 className="flex flex-row justify-center items-center gap-[12px] w-full h-[45px]">
-             
-              <span className="font-cormorant font-medium text-[#FFFFFF] text-[36px] sm:text-[36px] leading-[45px] text-center whitespace-nowrap">
-                You're not alone
-              </span>
-              
+              <span className="font-cormorant font-medium text-[#FFFFFF] text-[36px] sm:text-[36px] leading-[45px] text-center whitespace-nowrap">You're not alone</span>
             </h3>
-
-            {/* Slider Description Text */}
-            <p 
-              key={activeIndex}
-              className="font-cormorant font-medium text-[#FFFFFF] text-[20px] sm:text-[16px] leading-[22px] text-center w-full animate-fadeIn"
-            >
+            <p key={activeIndex} className="font-cormorant font-medium text-[#FFFFFF] text-[20px] sm:text-[16px] leading-[22px] text-center w-full animate-fadeIn">
               {slides[activeIndex].text}
             </p>
-
           </div>
-
-          {/* Indicator Dots */}
           <div className="flex flex-row justify-center items-center gap-[12px] h-[8px]">
             {slides.map((_, index) => (
-              <div
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`transition-all duration-300 rounded-[4px] cursor-pointer ${
-                  activeIndex === index
-                    ? "w-[64px] h-[8px] bg-[#FF7A21]"
-                    : "w-[16px] h-[8px] bg-[rgba(255,122,33,0.6)]"
-                }`}
-              ></div>
+              <div key={index} onClick={() => setActiveIndex(index)} className={`transition-all duration-300 rounded-[4px] cursor-pointer ${ activeIndex === index ? "w-[64px] h-[8px] bg-[#FF7A21]" : "w-[16px] h-[8px] bg-[rgba(255,122,33,0.6)]" }`}></div>
             ))}
           </div>
-
         </div>
 
       </div>
