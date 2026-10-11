@@ -72,13 +72,6 @@ export default function IntegratedCareSection() {
     },
     {
       id: 7,
-      image: "/video-thumb-7.jpg",
-      imgClass: "object-left object-cover scale-[1.02]",
-      title: "Sexual Wellbeing",
-      desc: "Changes in desire, intimacy, vaginal comfort, and sexual health are common yet often under-discussed. We provide a safe, supportive space to explore concerns and identify solutions that work for you."
-    },
-    {
-      id: 8,
       image: "/video-thumb-8.jpg",
       imgClass: "object-left object-cover scale-[1.02]",
       title: "Skin & Hair",
