@@ -67,7 +67,7 @@ export default function IntegratedCareSection() {
       id: 6,
       image: "/video-thumb-6.jpg",
       imgClass: "object-left object-cover scale-[1.02]",
-      title: "Movement & Strength",
+      title: "Strength & Mobility",
       desc: "Movement plays a powerful role in supporting physical health, mood, sleep, strength, and long-term wellbeing. We help you find sustainable ways to stay active that fit your body, your lifestyle, and your goals."
     },
     {

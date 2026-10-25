@@ -66,7 +66,7 @@ export default function StagesSection() {
               </div>
               
               {/* Thin plus/minus icon matching the image */}
-              <div className="w-[34px] h-[34px] shrink-0 rounded-full border-[1.5px] border-[#004d40] text-[#004d40] flex items-center justify-center transition-colors">
+              <div className="w-[34px] h-[34px] shrink-0 rounded-full border-[1.5px] border-[#7a1f3a] text-[#7a1f3a] flex items-center justify-center transition-colors">
                 {mobileState.perimenopause ? (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M18 12H6"></path>
@@ -101,7 +101,7 @@ export default function StagesSection() {
               </div>
               
               {/* Thin plus/minus icon matching the image */}
-              <div className="w-[34px] h-[34px] shrink-0 rounded-full border-[1.5px] border-[#004d40] text-[#004d40] flex items-center justify-center transition-colors">
+              <div className="w-[34px] h-[34px] shrink-0 rounded-full border-[1.5px] border-[#7a1f3a] text-[#7a1f3a] flex items-center justify-center transition-colors">
                 {mobileState.menopause ? (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M18 12H6"></path>
@@ -143,7 +143,7 @@ export default function StagesSection() {
                 <h3 className="text-slate-900 font-bold text-[24px]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Perimenopause</h3>
               </div>
               
-              <div className="w-7 h-7 rounded-full border-[1.5px] border-[#004d40] text-[#004d40] flex items-center justify-center hover:bg-[#004d40] hover:text-white transition-colors shrink-0">
+              <div className="w-7 h-7 rounded-full border-[1.5px] border-[#7a1f3a] text-[#7a1f3a] flex items-center justify-center hover:bg-[#7a1f3a] hover:text-white transition-colors shrink-0">
                 {desktopState.perimenopause ? (
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M20 12H4"></path>
@@ -174,7 +174,7 @@ export default function StagesSection() {
                 <h3 className="text-slate-900 font-bold text-[24px]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Menopause</h3>
               </div>
 
-              <div className="w-7 h-7 rounded-full border-[1.5px] border-[#004d40] text-[#004d40] flex items-center justify-center hover:bg-[#004d40] hover:text-white transition-colors shrink-0">
+              <div className="w-7 h-7 rounded-full border-[1.5px] border-[#7a1f3a] text-[#7a1f3a] flex items-center justify-center hover:bg-[#7a1f3a] hover:text-white transition-colors shrink-0">
                 {desktopState.menopause ? (
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M20 12H4"></path>
