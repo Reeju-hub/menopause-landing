@@ -80,7 +80,6 @@ export default function IntegratedCareSection() {
   ];
 
   return (
-    // YAHAN FIX KIYA HAI: id="how-we-help" lagaya gaya hai
     <section id="integrated-care" className="relative w-full py-24 flex flex-col items-center bg-[#004D40] overflow-hidden text-white">
       
       <style dangerouslySetInnerHTML={{__html: `
@@ -119,7 +118,8 @@ export default function IntegratedCareSection() {
           className="flex gap-4 md:gap-6 w-full md:w-[calc(100%+100px)] md:-mr-[100px] overflow-x-auto snap-x snap-mandatory mb-6 pb-6 px-6 md:pl-0 md:pr-[100px] scroll-pl-6 md:scroll-pl-0 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {cardsData.map((card) => (
-            <div key={card.id} className="shrink-0 w-[80vw] max-w-[360px] h-[312px] snap-start snap-always rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group">
+            // YAHAN FIX KIYA HAI: h-[312px] ki jagah h-[320px] md:h-[360px] kiya taaki height mil sake
+            <div key={card.id} className="shrink-0 w-[80vw] max-w-[360px] h-[320px] md:h-[360px] snap-start snap-always rounded-[24px] overflow-hidden shadow-lg bg-[#FAF4EE] relative group">
               
               <img 
                 src={card.image} 
@@ -127,15 +127,18 @@ export default function IntegratedCareSection() {
                 className={`absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out ${card.imgClass} ${flippedCards[card.id] ? 'opacity-0' : 'opacity-100'}`}
               />
 
+              {/* YAHAN FIX KIYA HAI: p-8 ko p-6 md:p-7 kiya taaki text ko zyada space mile */}
               <div 
-                className={`absolute inset-0 bg-[#FAF4EE] p-8 flex flex-col justify-center transition-all duration-500 ease-in-out ${
+                className={`absolute inset-0 bg-[#FAF4EE] p-6 md:p-7 flex flex-col justify-center transition-all duration-500 ease-in-out ${
                   flippedCards[card.id] ? 'opacity-100 translate-y-0 z-20' : 'opacity-0 translate-y-4 -z-10 pointer-events-none'
                 }`}
               >
-                <h3 className="text-[#7A1F3A] text-[20px] md:text-[22px] font-bold mb-3 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                {/* Title ki margin-bottom thodi kam ki (mb-2) */}
+                <h3 className="text-[#7A1F3A] text-[20px] md:text-[24px] font-bold mb-2 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   {card.title}
                 </h3>
-                <p className="text-[#7A1F3A] text-[20px] md:text-[22px] leading-relaxed font-medium" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                {/* YAHAN FIX KIYA HAI: text size 17-19px aur leading-snug kiya, taaki lambi lines perfectly fit ho jayein aur button ke peeche na chhupein */}
+                <p className="text-[#7A1F3A] text-[17px] md:text-[19px] leading-snug font-medium pr-2" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   {card.desc}
                 </p>
               </div>
