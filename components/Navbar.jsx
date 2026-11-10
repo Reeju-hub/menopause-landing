@@ -119,7 +119,7 @@ export default function Navbar() {
           </a>
 
           <button 
-            className="block md:hidden p-2 text-[#045D56] cursor-pointer relative z-50" 
+            className="block md:hidden p-2 text-[#7a1f3a] cursor-pointer relative z-50" 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (

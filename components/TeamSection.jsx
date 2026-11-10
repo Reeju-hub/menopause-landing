@@ -94,8 +94,8 @@ export default function TeamSection() {
                 {/* YAHAN FIX KIYA HAI: 'md:hidden' class lagayi taaki desktop pe button hide ho jaye */}
                 <button 
                   onClick={() => toggleCard(member.id)}
-                  className={`md:hidden shrink-0 w-8 h-8 rounded-full border-[1.5px] border-[#004D40] flex items-center justify-center transition cursor-pointer ml-2 ${
-                    expandedCards[member.id] ? "bg-[#004D40] text-white" : "text-[#004D40] hover:bg-[#004D40] hover:text-white"
+                  className={`md:hidden shrink-0 w-8 h-8 rounded-full border-[1.5px] border-[#7a1f3a] flex items-center justify-center transition cursor-pointer ml-2 ${
+                    expandedCards[member.id] ? "bg-[#7a1f3a] text-white" : "text-[#7a1f3a] hover:bg-[#7a1f3a] hover:text-white"
                   }`}
                 >
                   {expandedCards[member.id] ? (
